@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "app_weather"
+		},
+		{
+			"path": "design_system"
+		},
+		{
+			"path": "core_module"
+		},
+		{
+			"path": "web_weather"
+		}
+	],
+	"settings": {}
+}
