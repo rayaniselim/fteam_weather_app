@@ -18,3 +18,6 @@ class HomeStore extends NotifierStore<Exception, int> {
     setLoading(false);
   }
 }
+
+
+/// TODO: BLOC 

@@ -2,7 +2,7 @@ import 'package:core_module/core_module.dart';
 
 import 'modules/home/home_module.dart';
 
-/* ESTE MODULO É GLOBAL para todo o app
+/* ESTE MODULO É GLOBAL(é a RAIZ) para todo o app
 essa classe  existe APENAS para instanciar injecao de dependencia,
 que é um padrao q obriga vc a desacoplar as coisas, (trabalhar de forma desacoplada)
  e fazer inversao de controle,

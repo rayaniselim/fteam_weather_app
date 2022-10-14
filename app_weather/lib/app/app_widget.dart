@@ -2,12 +2,16 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'models/weather.model.dart';
+import 'models/weather_model.dart';
+
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
 
+  /// inserir o materialApp -
   @override
   Widget build(BuildContext context) {
-    // final weather = WeatherModel.fromMap(weatherJson); // TODO: erro MAP
+    final weather = WeatherModel.fromMap(weatherJson); // TODO: erro MAP
     // getHttp();
 
     // Modular.setArguments(arguments); ///  pode mandar um argumento inicial p/ a rota inicial

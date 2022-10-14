@@ -29,17 +29,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    MediaQuery.of(context).size.height;
-    MediaQuery.of(context).size.width;
+    final altura = MediaQuery.of(context).size.height;
+    final largura = MediaQuery.of(context).size.width;
     final statusBar = MediaQuery.of(context).viewPadding.top;
-    MediaQuery.of(context).viewPadding.bottom;
+    final statusBottom = MediaQuery.of(context).viewPadding.bottom;
+
     return Scaffold(
       extendBody: true,
-      // appBar: AppBar(
-      //     // elevation: 0,
-      //     // toolbarHeight: 0,
-      //     // toolbarOpacity: 0.0,
-      //     ),
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -50,20 +46,19 @@ class _HomePageState extends State<HomePage> {
           Container(
             color: Colors.black.withOpacity(0.15),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 0,
-              right: 22,
-              left: 22,
-              bottom: 30,
-            ),
-            child: Column(
-              children: [
-                SizedBox(height: statusBar),
-                Row(
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  top: statusBar,
+                  right: 22,
+                  left: 22,
+                ),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     /// HEADER - CABECALHO
+
                     Row(
                       children: [
                         const Icon(
@@ -73,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           ' Tuscany',
-                          style: AppFontTheme.textCidade,
+                          style: AppFontTheme(24).textWhite,
                         ),
                       ],
                     ),
@@ -88,51 +83,150 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                Row(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  right: 22,
+                  left: 22,
+                ),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       '23°', // TODO: deixar a bolinha pequena
-                      style: AppFontTheme.textTemperatura,
+                      style: AppFontTheme(130).textWhite,
                     ),
                     Text(
                       "it's Sunny",
-                      style: AppFontTheme.textIts,
+                      style: AppFontTheme(20).textWhite,
                     ),
                   ],
                 ),
-                const Spacer(),
+              ),
 
-                /// DESCRICAO
-                Container(
-                  width: 363,
-                  height: 90,
+              const Spacer(),
+
+              /// DESCRICAO
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: Container(
+                  width: largura * 0.93,
+                  height: altura * 0.098,
                   decoration: BoxDecoration(
                     color: Colors.white10,
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: Colors.white),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-
-                /// MODAL PREVISAO
-                Container(
-                  color: Colors.red,
-                  child: const Text(
-                    'Modal',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '40%',
+                                style: AppFontTheme(16).textWhite,
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                'Humidity',
+                                style: AppFontTheme(12).textWhite,
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: altura * 0.025,
+                        child: const VerticalDivider(
+                          color: Colors.white70,
+                          thickness: 0.3,
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '11km',
+                                style: AppFontTheme(16).textWhite,
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                'Visibility',
+                                style: AppFontTheme(12).textWhite,
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: altura * 0.025,
+                        child: const VerticalDivider(
+                          color: Colors.white70,
+                          thickness: 0.3, //espesura da borda
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '10km/h',
+                                style: AppFontTheme(16).textWhite,
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                'Wind',
+                                style: AppFontTheme(12).textWhite,
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 26,
+              ),
+
+              /// MODAL PREVISAO
+              /// TODO: tirar o padding daqui
+              Container(
+                width: largura * 1.1,
+                height: altura * 0.07,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(35),
+                    topRight: Radius.circular(35),
+                  ),
+                ),
+                child: Text(
+                  'Modal',
+                  textAlign: TextAlign.center,
+                  style: AppFontTheme(30).textBlack,
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 }
+
+
+// pastas pages
