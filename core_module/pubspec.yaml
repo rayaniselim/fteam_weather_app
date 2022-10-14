@@ -19,6 +19,8 @@ dependencies:
   # mix: ^0.0.6
   flutter_triple: ^1.2.7+4
   google_fonts: ^3.0.1
+  provider: ^6.0.4
+
 
 
 
