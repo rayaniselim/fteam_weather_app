@@ -1,7 +1,6 @@
-library design_system;
+export 'src/theme/app_theme.dart';
+export 'src/theme/app_color.dart';
+export 'src/theme/app_font.dart';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+
+// TODO : arrumar o export das imagens
