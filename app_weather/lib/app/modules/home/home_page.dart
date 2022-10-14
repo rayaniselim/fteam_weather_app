@@ -1,6 +1,6 @@
+import 'package:core_module/core_module.dart';
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_triple/flutter_triple.dart';
 
 import 'home_store.dart';
 
@@ -29,30 +29,109 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    MediaQuery.of(context).size.height;
+    MediaQuery.of(context).size.width;
+    final statusBar = MediaQuery.of(context).viewPadding.top;
+    MediaQuery.of(context).viewPadding.bottom;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Counter'),
-      ),
-      body: ScopedBuilder<HomeStore, Exception, int>(
-        store: store,
-        onState: (_, counter) {
-          return Padding(
-            padding: const EdgeInsets.all(10),
-            child: Text('$counter'),
-          );
-        },
-        onError: (context, error) => const Center(
-          child: Text(
-            'Too many clicks',
-            style: TextStyle(color: Colors.red),
+      extendBody: true,
+      // appBar: AppBar(
+      //     // elevation: 0,
+      //     // toolbarHeight: 0,
+      //     // toolbarOpacity: 0.0,
+      //     ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/images/dia.png',
+            fit: BoxFit.cover,
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          store.increment();
-        },
-        child: const Icon(Icons.add),
+          Container(
+            color: Colors.black.withOpacity(0.15),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 0,
+              right: 22,
+              left: 22,
+              bottom: 30,
+            ),
+            child: Column(
+              children: [
+                SizedBox(height: statusBar),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    /// HEADER - CABECALHO
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.location_on_sharp,
+                          color: Colors.white,
+                          size: 18,
+                        ),
+                        Text(
+                          ' Tuscany',
+                          style: AppFontTheme.textCidade,
+                        ),
+                      ],
+                    ),
+
+                    /// TODO: DRAWER
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.view_headline_rounded,
+                        size: 30,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '23°', // TODO: deixar a bolinha pequena
+                      style: AppFontTheme.textTemperatura,
+                    ),
+                    Text(
+                      "it's Sunny",
+                      style: AppFontTheme.textIts,
+                    ),
+                  ],
+                ),
+                const Spacer(),
+
+                /// DESCRICAO
+                Container(
+                  width: 363,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    color: Colors.white10,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.white),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+
+                /// MODAL PREVISAO
+                Container(
+                  color: Colors.red,
+                  child: const Text(
+                    'Modal',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

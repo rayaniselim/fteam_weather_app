@@ -1,4 +1,4 @@
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:core_module/core_module.dart';
 
 import 'home_page.dart';
 import 'home_store.dart';
