@@ -21,4 +21,6 @@ final Map<String, dynamic> weatherJson = {
   ]
 };
 
+
+
 /// TODO: pesquisar 

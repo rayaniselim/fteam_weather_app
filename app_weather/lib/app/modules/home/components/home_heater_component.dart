@@ -2,7 +2,12 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeaterComponent extends StatelessWidget {
-  const HomeHeaterComponent({super.key});
+  final void Function()? onTap;
+
+  const HomeHeaterComponent({
+    super.key,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,7 @@ class HomeHeaterComponent extends StatelessWidget {
                 ],
               ),
 
-              /// TODO: DRAWER
+              /// TODO: PESQUISA
               IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -41,6 +46,9 @@ class HomeHeaterComponent extends StatelessWidget {
                   size: 30,
                 ),
               ),
+              //      IconButton(
+              // onPressed: () {},
+              // icon: const Icon(Icons.search),
             ],
           ),
         ),
