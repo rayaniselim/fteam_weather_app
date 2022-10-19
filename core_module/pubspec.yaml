@@ -19,9 +19,7 @@ dependencies:
   # mix: ^0.0.6
   flutter_triple: ^1.2.7+4
   google_fonts: ^3.0.1
-  provider: ^6.0.4
-
-
+  mockito: ^5.3.2
 
 
 dev_dependencies:
@@ -30,13 +28,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 
-
-
-
-
 flutter:
 
-  # To add assets to your package, add an assets section, like this:
   # assets:
 
   #   - images/a_dot_burr.jpeg
@@ -53,6 +46,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  
   # fonts:
   #   - family: Schyler
   #     fonts:
