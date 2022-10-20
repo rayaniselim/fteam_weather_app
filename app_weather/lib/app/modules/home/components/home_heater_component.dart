@@ -24,6 +24,11 @@ class HomeHeaterComponent extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // ValueListenableBuilder(
+              //   valueListenable: ,
+              //   builder: (BuildContext context, value, _) {
+
+              //     child:
               Row(
                 children: [
                   const Icon(
@@ -32,11 +37,13 @@ class HomeHeaterComponent extends StatelessWidget {
                     size: 18,
                   ),
                   Text(
-                    ' Tuscany',
+                    ' cidade',
                     style: AppFontTheme(24).textWhite,
                   ),
                 ],
               ),
+              // },
+              // ),
 
               /// TODO: PESQUISA
               IconButton(

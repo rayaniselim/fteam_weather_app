@@ -11,8 +11,8 @@ class AppModule extends Module {
   @override
   // binds = injecao de dependencia
   final List<Bind> binds = [
-    Bind.instance<String>('Rayani'),
-    Bind.lazySingleton((i) => Controller(i())), // INVERSAO DE CONTROLE
+    // Bind.instance<String>('Rayani'),
+    // Bind.lazySingleton((i) => Controller(i())), // INVERSAO DE CONTROLE
   ];
 
   @override
@@ -21,14 +21,14 @@ class AppModule extends Module {
   ];
 }
 
-class Controller {
-  final String name;
+// class Controller {
+//   final String name;
 
-  Controller(
-    this.name,
-  );
+//   Controller(
+//     this.name,
+//   );
 
-  printText() {
-    print('Name: $name controller');
-  }
-}
+//   printText() {
+//     print('Name: $name controller');
+//   }
+// }
