@@ -1,4 +1,3 @@
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeaterComponent extends StatelessWidget {
@@ -24,26 +23,18 @@ class HomeHeaterComponent extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // ValueListenableBuilder(
-              //   valueListenable: ,
-              //   builder: (BuildContext context, value, _) {
-
-              //     child:
               Row(
                 children: [
                   const Icon(
                     Icons.location_on_sharp,
-                    color: Colors.white,
                     size: 18,
                   ),
                   Text(
                     ' cidade',
-                    style: AppFontTheme(24).textWhite,
+                    style: Theme.of(context).textTheme.subtitle1,
                   ),
                 ],
               ),
-              // },
-              // ),
 
               /// TODO: PESQUISA
               IconButton(
@@ -67,13 +58,25 @@ class HomeHeaterComponent extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '23°', // TODO: deixar a bolinha pequena
-                style: AppFontTheme(130).textWhite,
+              RichText(
+                textAlign: TextAlign.left,
+                text: TextSpan(
+                  text: '24',
+                  style: Theme.of(context).textTheme.headline2,
+                  children: <InlineSpan>[
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.top,
+                      child: Text(
+                        '°',
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Text(
                 "it's Sunny",
-                style: AppFontTheme(20).textWhite,
+                style: Theme.of(context).textTheme.subtitle1,
               ),
             ],
           ),

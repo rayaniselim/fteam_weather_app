@@ -14,7 +14,7 @@ class AppFontTheme {
       );
   TextStyle get textWhite => GoogleFonts.poppins(
         textStyle: TextStyle(
-          color: AppColors.colorsTextWhite,
+          color: AppColors.primaryColor,
           fontSize: sizeText!,
           fontWeight: FontWeight.w300,
         ),

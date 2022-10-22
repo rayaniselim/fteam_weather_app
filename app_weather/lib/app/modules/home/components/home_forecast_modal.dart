@@ -14,16 +14,16 @@ class HomeForecastModal extends StatelessWidget {
           width: largura * 1.1,
           height: altura * 0.07,
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: AppColors.colorsBackground,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(35),
               topRight: Radius.circular(35),
             ),
           ),
-          child: Text(
+          child: const Text(
             'Modal',
             textAlign: TextAlign.center,
-            style: AppFontTheme(30).textBlack,
+            // style: AppFontTheme(30).textBlack,
           ),
         ),
       ],
