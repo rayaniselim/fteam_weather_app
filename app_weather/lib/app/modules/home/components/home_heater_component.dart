@@ -2,11 +2,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeaterComponent extends StatelessWidget {
-  final void Function()? onTap;
-
   const HomeHeaterComponent({
     super.key,
-    this.onTap,
   });
 
   @override
@@ -24,38 +21,12 @@ class HomeHeaterComponent extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // ValueListenableBuilder(
-              //   valueListenable: ,
-              //   builder: (BuildContext context, value, _) {
-
-              //     child:
               Row(
-                children: [
-                  const Icon(
-                    Icons.location_on_sharp,
-                    color: Colors.white,
-                    size: 18,
-                  ),
-                  Text(
-                    ' cidade',
-                    style: AppFontTheme(24).textWhite,
-                  ),
+                children: const [
+                  CityWidget(),
                 ],
               ),
-              // },
-              // ),
-
-              /// TODO: PESQUISA
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.view_headline_rounded,
-                  size: 30,
-                ),
-              ),
-              //      IconButton(
-              // onPressed: () {},
-              // icon: const Icon(Icons.search),
+              const IconButtonWidget(),
             ],
           ),
         ),
@@ -66,15 +37,9 @@ class HomeHeaterComponent extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '23°', // TODO: deixar a bolinha pequena
-                style: AppFontTheme(130).textWhite,
-              ),
-              Text(
-                "it's Sunny",
-                style: AppFontTheme(20).textWhite,
-              ),
+            children: const [
+              TemperatureWidget(),
+              TextItsWidget(),
             ],
           ),
         ),

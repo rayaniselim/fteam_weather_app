@@ -1,4 +1,3 @@
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeForecastModal extends StatelessWidget {
@@ -20,10 +19,9 @@ class HomeForecastModal extends StatelessWidget {
               topRight: Radius.circular(35),
             ),
           ),
-          child: Text(
+          child: const Text(
             'Modal',
             textAlign: TextAlign.center,
-            style: AppFontTheme(30).textBlack,
           ),
         ),
       ],

@@ -23,24 +23,10 @@ class HomeDescriptionComponent extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
+                const Expanded(
                   flex: 1,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '40%',
-                          style: AppFontTheme(16).textWhite,
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          'Humidity',
-                          style: AppFontTheme(12).textWhite,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                    child: FirstColumn(),
                   ),
                 ),
                 SizedBox(
@@ -50,24 +36,10 @@ class HomeDescriptionComponent extends StatelessWidget {
                     thickness: 0.3,
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 1,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '11km',
-                          style: AppFontTheme(16).textWhite,
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          'Visibility',
-                          style: AppFontTheme(12).textWhite,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                    child: SecondColumn(),
                   ),
                 ),
                 SizedBox(
@@ -77,24 +49,10 @@ class HomeDescriptionComponent extends StatelessWidget {
                     thickness: 0.3, //espesura da borda
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 1,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '10km/h',
-                          style: AppFontTheme(16).textWhite,
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          'Wind',
-                          style: AppFontTheme(12).textWhite,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                    child: ThirdColumn(),
                   ),
                 ),
               ],
