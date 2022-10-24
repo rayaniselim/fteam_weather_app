@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             'assets/images/dia.png',
             fit: BoxFit.cover,
           ),
-          Container(color: AppColors.colorBlackOpacity),
+          Container(color: LightColors.colorBlackOpacity),
           Column(
             children: const [
               HomeHeaterComponent(),

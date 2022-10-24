@@ -14,7 +14,7 @@ class HomeForecastModal extends StatelessWidget {
           width: largura * 1.1,
           height: altura * 0.07,
           decoration: const BoxDecoration(
-            color: AppColors.colorsBackground,
+            color: LightColors.colorsBackground,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(35),
               topRight: Radius.circular(35),

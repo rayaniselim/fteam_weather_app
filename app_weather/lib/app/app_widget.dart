@@ -21,7 +21,7 @@ class AppWidget extends StatelessWidget {
       builder: (context, isLight, child) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.themeLight,
+          theme: AppTheme.lightTheme,
           // darkTheme: AppTheme.themeDark,
           // themeMode: isLight ? ThemeMode.light : ThemeMode.dark,
           routerDelegate: Modular.routerDelegate,

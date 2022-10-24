@@ -16,9 +16,9 @@ class HomeDescriptionComponent extends StatelessWidget {
             width: largura * 0.93,
             height: altura * 0.098,
             decoration: BoxDecoration(
-              color: AppColors.colorWhite10,
+              color: LightColors.colorWhite10,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: AppColors.primaryColor),
+              border: Border.all(color: LightColors.primaryColor),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +46,7 @@ class HomeDescriptionComponent extends StatelessWidget {
                 SizedBox(
                   height: altura * 0.025,
                   child: const VerticalDivider(
-                    color: AppColors.colorWhite70,
+                    color: LightColors.colorWhite70,
                     thickness: 0.3,
                   ),
                 ),
@@ -73,7 +73,7 @@ class HomeDescriptionComponent extends StatelessWidget {
                 SizedBox(
                   height: altura * 0.025,
                   child: const VerticalDivider(
-                    color: AppColors.colorWhite70,
+                    color: LightColors.colorWhite70,
                     thickness: 0.3, //espesura da borda
                   ),
                 ),

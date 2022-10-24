@@ -62,7 +62,10 @@ class HomeHeaterComponent extends StatelessWidget {
                 textAlign: TextAlign.left,
                 text: TextSpan(
                   text: '24',
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline2
+                      ?.copyWith(fontSize: 120),
                   children: <InlineSpan>[
                     WidgetSpan(
                       alignment: PlaceholderAlignment.top,

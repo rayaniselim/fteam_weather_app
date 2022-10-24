@@ -1,4 +1,3 @@
-import 'package:core_module/core_module.dart';
 import 'package:design_system/src/theme/app_font_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +20,7 @@ import 'app_color.dart';
 //     errorColor: LightColors.colorsError,
 //     backgroundColor: LightColors.colorsBackground,
 //   );
-// }ThemeData.textTheme
+// }
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
