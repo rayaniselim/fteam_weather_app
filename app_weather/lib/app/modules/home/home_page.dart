@@ -1,5 +1,6 @@
 import 'package:app_weather/app/modules/home/components/home_forecast_modal.dart';
 import 'package:core_module/core_module.dart';
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'components/home_description_component.dart';
@@ -42,9 +43,7 @@ class _HomePageState extends State<HomePage> {
             'assets/images/dia.png',
             fit: BoxFit.cover,
           ),
-          Container(
-            color: Colors.black.withOpacity(0.15),
-          ),
+          Container(color: LightColors.colorBlackOpacity),
           Column(
             children: const [
               HomeHeaterComponent(),

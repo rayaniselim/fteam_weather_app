@@ -16,9 +16,9 @@ class HomeDescriptionComponent extends StatelessWidget {
             width: largura * 0.93,
             height: altura * 0.098,
             decoration: BoxDecoration(
-              color: Colors.white10,
+              color: LightColors.colorWhite10,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white),
+              border: Border.all(color: LightColors.primaryColor),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -31,12 +31,12 @@ class HomeDescriptionComponent extends StatelessWidget {
                       children: [
                         Text(
                           '40%',
-                          style: AppFontTheme(16).textWhite,
+                          style: Theme.of(context).textTheme.subtitle1,
                           textAlign: TextAlign.center,
                         ),
                         Text(
                           'Humidity',
-                          style: AppFontTheme(12).textWhite,
+                          style: Theme.of(context).textTheme.caption,
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -46,7 +46,7 @@ class HomeDescriptionComponent extends StatelessWidget {
                 SizedBox(
                   height: altura * 0.025,
                   child: const VerticalDivider(
-                    color: Colors.white70,
+                    color: LightColors.colorWhite70,
                     thickness: 0.3,
                   ),
                 ),
@@ -58,12 +58,12 @@ class HomeDescriptionComponent extends StatelessWidget {
                       children: [
                         Text(
                           '11km',
-                          style: AppFontTheme(16).textWhite,
+                          style: Theme.of(context).textTheme.subtitle1,
                           textAlign: TextAlign.center,
                         ),
                         Text(
                           'Visibility',
-                          style: AppFontTheme(12).textWhite,
+                          style: Theme.of(context).textTheme.caption,
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -73,7 +73,7 @@ class HomeDescriptionComponent extends StatelessWidget {
                 SizedBox(
                   height: altura * 0.025,
                   child: const VerticalDivider(
-                    color: Colors.white70,
+                    color: LightColors.colorWhite70,
                     thickness: 0.3, //espesura da borda
                   ),
                 ),
@@ -85,12 +85,12 @@ class HomeDescriptionComponent extends StatelessWidget {
                       children: [
                         Text(
                           '10km/h',
-                          style: AppFontTheme(16).textWhite,
+                          style: Theme.of(context).textTheme.subtitle1,
                           textAlign: TextAlign.center,
                         ),
                         Text(
                           'Wind',
-                          style: AppFontTheme(12).textWhite,
+                          style: Theme.of(context).textTheme.caption,
                           textAlign: TextAlign.center,
                         ),
                       ],
