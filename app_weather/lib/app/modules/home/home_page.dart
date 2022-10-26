@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
     // final statusBottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
+      // backgroundColor: Colors.black,
       extendBody: true,
       body: Stack(
         fit: StackFit.expand,

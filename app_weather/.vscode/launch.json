@@ -5,17 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "core_module",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "core_module (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
             "name": "core_module (release mode)",
             "request": "launch",
             "type": "dart",

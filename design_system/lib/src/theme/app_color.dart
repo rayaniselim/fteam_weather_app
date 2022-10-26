@@ -9,7 +9,7 @@ class LightColors {
 
   static const Color colorsIcon = Color(0xFFFFFFFF);
 
-  static const Color colorsBackground = Color(0xFFF3F3F3);
+  static const Color colorsBackground = Color(0xFFFFFFFF);
 
   // static const Color colorsAppBar = Color(0x0fffff00);
   static const Color colorsAppBar = Colors.transparent;
