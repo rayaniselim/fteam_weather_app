@@ -40,5 +40,6 @@ class AppTheme {
     hintColor: LightColors.colorsTextGrey,
     focusColor: LightColors.primaryColor,
     primaryColor: LightColors.primaryColor,
+    indicatorColor: LightColors.colorsTextBlack,
   );
 }

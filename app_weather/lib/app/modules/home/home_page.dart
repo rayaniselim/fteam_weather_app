@@ -3,7 +3,7 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'components/home_description.dart';
+import 'components/home_description_component.dart';
 import 'components/home_heater_component.dart';
 import 'home_store.dart';
 

@@ -37,7 +37,7 @@ void cardModal(BuildContext context, {required Size size}) {
                         ?.copyWith(fontSize: 20),
                   ),
                   const SizedBox(
-                    height: 16,
+                    height: 10,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),

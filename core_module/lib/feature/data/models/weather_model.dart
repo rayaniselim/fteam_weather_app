@@ -17,13 +17,13 @@ class WeatherModel {
     required this.forecast,
   });
 
-  factory WeatherModel.fromMap(Map json) {
+  factory WeatherModel.fromMap(Map jsonMap) {
     return WeatherModel(
-      city: json['city'],
-      temperature: json['temperature'], // '20 °C',
-      wind: json['wind'], // '20 km/h',
-      description: json['description'], // 'Partly cloudy',
-      forecast: json['forecast'].map(
+      city: jsonMap['city'],
+      temperature: jsonMap['temperature'], // '20 °C',
+      wind: jsonMap['wind'], // '20 km/h',
+      description: jsonMap['description'], // 'Partly cloudy',
+      forecast: jsonMap['forecast'].map(
         (element) => ForecastModel.fromMap(element),
       ),
     );

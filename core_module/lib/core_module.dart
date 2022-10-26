@@ -6,3 +6,8 @@ export 'package:flutter_modular/flutter_modular.dart';
 export 'package:flutter_triple/flutter_triple.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:mockito/mockito.dart';
+
+export '/feature/data/models/weather_model.dart';
+export '/feature/data/models/weather_json.dart';
+export '/feature/data/models/http_model.dart';
+export '/feature/data/models/forecast_model.dart';
