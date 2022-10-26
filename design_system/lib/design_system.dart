@@ -15,6 +15,8 @@ export 'src/widgets/modal/hour_five.dart';
 export 'src/widgets/modal/hour_six.dart';
 export 'src/widgets/modal/hour_seven.dart';
 export 'src/widgets/modal/hour_eight.dart';
+export 'src/widgets/modal/components/modal_custom_painter.dart';
+export '/src/widgets/modal/components/card_modal.dart';
 
 
 

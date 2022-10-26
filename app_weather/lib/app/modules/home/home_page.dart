@@ -2,7 +2,7 @@ import 'package:app_weather/app/modules/home/components/home_forecast_modal.dart
 import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
 
-import 'components/home_description_component.dart';
+import 'components/home_description.dart';
 import 'components/home_heater_component.dart';
 import 'home_store.dart';
 
