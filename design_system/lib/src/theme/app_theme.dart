@@ -1,7 +1,7 @@
 import 'package:design_system/src/theme/app_font_theme.dart';
 import 'package:flutter/material.dart';
 
-import 'app_color.dart';
+import '../../design_system.dart';
 
 // class AppTheme {
 //   static final lightTheme = ThemeData(
@@ -36,8 +36,7 @@ class AppTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity,
     iconTheme: const IconThemeData(color: LightColors.primaryColor),
     errorColor: LightColors.colorsError,
-    // backgroundColor: LightColors.colorsBackground,
-    backgroundColor: Colors.red, // ??????
+    backgroundColor: LightColors.colorsBackground,
     hintColor: LightColors.colorsTextGrey,
     focusColor: LightColors.primaryColor,
     primaryColor: LightColors.primaryColor,

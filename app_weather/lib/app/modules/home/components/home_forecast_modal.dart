@@ -6,24 +6,38 @@ class HomeForecastModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final altura = MediaQuery.of(context).size.height;
-    final largura = MediaQuery.of(context).size.width;
-    return Column(
+    final size = MediaQuery.of(context).size;
+
+    return Stack(
       children: [
-        Container(
-          width: largura * 1.1,
-          height: altura * 0.07,
-          decoration: const BoxDecoration(
-            color: LightColors.colorsBackground,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(35),
-              topRight: Radius.circular(35),
-            ),
-          ),
-          child: const Text(
-            'Modal',
-            textAlign: TextAlign.center,
-            // style: AppFontTheme(30).textBlack,
+        CustomPaint(
+          painter: ModalCustomPainter(Size(size.width, 320)),
+          child: Column(
+            children: [
+              Container(
+                width: size.width,
+                height: 46,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(35),
+                    topRight: Radius.circular(35),
+                  ),
+                ),
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.horizontal_rule_rounded,
+                    color: LightColors.colorsTextGrey,
+                  ),
+                  onPressed: () {
+                    cardModal(context, size: size);
+                  },
+                ),
+              ),
+              Container(
+                height: 16,
+                color: Colors.white,
+              ),
+            ],
           ),
         ),
       ],

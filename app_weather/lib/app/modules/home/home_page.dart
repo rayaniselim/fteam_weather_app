@@ -3,7 +3,7 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'components/home_description_component.dart';
+import 'components/home_description.dart';
 import 'components/home_heater_component.dart';
 import 'home_store.dart';
 
@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
     // final statusBottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
+      // backgroundColor: Colors.black,
       extendBody: true,
       body: Stack(
         fit: StackFit.expand,

@@ -1,11 +1,9 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeaterComponent extends StatelessWidget {
-  final void Function()? onTap;
-
   const HomeHeaterComponent({
     super.key,
-    this.onTap,
   });
 
   @override
@@ -24,29 +22,11 @@ class HomeHeaterComponent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                children: [
-                  const Icon(
-                    Icons.location_on_sharp,
-                    size: 18,
-                  ),
-                  Text(
-                    ' cidade',
-                    style: Theme.of(context).textTheme.subtitle1,
-                  ),
+                children: const [
+                  CityWidget(),
                 ],
               ),
-
-              /// TODO: PESQUISA
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.view_headline_rounded,
-                  size: 30,
-                ),
-              ),
-              //      IconButton(
-              // onPressed: () {},
-              // icon: const Icon(Icons.search),
+              const IconButtonWidget(),
             ],
           ),
         ),
@@ -57,30 +37,9 @@ class HomeHeaterComponent extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              RichText(
-                textAlign: TextAlign.left,
-                text: TextSpan(
-                  text: '24',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline2
-                      ?.copyWith(fontSize: 120),
-                  children: <InlineSpan>[
-                    WidgetSpan(
-                      alignment: PlaceholderAlignment.top,
-                      child: Text(
-                        '°',
-                        style: Theme.of(context).textTheme.headline3,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text(
-                "it's Sunny",
-                style: Theme.of(context).textTheme.subtitle1,
-              ),
+            children: const [
+              TemperatureWidget(),
+              TextItsWidget(),
             ],
           ),
         ),
