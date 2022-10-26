@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'icon_button/search_dropdown.dart';
+
 class IconButtonWidget extends StatelessWidget {
   final void Function()? onTap;
   const IconButtonWidget({super.key, this.onTap});
@@ -7,15 +9,12 @@ class IconButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const SearchDropDown())),
       icon: const Icon(
         Icons.view_headline_rounded,
         size: 30,
       ),
-
-      //      IconButton(
-      // onPressed: () {},
-      // icon: const Icon(Icons.search),
     );
   }
 }

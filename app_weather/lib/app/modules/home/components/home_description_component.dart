@@ -16,85 +16,43 @@ class HomeDescriptionComponent extends StatelessWidget {
             width: largura * 0.93,
             height: altura * 0.098,
             decoration: BoxDecoration(
-              color: LightColors.colorWhite10,
+              color: Colors.white10,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: LightColors.primaryColor),
+              border: Border.all(color: Colors.white),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
+                const Expanded(
                   flex: 1,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '40%',
-                          style: Theme.of(context).textTheme.subtitle1,
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          'Humidity',
-                          style: Theme.of(context).textTheme.caption,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                    child: FirstColumn(),
                   ),
                 ),
                 SizedBox(
                   height: altura * 0.025,
                   child: const VerticalDivider(
-                    color: LightColors.colorWhite70,
+                    color: Colors.white70,
                     thickness: 0.3,
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 1,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '11km',
-                          style: Theme.of(context).textTheme.subtitle1,
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          'Visibility',
-                          style: Theme.of(context).textTheme.caption,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                    child: SecondColumn(),
                   ),
                 ),
                 SizedBox(
                   height: altura * 0.025,
                   child: const VerticalDivider(
-                    color: LightColors.colorWhite70,
+                    color: Colors.white70,
                     thickness: 0.3, //espesura da borda
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 1,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '10km/h',
-                          style: Theme.of(context).textTheme.subtitle1,
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          'Wind',
-                          style: Theme.of(context).textTheme.caption,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                    child: ThirdColumn(),
                   ),
                 ),
               ],
