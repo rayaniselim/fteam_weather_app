@@ -10,21 +10,21 @@ class HourEightMobile extends StatefulWidget {
 class _HourEightMobileState extends State<HourEightMobile> {
   @override
   Widget build(BuildContext context) {
-    final altura = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: altura * 0.04,
+            height: height * 0.04,
             child: Image.asset(
               'assets/images/sol.png',
               // scale: 1,
             ),
           ),
           SizedBox(
-            height: altura * 0.0038,
+            height: height * 0.0038,
           ),
           Text(
             '08:00 AM',
@@ -32,7 +32,7 @@ class _HourEightMobileState extends State<HourEightMobile> {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: altura * 0.0042,
+            height: height * 0.0042,
           ),
           RichText(
             textAlign: TextAlign.left,
@@ -55,7 +55,7 @@ class _HourEightMobileState extends State<HourEightMobile> {
             ),
           ),
           SizedBox(
-            height: altura * 0.0041,
+            height: height * 0.0041,
           )
         ],
       ),

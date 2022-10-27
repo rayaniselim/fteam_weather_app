@@ -30,10 +30,12 @@ class _HomePageMobileState extends State<HomePageMobile> {
               const HomeHeaterComponent(),
               const Spacer(),
               HomeDescriptionComponent(
-                border: Border.all(color: Colors.white),
-                color: Colors.white10,
-                colorDivider: Colors.white70,
+                border: Border.all(color: LightColors.primaryColor),
+                color: LightColors.colorWhite10,
+                colorDivider: LightColors.colorWhite70,
                 thickness: 0.3,
+                size1: 16,
+                size2: 12,
               ),
               const SizedBox(
                 height: 26,

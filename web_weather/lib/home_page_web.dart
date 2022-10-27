@@ -3,8 +3,9 @@ import 'package:app_weather/app/modules/home/components/home_description_compone
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'components/card_modal_web.dart';
-import 'components/temperature_component_web.dart';
+import 'widgets/modal/components/card_modal_web.dart';
+import 'widgets/modal/components/forecast_day_web.dart';
+import 'widgets/modal/components/temperature_component_web.dart';
 
 class HomePageWeb extends StatefulWidget {
   const HomePageWeb({super.key});
@@ -33,23 +34,60 @@ class _HomePageWebState extends State<HomePageWeb> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
-                    TemperatureComponentWeb(),
-                    CardModalWeb(),
+                    FittedBox(
+                      child: TemperatureComponentWeb(),
+                    ),
+                    FittedBox(
+                      child: CardModalWeb(),
+                    ),
                   ],
                 ),
                 const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    FittedBox(
+                      child: ForecastDayWeb(
+                        image: 'assets/images/sol.png',
+                        textDay: 'Monday',
+                        textTemperature: '27',
+                      ),
+                    ),
+                    FittedBox(
+                      child: ForecastDayWeb(
+                        textDay: 'Tuesday',
+                        textTemperature: '25',
+                        image: 'assets/images/nublado_branco.png',
+                      ),
+                    ),
+                    FittedBox(
+                      child: ForecastDayWeb(
+                        image: 'assets/images/chuva_branca.png',
+                        textDay: 'Wednesday',
+                        textTemperature: '16',
+                      ),
+                    ),
+                  ],
+                ),
+
                 Padding(
                   padding: const EdgeInsets.all(36),
-                  child: HomeDescriptionComponent(
-                    color: Colors.black38,
-                    border: Border.all(color: Colors.black),
-                    colorDivider: Colors.black,
-                    thickness: 0.5,
+                  child: FittedBox(
+                    child: HomeDescriptionComponent(
+                      color: LightColors.colorsBlack38,
+                      border: Border.all(
+                        color: LightColors.primaryColor,
+                      ),
+                      colorDivider: LightColors.primaryColor,
+                      thickness: 0.5,
+                      size1: 26,
+                      size2: 18,
+                    ),
                   ),
                 ),
-                const SizedBox(
-                  height: 26,
-                ),
+                // const SizedBox(
+                //   height: 26,
+                // ),
               ],
             ),
           ),

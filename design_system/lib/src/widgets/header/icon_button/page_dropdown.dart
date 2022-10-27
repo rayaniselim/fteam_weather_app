@@ -19,6 +19,17 @@ class _PageDropDownState extends State<PageDropDown> {
             .iconTheme
             .copyWith(color: LightColors.colorsTextGrey),
         elevation: 0,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const CircleAvatar(
+              radius: 22,
+              backgroundImage: AssetImage(
+                'assets/images/lago.jpeg',
+              ),
+            ),
+          ),
+        ],
       ),
       body: Stack(
         children: const [

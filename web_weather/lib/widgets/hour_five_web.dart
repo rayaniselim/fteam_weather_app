@@ -12,35 +12,36 @@ class HourFiveWeb extends StatefulWidget {
 class _HourFiveWebState extends State<HourFiveWeb> {
   @override
   Widget build(BuildContext context) {
-    final altura = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: altura * 0.04,
+            height: height * 0.05,
             child: Image.asset(
               'assets/images/sol.png',
             ),
           ),
           SizedBox(
-            height: altura * 0.0038,
+            height: height * 0.02,
           ),
           Text(
             '05:00 AM',
-            style: Theme.of(context).textTheme.overline,
+            style: Theme.of(context).textTheme.caption,
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: altura * 0.0042,
+            height: height * 0.02,
           ),
           RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
               text: '23',
-              style:
-                  Theme.of(context).textTheme.headline5!.copyWith(fontSize: 30),
+              style: Theme.of(context).textTheme.headline2!.copyWith(
+                    fontSize: 36,
+                  ),
               children: <InlineSpan>[
                 WidgetSpan(
                   alignment: PlaceholderAlignment.top,
@@ -48,15 +49,15 @@ class _HourFiveWebState extends State<HourFiveWeb> {
                     '°',
                     style: Theme.of(context)
                         .textTheme
-                        .headline5!
-                        .copyWith(fontSize: 16),
+                        .headline2!
+                        .copyWith(fontSize: 26),
                   ),
                 ),
               ],
             ),
           ),
           SizedBox(
-            height: altura * 0.0041,
+            height: height * 0.0041,
           )
         ],
       ),

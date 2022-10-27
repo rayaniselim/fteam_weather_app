@@ -10,21 +10,21 @@ class HourSixMobile extends StatefulWidget {
 class _HourSixMobileState extends State<HourSixMobile> {
   @override
   Widget build(BuildContext context) {
-    final altura = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: altura * 0.04,
+            height: height * 0.04,
             child: Image.asset(
               'assets/images/nublado.png',
               // scale: 1,
             ),
           ),
           SizedBox(
-            height: altura * 0.0038,
+            height: height * 0.0038,
           ),
           Text(
             '06:00 AM',
@@ -32,7 +32,7 @@ class _HourSixMobileState extends State<HourSixMobile> {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: altura * 0.0042,
+            height: height * 0.0042,
           ),
           RichText(
             textAlign: TextAlign.left,
@@ -55,7 +55,7 @@ class _HourSixMobileState extends State<HourSixMobile> {
             ),
           ),
           SizedBox(
-            height: altura * 0.0041,
+            height: height * 0.0041,
           )
         ],
       ),

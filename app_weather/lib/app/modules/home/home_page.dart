@@ -17,12 +17,12 @@ class _HomePageState extends State<HomePage> {
   late final HomeStore store;
 
   _ajustarVisualizacao(
-    double larguraTela,
+    double widthTela,
   ) {
     int colunas = 2;
-    if (larguraTela <= 600) {
+    if (widthTela <= 600) {
       colunas = 2;
-    } else if (larguraTela <= 960) {
+    } else if (widthTela <= 960) {
       colunas = 4;
     } else {
       colunas = 6;
@@ -48,27 +48,27 @@ class _HomePageState extends State<HomePage> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        var largura = constraints.maxWidth;
+        var width = constraints.maxWidth;
         var alturaBarra = AppBar().preferredSize.height;
 
         return Scaffold(
-          appBar: largura < 600
+          appBar: width < 600
               ? PreferredSize(
-                  preferredSize: Size(largura, alturaBarra),
+                  preferredSize: Size(width, alturaBarra),
                   child: const SafeArea(
                     child: SizedBox(width: 1),
                   ))
               : PreferredSize(
-                  preferredSize: Size(largura, alturaBarra),
+                  preferredSize: Size(width, alturaBarra),
                   child: const WebAppBar(),
                 ),
-          body: largura < 600
+          body: width < 600
               ? PreferredSize(
-                  preferredSize: Size(largura, alturaBarra),
+                  preferredSize: Size(width, alturaBarra),
                   child: const HomePageMobile(),
                 )
               : PreferredSize(
-                  preferredSize: Size(largura, alturaBarra),
+                  preferredSize: Size(width, alturaBarra),
                   child: const HomePageWeb(),
                 ),
         );

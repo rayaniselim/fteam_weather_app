@@ -35,7 +35,7 @@ class HomeForecastModal extends StatelessWidget {
               ),
               Container(
                 height: 16,
-                color: Colors.white,
+                color: LightColors.primaryColor,
               ),
             ],
           ),

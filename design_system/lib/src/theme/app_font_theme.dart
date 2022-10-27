@@ -11,7 +11,7 @@ class LightTextStyle {
   );
 
   static TextStyle headline5 = GoogleFonts.poppins(
-    color: LightColors.colorsTextBlack,
+    color: LightColors.colorsBlack,
   );
   static TextStyle subtitle1 = GoogleFonts.poppins(
     color: LightColors.primaryColor,

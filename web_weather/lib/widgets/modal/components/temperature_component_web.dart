@@ -11,31 +11,44 @@ class TemperatureComponentWeb extends StatefulWidget {
 class _TemperatureWidgeWebtState extends State<TemperatureComponentWeb> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
-      height: 280,
-      width: 280,
-      color: Colors.black38,
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const CityWidget(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                TemperatureWidget(),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
-                TextItsWidget(),
-              ],
-            )
-          ],
+      width: width * 0.32,
+      height: height * 0.32,
+      decoration: BoxDecoration(
+        color: LightColors.colorsBlack38,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: LightColors.primaryColor,
+        ),
+      ),
+      child: FittedBox(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                width: width * 0.28,
+                alignment: Alignment.topLeft,
+                child: const CityWidget(
+                  size: 20,
+                ),
+              ),
+              const TemperatureWidget(
+                size: 130,
+              ),
+              Container(
+                alignment: Alignment.bottomRight,
+                width: width * 0.28,
+                child: const TextItsWidget(
+                  size: 20,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

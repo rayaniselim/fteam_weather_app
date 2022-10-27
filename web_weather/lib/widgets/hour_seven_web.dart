@@ -10,44 +10,43 @@ class HourSevenWeb extends StatefulWidget {
 class _HourSevenWebState extends State<HourSevenWeb> {
   @override
   Widget build(BuildContext context) {
-    final altura = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: altura * 0.04,
+            height: height * 0.05,
             child: Image.asset(
-              'assets/images/chuva.png',
-              // scale: 1,
+              'assets/images/chuva_branca.png',
             ),
           ),
           SizedBox(
-            height: altura * 0.0038,
+            height: height * 0.02,
           ),
           Text(
             '07:00 AM',
-            style: Theme.of(context).textTheme.overline,
+            style: Theme.of(context).textTheme.caption,
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: altura * 0.0042,
+            height: height * 0.02,
           ),
           RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
               text: '3',
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    fontSize: 30,
+              style: Theme.of(context).textTheme.headline2!.copyWith(
+                    fontSize: 36,
                   ),
               children: <InlineSpan>[
                 WidgetSpan(
                   alignment: PlaceholderAlignment.top,
                   child: Text(
                     '°',
-                    style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontSize: 16,
+                    style: Theme.of(context).textTheme.headline2!.copyWith(
+                          fontSize: 26,
                         ),
                   ),
                 ),
@@ -55,7 +54,7 @@ class _HourSevenWebState extends State<HourSevenWeb> {
             ),
           ),
           SizedBox(
-            height: altura * 0.0041,
+            height: height * 0.0041,
           )
         ],
       ),

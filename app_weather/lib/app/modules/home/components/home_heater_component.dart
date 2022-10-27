@@ -23,7 +23,9 @@ class HomeHeaterComponent extends StatelessWidget {
             children: [
               Row(
                 children: const [
-                  CityWidget(),
+                  CityWidget(
+                    size: 16,
+                  ),
                 ],
               ),
               const IconButtonWidget(),
@@ -38,8 +40,12 @@ class HomeHeaterComponent extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              TemperatureWidget(),
-              TextItsWidget(),
+              TemperatureWidget(
+                size: 120,
+              ),
+              TextItsWidget(
+                size: 16,
+              ),
             ],
           ),
         ),
