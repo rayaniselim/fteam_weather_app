@@ -1,10 +1,10 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:web_weather/widgets/hour_five_web.dart';
+import 'package:web_weather/widgets/modal/widgets/hour_five_web.dart';
 
-import '../../hour_eight_web.dart';
-import '../../hour_seven_web.dart';
-import '../../hour_six_web.dart';
+import '../widgets/hour_eight_web.dart';
+import '../widgets/hour_seven_web.dart';
+import '../widgets/hour_six_web.dart';
 
 class CardModalWeb extends StatelessWidget {
   const CardModalWeb({super.key});

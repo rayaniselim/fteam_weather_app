@@ -16,19 +16,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late final HomeStore store;
 
-  _ajustarVisualizacao(
-    double widthTela,
-  ) {
-    int colunas = 2;
-    if (widthTela <= 600) {
-      colunas = 2;
-    } else if (widthTela <= 960) {
-      colunas = 4;
-    } else {
-      colunas = 6;
-    }
-    return colunas;
-  }
+  // _ajustarVisualizacao(
+  //   double widthTela,
+  // ) {
+  //   int colunas = 2;
+  //   if (widthTela <= 600) {
+  //     colunas = 2;
+  //   } else if (widthTela <= 960) {
+  //     colunas = 4;
+  //   } else {
+  //     colunas = 6;
+  //   }
+  //   return colunas;
+  // }
 
   @override
   void initState() {
@@ -44,8 +44,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // final statusBottom = MediaQuery.of(context).viewPadding.bottom;
-
     return LayoutBuilder(
       builder: (context, constraints) {
         var width = constraints.maxWidth;

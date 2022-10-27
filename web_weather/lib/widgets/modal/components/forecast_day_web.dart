@@ -51,33 +51,35 @@ class ForecastDayWeb extends StatelessWidget {
                       thickness: 0.6,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Center(
                     child: Image.asset(
                       image,
                       height: 60,
                     ),
                   ),
-                  Spacer(),
-                  RichText(
-                    textAlign: TextAlign.left,
-                    text: TextSpan(
-                      text: textTemperature,
-                      style: Theme.of(context).textTheme.headline2!.copyWith(
-                            fontSize: 36,
+                  const Spacer(),
+                  FittedBox(
+                    child: RichText(
+                      textAlign: TextAlign.left,
+                      text: TextSpan(
+                        text: textTemperature,
+                        style: Theme.of(context).textTheme.headline2!.copyWith(
+                              fontSize: 36,
+                            ),
+                        children: <InlineSpan>[
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.top,
+                            child: Text(
+                              '°',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2!
+                                  .copyWith(fontSize: 26),
+                            ),
                           ),
-                      children: <InlineSpan>[
-                        WidgetSpan(
-                          alignment: PlaceholderAlignment.top,
-                          child: Text(
-                            '°',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline2!
-                                .copyWith(fontSize: 26),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
