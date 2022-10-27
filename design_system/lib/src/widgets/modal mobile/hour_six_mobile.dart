@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HourEight extends StatefulWidget {
-  const HourEight({super.key});
+class HourSixMobile extends StatefulWidget {
+  const HourSixMobile({super.key});
 
   @override
-  State<HourEight> createState() => _HourEightState();
+  State<HourSixMobile> createState() => _HourSixMobileState();
 }
 
-class _HourEightState extends State<HourEight> {
+class _HourSixMobileState extends State<HourSixMobile> {
   @override
   Widget build(BuildContext context) {
     final altura = MediaQuery.of(context).size.height;
@@ -19,7 +19,7 @@ class _HourEightState extends State<HourEight> {
           SizedBox(
             height: altura * 0.04,
             child: Image.asset(
-              'assets/images/sol.png',
+              'assets/images/nublado.png',
               // scale: 1,
             ),
           ),
@@ -27,7 +27,7 @@ class _HourEightState extends State<HourEight> {
             height: altura * 0.0038,
           ),
           Text(
-            '08:00 AM',
+            '06:00 AM',
             style: Theme.of(context).textTheme.overline,
             textAlign: TextAlign.center,
           ),
@@ -37,7 +37,7 @@ class _HourEightState extends State<HourEight> {
           RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
-              text: '23',
+              text: '16',
               style: Theme.of(context).textTheme.headline5!.copyWith(
                     fontSize: 30,
                   ),

@@ -11,17 +11,13 @@ export 'src/widgets/description/first_column.dart';
 export 'src/widgets/description/second_column.dart';
 export 'src/widgets/description/third_column.dart';
 
-export 'src/widgets/modal/hour_five.dart';
-export 'src/widgets/modal/hour_six.dart';
-export 'src/widgets/modal/hour_seven.dart';
-export 'src/widgets/modal/hour_eight.dart';
-export 'src/widgets/modal/components/modal_custom_painter.dart';
-export 'src/widgets/modal/components/card_modal_mobile.dart';
+export 'src/widgets/modal mobile/hour_five_mobile.dart';
+export 'src/widgets/modal mobile/hour_six_mobile.dart';
+export 'src/widgets/modal mobile/hour_seven_mobile.dart';
+export 'src/widgets/modal mobile/hour_eight_mobile.dart';
+
+export 'src/widgets/modal mobile/components mobile/modal_custom_painter.dart';
+export 'src/widgets/modal mobile/components mobile/card_modal_mobile.dart';
 
 export 'src/widgets/header/icon_button/page_dropdown.dart';
 export 'src/widgets/header/icon_button/search_dropdown.dart';
-
-
-
-
-// TODO : arrumar o export das imagens

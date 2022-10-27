@@ -1,5 +1,9 @@
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:web_weather/widgets/hour_five_web.dart';
+
+import '../../hour_eight_web.dart';
+import '../../hour_seven_web.dart';
+import '../../hour_six_web.dart';
 
 class CardModalWeb extends StatelessWidget {
   const CardModalWeb({super.key});
@@ -31,19 +35,19 @@ class CardModalWeb extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
-                    HourFive(),
+                    HourFiveWeb(),
                     SizedBox(
                       width: 20,
                     ),
-                    HourSix(),
+                    HourSixWeb(),
                     SizedBox(
                       width: 20,
                     ),
-                    HourSeven(),
+                    HourSevenWeb(),
                     SizedBox(
                       width: 20,
                     ),
-                    HourEight(),
+                    HourEightWeb(),
                   ],
                 ),
               ),

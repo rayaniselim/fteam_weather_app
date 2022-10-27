@@ -46,10 +46,10 @@ cardModalMobile(BuildContext context, {required Size size}) {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HourFive(),
-                        HourSix(),
-                        HourSeven(),
-                        HourEight(),
+                        HourFiveMobile(),
+                        HourSixMobile(),
+                        HourSevenMobile(),
+                        HourEightMobile(),
                       ],
                     ),
                   ),

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HourSix extends StatefulWidget {
-  const HourSix({super.key});
+class HourFiveWeb extends StatefulWidget {
+  const HourFiveWeb({
+    super.key,
+  });
 
   @override
-  State<HourSix> createState() => _HourSixState();
+  State<HourFiveWeb> createState() => _HourFiveWebState();
 }
 
-class _HourSixState extends State<HourSix> {
+class _HourFiveWebState extends State<HourFiveWeb> {
   @override
   Widget build(BuildContext context) {
     final altura = MediaQuery.of(context).size.height;
@@ -19,15 +21,14 @@ class _HourSixState extends State<HourSix> {
           SizedBox(
             height: altura * 0.04,
             child: Image.asset(
-              'assets/images/nublado.png',
-              // scale: 1,
+              'assets/images/sol.png',
             ),
           ),
           SizedBox(
             height: altura * 0.0038,
           ),
           Text(
-            '06:00 AM',
+            '05:00 AM',
             style: Theme.of(context).textTheme.overline,
             textAlign: TextAlign.center,
           ),
@@ -37,18 +38,18 @@ class _HourSixState extends State<HourSix> {
           RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
-              text: '16',
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    fontSize: 30,
-                  ),
+              text: '23',
+              style:
+                  Theme.of(context).textTheme.headline5!.copyWith(fontSize: 30),
               children: <InlineSpan>[
                 WidgetSpan(
                   alignment: PlaceholderAlignment.top,
                   child: Text(
                     '°',
-                    style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontSize: 16,
-                        ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline5!
+                        .copyWith(fontSize: 16),
                   ),
                 ),
               ],
