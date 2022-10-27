@@ -2,7 +2,17 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeDescriptionComponent extends StatelessWidget {
-  const HomeDescriptionComponent({super.key});
+  final Border border;
+  final Color color;
+  final Color colorDivider;
+  final double thickness;
+
+  const HomeDescriptionComponent(
+      {super.key,
+      required this.border,
+      required this.color,
+      required this.colorDivider,
+      required this.thickness});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +26,9 @@ class HomeDescriptionComponent extends StatelessWidget {
             width: largura * 0.93,
             height: altura * 0.098,
             decoration: BoxDecoration(
-              color: Colors.white10,
+              color: color,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white),
+              border: border,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -31,9 +41,9 @@ class HomeDescriptionComponent extends StatelessWidget {
                 ),
                 SizedBox(
                   height: altura * 0.025,
-                  child: const VerticalDivider(
-                    color: Colors.white70,
-                    thickness: 0.3,
+                  child: VerticalDivider(
+                    color: colorDivider,
+                    thickness: thickness,
                   ),
                 ),
                 const Expanded(
@@ -44,9 +54,9 @@ class HomeDescriptionComponent extends StatelessWidget {
                 ),
                 SizedBox(
                   height: altura * 0.025,
-                  child: const VerticalDivider(
-                    color: Colors.white70,
-                    thickness: 0.3, //espesura da borda
+                  child: VerticalDivider(
+                    color: colorDivider,
+                    thickness: thickness,
                   ),
                 ),
                 const Expanded(

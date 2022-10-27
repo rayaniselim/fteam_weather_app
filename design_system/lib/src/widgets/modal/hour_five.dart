@@ -20,7 +20,6 @@ class _HourFiveState extends State<HourFive> {
             height: altura * 0.04,
             child: Image.asset(
               'assets/images/sol.png',
-              // scale: 1,
             ),
           ),
           SizedBox(

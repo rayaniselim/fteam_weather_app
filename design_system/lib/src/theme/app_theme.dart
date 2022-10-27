@@ -1,4 +1,3 @@
-import 'package:design_system/src/theme/app_font_theme.dart';
 import 'package:flutter/material.dart';
 
 import '../../design_system.dart';

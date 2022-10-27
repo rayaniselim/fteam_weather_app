@@ -1,10 +1,8 @@
-import 'package:app_weather/app/modules/home/components/home_forecast_modal.dart';
 import 'package:core_module/core_module.dart';
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:web_weather/web_weather.dart';
 
-import 'components/home_description_component.dart';
-import 'components/home_heater_component.dart';
+import 'components/home_page_mobile.dart';
 import 'home_store.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +15,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late final HomeStore store;
+
+  _ajustarVisualizacao(
+    double larguraTela,
+  ) {
+    int colunas = 2;
+    if (larguraTela <= 600) {
+      colunas = 2;
+    } else if (larguraTela <= 960) {
+      colunas = 4;
+    } else {
+      colunas = 6;
+    }
+    return colunas;
+  }
 
   @override
   void initState() {
@@ -34,33 +46,33 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // final statusBottom = MediaQuery.of(context).viewPadding.bottom;
 
-    return Scaffold(
-      // backgroundColor: Colors.black,
-      extendBody: true,
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(
-            'assets/images/dia.png',
-            fit: BoxFit.cover,
-          ),
-          Container(color: LightColors.colorBlackOpacity),
-          Column(
-            children: const [
-              HomeHeaterComponent(),
-              Spacer(),
-              HomeDescriptionComponent(),
-              SizedBox(
-                height: 26,
-              ),
-              HomeForecastModal(),
-            ],
-          ),
-        ],
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        var largura = constraints.maxWidth;
+        var alturaBarra = AppBar().preferredSize.height;
+
+        return Scaffold(
+          appBar: largura < 600
+              ? PreferredSize(
+                  preferredSize: Size(largura, alturaBarra),
+                  child: const SafeArea(
+                    child: SizedBox(width: 1),
+                  ))
+              : PreferredSize(
+                  preferredSize: Size(largura, alturaBarra),
+                  child: const WebAppBar(),
+                ),
+          body: largura < 600
+              ? PreferredSize(
+                  preferredSize: Size(largura, alturaBarra),
+                  child: const HomePageMobile(),
+                )
+              : PreferredSize(
+                  preferredSize: Size(largura, alturaBarra),
+                  child: const HomePageWeb(),
+                ),
+        );
+      },
     );
   }
 }
-
-
-// pastas pages

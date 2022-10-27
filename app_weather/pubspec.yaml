@@ -20,6 +20,8 @@ dependencies:
     path: ../design_system
   core_module: 
     path: ../core_module
+  web_weather:
+    path: ../web_weather
 
 
 
