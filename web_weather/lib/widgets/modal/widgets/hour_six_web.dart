@@ -1,53 +1,52 @@
 import 'package:flutter/material.dart';
 
-class HourSeven extends StatefulWidget {
-  const HourSeven({super.key});
+class HourSixWeb extends StatefulWidget {
+  const HourSixWeb({super.key});
 
   @override
-  State<HourSeven> createState() => _HourSevenState();
+  State<HourSixWeb> createState() => _HourSixWebState();
 }
 
-class _HourSevenState extends State<HourSeven> {
+class _HourSixWebState extends State<HourSixWeb> {
   @override
   Widget build(BuildContext context) {
-    final altura = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: altura * 0.04,
+            height: height * 0.05,
             child: Image.asset(
-              'assets/images/chuva.png',
-              // scale: 1,
+              'assets/images/nublado_branco.png',
             ),
           ),
           SizedBox(
-            height: altura * 0.0038,
+            height: height * 0.02,
           ),
           Text(
-            '07:00 AM',
-            style: Theme.of(context).textTheme.overline,
+            '06:00 AM',
+            style: Theme.of(context).textTheme.caption,
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: altura * 0.0042,
+            height: height * 0.02,
           ),
           RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
-              text: '3',
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    fontSize: 30,
+              text: '16',
+              style: Theme.of(context).textTheme.headline2!.copyWith(
+                    fontSize: 36,
                   ),
               children: <InlineSpan>[
                 WidgetSpan(
                   alignment: PlaceholderAlignment.top,
                   child: Text(
                     '°',
-                    style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontSize: 16,
+                    style: Theme.of(context).textTheme.headline2!.copyWith(
+                          fontSize: 26,
                         ),
                   ),
                 ),
@@ -55,7 +54,7 @@ class _HourSevenState extends State<HourSeven> {
             ),
           ),
           SizedBox(
-            height: altura * 0.0041,
+            height: height * 0.0041,
           )
         ],
       ),

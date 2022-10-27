@@ -1,7 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-void cardModal(BuildContext context, {required Size size}) {
+cardModalMobile(BuildContext context, {required Size size}) {
   showModalBottomSheet<void>(
     context: context,
     backgroundColor: Colors.transparent,
@@ -12,7 +12,9 @@ void cardModal(BuildContext context, {required Size size}) {
     ),
     builder: (BuildContext context) {
       return CustomPaint(
-        painter: ModalCustomPainter(Size(size.width, 320)),
+        painter: ModalCustomPainter(
+          Size(size.width, 320),
+        ),
         child: Column(
           children: [
             SizedBox(
@@ -44,10 +46,10 @@ void cardModal(BuildContext context, {required Size size}) {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HourFive(),
-                        HourSix(),
-                        HourSeven(),
-                        HourEight(),
+                        HourFiveMobile(),
+                        HourSixMobile(),
+                        HourSevenMobile(),
+                        HourEightMobile(),
                       ],
                     ),
                   ),

@@ -1,4 +1,3 @@
-import 'package:design_system/src/theme/app_font_theme.dart';
 import 'package:flutter/material.dart';
 
 import '../../design_system.dart';
@@ -32,14 +31,14 @@ class AppTheme {
       headline5: LightTextStyle.headline5,
       headline3: LightTextStyle.headline3,
     ),
-    scaffoldBackgroundColor: LightColors.colorsBackground,
+    scaffoldBackgroundColor: LightColors.primaryColor,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     iconTheme: const IconThemeData(color: LightColors.primaryColor),
     errorColor: LightColors.colorsError,
-    backgroundColor: LightColors.colorsBackground,
+    backgroundColor: LightColors.primaryColor,
     hintColor: LightColors.colorsTextGrey,
     focusColor: LightColors.primaryColor,
     primaryColor: LightColors.primaryColor,
-    indicatorColor: LightColors.colorsTextBlack,
+    indicatorColor: LightColors.colorsBlack,
   );
 }

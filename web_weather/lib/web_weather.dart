@@ -1,7 +1,3 @@
-library web_weather;
+export 'package:web_weather/home_page_web.dart';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:web_weather/widgets/modal/components/app_bar_web.dart';

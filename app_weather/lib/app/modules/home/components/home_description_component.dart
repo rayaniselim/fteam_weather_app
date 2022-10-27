@@ -2,57 +2,80 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeDescriptionComponent extends StatelessWidget {
-  const HomeDescriptionComponent({super.key});
+  final Border border;
+  final Color color;
+  final Color colorDivider;
+  final double thickness;
+  final double size1;
+  final double size2;
+
+  const HomeDescriptionComponent(
+      {super.key,
+      required this.border,
+      required this.color,
+      required this.colorDivider,
+      required this.thickness,
+      required this.size1,
+      required this.size2});
 
   @override
   Widget build(BuildContext context) {
-    final altura = MediaQuery.of(context).size.height;
-    final largura = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(14.0),
           child: Container(
-            width: largura * 0.93,
-            height: altura * 0.098,
+            width: width * 0.93,
+            height: height * 0.098,
             decoration: BoxDecoration(
-              color: Colors.white10,
+              color: color,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white),
+              border: border,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Expanded(
+                Expanded(
                   flex: 1,
                   child: Center(
-                    child: FirstColumn(),
+                    child: FirstColumn(
+                      size1: size1,
+                      size2: size2,
+                    ),
                   ),
                 ),
                 SizedBox(
-                  height: altura * 0.025,
-                  child: const VerticalDivider(
-                    color: Colors.white70,
-                    thickness: 0.3,
+                  height: height * 0.025,
+                  child: VerticalDivider(
+                    color: colorDivider,
+                    thickness: thickness,
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   flex: 1,
                   child: Center(
-                    child: SecondColumn(),
+                    child: SecondColumn(
+                      size1: size1,
+                      size2: size2,
+                    ),
                   ),
                 ),
                 SizedBox(
-                  height: altura * 0.025,
-                  child: const VerticalDivider(
-                    color: Colors.white70,
-                    thickness: 0.3, //espesura da borda
+                  height: height * 0.025,
+                  child: VerticalDivider(
+                    color: colorDivider,
+                    thickness: thickness,
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   flex: 1,
                   child: Center(
-                    child: ThirdColumn(),
+                    child: ThirdColumn(
+                      size1: size1,
+                      size2: size2,
+                    ),
                   ),
                 ),
               ],

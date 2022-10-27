@@ -29,13 +29,13 @@ class HomeForecastModal extends StatelessWidget {
                     color: LightColors.colorsTextGrey,
                   ),
                   onPressed: () {
-                    cardModal(context, size: size);
+                    cardModalMobile(context, size: size);
                   },
                 ),
               ),
               Container(
                 height: 16,
-                color: Colors.white,
+                color: LightColors.primaryColor,
               ),
             ],
           ),

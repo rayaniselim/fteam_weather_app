@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class TextItsWidget extends StatelessWidget {
-  const TextItsWidget({super.key});
+  final double size;
+
+  const TextItsWidget({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       "it's Sunny",
-      style: Theme.of(context).textTheme.subtitle1,
+      style: Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: size),
     );
   }
 }

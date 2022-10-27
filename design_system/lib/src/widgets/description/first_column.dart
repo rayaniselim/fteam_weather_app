@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class FirstColumn extends StatefulWidget {
-  const FirstColumn({super.key});
+class FirstColumn extends StatelessWidget {
+  double? size1;
+  double? size2;
+  FirstColumn({
+    required this.size1,
+    required this.size2,
+    super.key,
+  });
 
-  @override
-  State<FirstColumn> createState() => _FirstColumnState();
-}
-
-class _FirstColumnState extends State<FirstColumn> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -16,12 +17,16 @@ class _FirstColumnState extends State<FirstColumn> {
         children: [
           Text(
             '40%',
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context)
+                .textTheme
+                .subtitle1!
+                .copyWith(fontSize: size1),
             textAlign: TextAlign.center,
           ),
           Text(
             'Humidity',
-            style: Theme.of(context).textTheme.caption,
+            style:
+                Theme.of(context).textTheme.caption!.copyWith(fontSize: size2),
             textAlign: TextAlign.center,
           ),
         ],

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CityWidget extends StatelessWidget {
-  const CityWidget({super.key});
+  final double size;
+  const CityWidget({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,9 @@ class CityWidget extends StatelessWidget {
         ),
         Text(
           ' cidade',
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                fontSize: size,
+              ),
         ),
       ],
     );
