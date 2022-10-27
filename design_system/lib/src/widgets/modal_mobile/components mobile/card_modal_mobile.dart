@@ -1,6 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import '../hour_six_mobile.dart';
+
 cardModalMobile(BuildContext context, {required Size size}) {
   showModalBottomSheet<void>(
     context: context,
