@@ -25,3 +25,6 @@ class LightTextStyle {
     color: LightColors.colorsTextGrey,
   );
 }
+
+
+// TODO: tamanho da fonte 
