@@ -3,10 +3,6 @@ import 'package:app_weather/app/modules/home/components/home_description_compone
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/modal/components/card_modal_web.dart';
-import 'widgets/modal/components/forecast_day_web.dart';
-import 'widgets/modal/components/temperature_component_web.dart';
-
 class HomePageWeb extends StatefulWidget {
   const HomePageWeb({super.key});
 
@@ -28,14 +24,14 @@ class _HomePageWebState extends State<HomePageWeb> {
           ),
           Container(color: LightColors.colorBlackOpacity),
           Padding(
-            padding: const EdgeInsets.all(60.0),
+            padding: const EdgeInsets.all(60),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
                     FittedBox(
-                      child: TemperatureComponentWeb(),
+                      child: CardTemperatureWeb(),
                     ),
                     FittedBox(
                       child: CardModalWeb(),
@@ -47,21 +43,21 @@ class _HomePageWebState extends State<HomePageWeb> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     FittedBox(
-                      child: ForecastDayWeb(
+                      child: CardForecastDayWeb(
                         image: 'assets/images/sol.png',
                         textDay: 'Monday',
                         textTemperature: '27',
                       ),
                     ),
                     FittedBox(
-                      child: ForecastDayWeb(
+                      child: CardForecastDayWeb(
                         textDay: 'Tuesday',
                         textTemperature: '25',
                         image: 'assets/images/nublado_branco.png',
                       ),
                     ),
                     FittedBox(
-                      child: ForecastDayWeb(
+                      child: CardForecastDayWeb(
                         image: 'assets/images/chuva_branca.png',
                         textDay: 'Wednesday',
                         textTemperature: '16',
@@ -69,9 +65,12 @@ class _HomePageWebState extends State<HomePageWeb> {
                     ),
                   ],
                 ),
-
                 Padding(
-                  padding: const EdgeInsets.all(36),
+                  padding: const EdgeInsets.only(
+                    top: 36,
+                    right: 36,
+                    left: 36,
+                  ),
                   child: FittedBox(
                     child: HomeDescriptionComponent(
                       color: LightColors.colorsBlack38,
@@ -80,14 +79,11 @@ class _HomePageWebState extends State<HomePageWeb> {
                       ),
                       colorDivider: LightColors.primaryColor,
                       thickness: 0.5,
-                      size1: 26,
-                      size2: 18,
+                      sizeDescription: 18,
+                      sizeNumber: 26,
                     ),
                   ),
                 ),
-                // const SizedBox(
-                //   height: 26,
-                // ),
               ],
             ),
           ),
