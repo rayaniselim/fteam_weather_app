@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../../../design_system.dart';
+import '../../../design_system.dart';
 
-class SearchDropDown extends StatefulWidget {
-  const SearchDropDown({super.key});
+class SearchWidgetDropDown extends StatefulWidget {
+  const SearchWidgetDropDown({super.key});
 
   @override
-  State<SearchDropDown> createState() => _SearchDropDownState();
+  State<SearchWidgetDropDown> createState() => _SearchWidgetDropDownState();
 }
 
-class _SearchDropDownState extends State<SearchDropDown> {
+class _SearchWidgetDropDownState extends State<SearchWidgetDropDown> {
   @override
   Widget build(BuildContext context) {
     return Padding(

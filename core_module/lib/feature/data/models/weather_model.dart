@@ -1,8 +1,10 @@
+import 'package:core_module/feature/data/repositories/weather_repository.dart';
+
 import 'forecast_model.dart';
 
 /// REGRA DE NEGOCIO
 
-class WeatherModel {
+class WeatherModel implements WeatherRepository {
   final String city;
   final String temperature;
   final String wind; // vento
@@ -37,6 +39,18 @@ class WeatherModel {
       description: description, // 'Partly cloudy',
       forecast: forecast,
     };
+  }
+
+  @override
+  Future<WeatherModel> getForecastData() {
+    // TODO: implement getForecastData
+    throw UnimplementedError();
+  }
+
+  @override
+  List<WeatherRepository> loadWeathers() {
+    // TODO: implement loadWeathers
+    throw UnimplementedError();
   }
 
   // factory WeatherModel.fromMap(Map<String, dynamic> weather, [param1]) {

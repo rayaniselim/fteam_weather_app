@@ -35,7 +35,7 @@ class _PageDropDownState extends State<PageDropDown> {
         children: const [
           Card(
             elevation: 0,
-            child: SearchDropDown(),
+            child: SearchWidgetDropDown(),
           ),
         ],
       ),

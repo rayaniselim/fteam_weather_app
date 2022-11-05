@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 
-class HourSixMobile extends StatefulWidget {
-  const HourSixMobile({super.key});
+class HoursWidgetMobile extends StatelessWidget {
+  final String textHour;
+  final String image;
+  final String textTemperature;
 
-  @override
-  State<HourSixMobile> createState() => _HourSixMobileState();
-}
+  final double fontSizeTemperature;
+  final double fontSizeHour;
+  final double fontSizeBolinha;
+  const HoursWidgetMobile(
+      {super.key,
+      required this.textHour,
+      required this.image,
+      required this.textTemperature,
+      required this.fontSizeTemperature,
+      required this.fontSizeHour,
+      required this.fontSizeBolinha});
 
-class _HourSixMobileState extends State<HourSixMobile> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -19,16 +28,19 @@ class _HourSixMobileState extends State<HourSixMobile> {
           SizedBox(
             height: height * 0.04,
             child: Image.asset(
-              'assets/images/nublado.png',
-              // scale: 1,
+              image,
+              // 'assets/images/nublado.png',
             ),
           ),
           SizedBox(
             height: height * 0.0038,
           ),
           Text(
-            '06:00 AM',
-            style: Theme.of(context).textTheme.overline,
+            textHour,
+            // '06:00 AM',
+            style: Theme.of(context).textTheme.overline!.copyWith(
+                  fontSize: fontSizeHour,
+                ),
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -37,9 +49,11 @@ class _HourSixMobileState extends State<HourSixMobile> {
           RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
-              text: '16',
+              text: textTemperature,
+              // '16',
               style: Theme.of(context).textTheme.headline5!.copyWith(
-                    fontSize: 30,
+                    fontSize: fontSizeTemperature,
+                    //  30,
                   ),
               children: <InlineSpan>[
                 WidgetSpan(
@@ -47,7 +61,8 @@ class _HourSixMobileState extends State<HourSixMobile> {
                   child: Text(
                     '°',
                     style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontSize: 16,
+                          fontSize: fontSizeBolinha,
+                          // 16,
                         ),
                   ),
                 ),

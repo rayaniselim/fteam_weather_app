@@ -34,8 +34,8 @@ class _HomePageMobileState extends State<HomePageMobile> {
                 color: LightColors.colorWhite10,
                 colorDivider: LightColors.colorWhite70,
                 thickness: 0.3,
-                size1: 16,
-                size2: 12,
+                sizeDescription: 12,
+                sizeNumber: 16,
               ),
               const SizedBox(
                 height: 26,

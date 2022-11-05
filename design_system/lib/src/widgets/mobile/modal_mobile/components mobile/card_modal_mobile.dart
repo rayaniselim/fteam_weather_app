@@ -1,8 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import '../hour_six_mobile.dart';
-
 cardModalMobile(BuildContext context, {required Size size}) {
   showModalBottomSheet<void>(
     context: context,
@@ -48,15 +46,43 @@ cardModalMobile(BuildContext context, {required Size size}) {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        HourFiveMobile(),
-                        HourSixMobile(),
-                        HourSevenMobile(),
-                        HourEightMobile(),
+                        HoursWidgetMobile(
+                          image: 'assets/images/chuva.png',
+                          textHour: '05:00 AM',
+                          fontSizeHour: 12,
+                          textTemperature: '3',
+                          fontSizeTemperature: 36,
+                          fontSizeBolinha: 26,
+                        ),
+                        HoursWidgetMobile(
+                          image: 'assets/images/nublado.png',
+                          textHour: '06:00 AM',
+                          fontSizeHour: 12,
+                          textTemperature: '16',
+                          fontSizeTemperature: 36,
+                          fontSizeBolinha: 26,
+                        ),
+                        HoursWidgetMobile(
+                          image: 'assets/images/sol.png',
+                          textHour: '07:00 AM',
+                          fontSizeHour: 12,
+                          textTemperature: '23',
+                          fontSizeTemperature: 36,
+                          fontSizeBolinha: 26,
+                        ),
+                        HoursWidgetMobile(
+                          image: 'assets/images/sol.png',
+                          textHour: '08:00 AM',
+                          fontSizeHour: 12,
+                          textTemperature: '23',
+                          fontSizeTemperature: 36,
+                          fontSizeBolinha: 26,
+                        )
                       ],
                     ),
                   ),
                   const SizedBox(
-                    height: 24,
+                    height: 15,
                   ),
                 ],
               ),

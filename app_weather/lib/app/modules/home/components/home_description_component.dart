@@ -6,17 +6,18 @@ class HomeDescriptionComponent extends StatelessWidget {
   final Color color;
   final Color colorDivider;
   final double thickness;
-  final double size1;
-  final double size2;
+  final double sizeNumber;
+  final double sizeDescription;
 
-  const HomeDescriptionComponent(
-      {super.key,
-      required this.border,
-      required this.color,
-      required this.colorDivider,
-      required this.thickness,
-      required this.size1,
-      required this.size2});
+  const HomeDescriptionComponent({
+    super.key,
+    required this.colorDivider,
+    required this.thickness,
+    required this.border,
+    required this.color,
+    required this.sizeNumber,
+    required this.sizeDescription,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +41,11 @@ class HomeDescriptionComponent extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Center(
-                    child: FirstColumn(
-                      size1: size1,
-                      size2: size2,
+                    child: ColumnDescriptionMobile(
+                      sizeNumber: sizeNumber,
+                      sizeDescription: sizeDescription,
+                      textDescription: 'Humidity',
+                      textNumber: '40%',
                     ),
                   ),
                 ),
@@ -56,9 +59,11 @@ class HomeDescriptionComponent extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Center(
-                    child: SecondColumn(
-                      size1: size1,
-                      size2: size2,
+                    child: ColumnDescriptionMobile(
+                      sizeNumber: sizeNumber,
+                      sizeDescription: sizeDescription,
+                      textDescription: 'Visibility',
+                      textNumber: '11km',
                     ),
                   ),
                 ),
@@ -72,9 +77,11 @@ class HomeDescriptionComponent extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Center(
-                    child: ThirdColumn(
-                      size1: size1,
-                      size2: size2,
+                    child: ColumnDescriptionMobile(
+                      sizeNumber: sizeNumber,
+                      sizeDescription: sizeDescription,
+                      textDescription: 'Wind',
+                      textNumber: '10km/h',
                     ),
                   ),
                 ),
