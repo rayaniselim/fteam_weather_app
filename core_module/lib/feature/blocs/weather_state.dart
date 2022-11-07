@@ -1,19 +1,19 @@
 import '../data/models/weather_model.dart';
 
 abstract class WeatherState {
-  List<WeatherModel> weather;
+  List<WeatherModel> weathers = [];
 
   WeatherState({
-    required this.weather,
+    required this.weathers,
   });
 }
 
 class WeatherInitialState extends WeatherState {
-  WeatherInitialState() : super(weather: []);
+  WeatherInitialState() : super(weathers: []);
 }
 
 class WeatherSuccessState extends WeatherState {
   WeatherSuccessState({
     required List<WeatherModel> weather,
-  }) : super(weather: weather);
+  }) : super(weathers: weather);
 }

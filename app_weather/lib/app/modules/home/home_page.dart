@@ -1,9 +1,7 @@
-import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
 import 'package:web_weather/web_weather.dart';
 
-import 'components/home_page_mobile.dart';
-import 'home_store.dart';
+import 'components_mobile/home_page_mobile.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -14,31 +12,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late final HomeStore store;
-
-  // _ajustarVisualizacao(
-  //   double widthTela,
-  // ) {
-  //   int colunas = 2;
-  //   if (widthTela <= 600) {
-  //     colunas = 2;
-  //   } else if (widthTela <= 960) {
-  //     colunas = 4;
-  //   } else {
-  //     colunas = 6;
-  //   }
-  //   return colunas;
-  // }
+  // late final HomeStore store;
 
   @override
   void initState() {
     super.initState();
-    store = Modular.get<HomeStore>();
+    // store = Modular.get<HomeStore>();
   }
 
   @override
   void dispose() {
-    Modular.dispose<HomeStore>();
+    // Modular.dispose<HomeStore>();
     super.dispose();
   }
 
@@ -50,12 +34,9 @@ class _HomePageState extends State<HomePage> {
         var alturaBarra = AppBar().preferredSize.height;
 
         return Scaffold(
+          extendBody: true,
           appBar: width < 600
-              ? PreferredSize(
-                  preferredSize: Size(width, alturaBarra),
-                  child: const SafeArea(
-                    child: SizedBox(width: 1),
-                  ))
+              ? null
               : PreferredSize(
                   preferredSize: Size(width, alturaBarra),
                   child: const WebAppBar(),
@@ -70,6 +51,7 @@ class _HomePageState extends State<HomePage> {
                   child: const HomePageWeb(),
                 ),
         );
+        // }
       },
     );
   }

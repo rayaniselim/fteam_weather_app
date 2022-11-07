@@ -22,7 +22,8 @@ dependencies:
     path: ../core_module
   web_weather:
     path: ../web_weather
-
+  # bloc: ^8.1.0
+  # flutter_bloc: ^8.0.1
 
 
 

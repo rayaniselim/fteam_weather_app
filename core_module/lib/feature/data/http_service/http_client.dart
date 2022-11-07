@@ -3,3 +3,6 @@ abstract class HttpClient {
     required String path,
   });
 }
+
+
+// http : protocolo para transportar hipertextos 

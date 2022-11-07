@@ -1,27 +1,46 @@
-import '../datasources/weather_datasource.dart';
+import 'package:core_module/feature/data/models/forecast_model.dart';
 import '../models/weather_model.dart';
 
 class WeatherRepository {
-  Future<WeatherModel> getForecastData() async {
-    final Map<String, dynamic> map = await WeatherDatasource().getWeatherData();
+  List<WeatherModel> _weathers = [];
 
-    return WeatherModel.fromMap(map);
+  Future<List<WeatherModel>> loadWeathers() async {
+    await Future.delayed(
+      const Duration(seconds: 1),
+    );
+    _weathers = const [
+      WeatherModel(
+        day: 'day',
+        city: 'brasilia',
+        description: 'descrip',
+        temperature: '17',
+        wind: '4 km/h',
+        forecast: [
+          ForecastModel(
+            temperature: '19',
+            wind: '15 km/h',
+            day: '1',
+          ),
+          ForecastModel(
+            temperature: '19',
+            wind: '15 km/h',
+            day: '1',
+          ),
+          ForecastModel(
+            temperature: '19',
+            wind: '15 km/h',
+            day: '1',
+          ),
+          ForecastModel(
+            temperature: '19',
+            wind: '15 km/h',
+            day: '1',
+          ),
+        ],
+      ),
+    ];
+    return _weathers;
   }
-
-  // final List<WeatherRepository> _weathers = [];
-
-  // List<WeatherRepository> loadWeathers() {
-  //   _weathers.addAll([
-  //     WeatherRepository(),
-  //   ]);
-  //   return _weathers;
-  // }
-
-  // List<WeatherRepository> addWeather(WeatherRepository weather) {
-  //   _weathers.add(weather);
-  //   return _weathers;
-  // }
-
 }
 
 /// 1. cliente: http, firestore, hasura, google cloud...

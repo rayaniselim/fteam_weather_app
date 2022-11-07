@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
 class HoursWidgetMobile extends StatelessWidget {
-  final String textHour;
+  final String textDay;
+  final String textWind;
   final String image;
   final String textTemperature;
-
   final double fontSizeTemperature;
   final double fontSizeHour;
   final double fontSizeBolinha;
+
   const HoursWidgetMobile(
       {super.key,
-      required this.textHour,
+      required this.textDay,
       required this.image,
       required this.textTemperature,
       required this.fontSizeTemperature,
       required this.fontSizeHour,
-      required this.fontSizeBolinha});
+      required this.fontSizeBolinha,
+      required this.textWind});
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +31,23 @@ class HoursWidgetMobile extends StatelessWidget {
             height: height * 0.04,
             child: Image.asset(
               image,
-              // 'assets/images/nublado.png',
             ),
           ),
           SizedBox(
             height: height * 0.0038,
           ),
           Text(
-            textHour,
-            // '06:00 AM',
+            textDay,
+            style: Theme.of(context).textTheme.overline!.copyWith(
+                  fontSize: fontSizeHour,
+                ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: height * 0.0042,
+          ),
+          Text(
+            textWind,
             style: Theme.of(context).textTheme.overline!.copyWith(
                   fontSize: fontSizeHour,
                 ),
@@ -50,7 +60,6 @@ class HoursWidgetMobile extends StatelessWidget {
             textAlign: TextAlign.left,
             text: TextSpan(
               text: textTemperature,
-              // '16',
               style: Theme.of(context).textTheme.headline5!.copyWith(
                     fontSize: fontSizeTemperature,
                     //  30,

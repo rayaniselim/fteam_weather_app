@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter/foundation.dart' show kIsWeb;
 
 class CityWidget extends StatelessWidget {
   final double size;
-  const CityWidget({super.key, required this.size});
+  final String city;
+
+  const CityWidget({
+    super.key,
+    required this.size,
+    required this.city,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,9 @@ class CityWidget extends StatelessWidget {
         Text(
           ' cidade',
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                fontSize: size,
+                fontSize: // TODO kIsWeb
+
+                    size,
               ),
         ),
       ],

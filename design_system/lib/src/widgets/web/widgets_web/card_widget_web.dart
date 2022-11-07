@@ -3,14 +3,10 @@ import 'package:flutter/material.dart';
 
 class CardTopWidgetWeb extends StatelessWidget {
   final Widget child;
-  // final double width;
-  // final double heigth;
 
   const CardTopWidgetWeb({
     super.key,
     required this.child,
-    // required this.width,
-    // required this.heigth,
   });
 
   @override

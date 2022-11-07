@@ -1,8 +1,14 @@
+import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class CardForecastDayWeb extends StatelessWidget {
+  final List<ForecastModel> forecastsList;
+
   final String textDay;
+  final String textWind;
+  final String textKmWind;
+
   final String textTemperature;
   final String image;
 
@@ -11,6 +17,9 @@ class CardForecastDayWeb extends StatelessWidget {
     required this.textDay,
     required this.textTemperature,
     required this.image,
+    required this.forecastsList,
+    required this.textWind,
+    required this.textKmWind,
   });
 
   @override
@@ -23,7 +32,7 @@ class CardForecastDayWeb extends StatelessWidget {
           padding: const EdgeInsets.all(14.0),
           child: Container(
             width: width * 0.09,
-            height: height * 0.20,
+            height: height * 0.30,
             decoration: BoxDecoration(
               color: LightColors.colorsBlack38,
               borderRadius: BorderRadius.circular(20),
@@ -81,6 +90,34 @@ class CardForecastDayWeb extends StatelessWidget {
                         ],
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    width: width * 0.025,
+                    child: const Divider(
+                      color: LightColors.primaryColor,
+                      thickness: 0.6,
+                    ),
+                  ),
+                  FittedBox(
+                    child: Text(
+                      textKmWind,
+                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                            fontSize: 20,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                    ),
+                  ),
+                  FittedBox(
+                    child: Text(
+                      textWind,
+                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                            fontSize: 16,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: width * 0.030,
                   ),
                 ],
               ),

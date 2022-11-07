@@ -1,9 +1,16 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class HomeHeaterComponent extends StatelessWidget {
-  const HomeHeaterComponent({
+class HomeHeaderComponent extends StatelessWidget {
+  final String temperature;
+  final String city;
+  final String description;
+
+  const HomeHeaderComponent({
     super.key,
+    required this.city,
+    required this.temperature,
+    required this.description,
   });
 
   @override
@@ -22,9 +29,10 @@ class HomeHeaterComponent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                children: const [
+                children: [
                   CityWidget(
                     size: 16,
+                    city: city,
                   ),
                 ],
               ),
@@ -39,12 +47,14 @@ class HomeHeaterComponent extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               TemperatureWidget(
                 size: 120,
+                temperature: temperature,
               ),
               TextItsWidget(
                 size: 16,
+                description: description,
               ),
             ],
           ),

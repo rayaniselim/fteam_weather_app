@@ -1,17 +1,17 @@
-import 'package:core_module/feature/data/repositories/weather_repository.dart';
-
 import 'forecast_model.dart';
 
 /// REGRA DE NEGOCIO
 
-class WeatherModel implements WeatherRepository {
+class WeatherModel {
   final String city;
   final String temperature;
   final String wind; // vento
   final String description;
   final List<ForecastModel> forecast; // ?? PREVISAO
+  final String day;
 
   const WeatherModel({
+    required this.day,
     required this.city,
     required this.temperature,
     required this.wind,
@@ -21,13 +21,16 @@ class WeatherModel implements WeatherRepository {
 
   factory WeatherModel.fromMap(Map jsonMap) {
     return WeatherModel(
+      day: jsonMap['day'],
       city: jsonMap['city'],
       temperature: jsonMap['temperature'], // '20 °C',
       wind: jsonMap['wind'], // '20 km/h',
       description: jsonMap['description'], // 'Partly cloudy',
-      forecast: jsonMap['forecast'].map(
-        (element) => ForecastModel.fromMap(element),
-      ),
+      forecast: jsonMap['forecast']
+          .map(
+            (element) => ForecastModel.fromMap(element),
+          )
+          .toList(),
     );
   }
 
@@ -39,18 +42,6 @@ class WeatherModel implements WeatherRepository {
       description: description, // 'Partly cloudy',
       forecast: forecast,
     };
-  }
-
-  @override
-  Future<WeatherModel> getForecastData() {
-    // TODO: implement getForecastData
-    throw UnimplementedError();
-  }
-
-  @override
-  List<WeatherRepository> loadWeathers() {
-    // TODO: implement loadWeathers
-    throw UnimplementedError();
   }
 
   // factory WeatherModel.fromMap(Map<String, dynamic> weather, [param1]) {
