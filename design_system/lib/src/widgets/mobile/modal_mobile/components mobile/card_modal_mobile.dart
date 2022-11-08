@@ -2,7 +2,7 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'component_hours.dart';
+import '../../page_mobile/component_hours_mobile.dart';
 
 cardModalMobile(BuildContext context,
     {required Size size, required List<ForecastModel> forecastsList}) {
@@ -53,7 +53,7 @@ cardModalMobile(BuildContext context,
                       const SizedBox(
                         height: 10,
                       ),
-                      ComponentsHours(
+                      ComponentsHoursMobile(
                         forecastList: forecastsList,
                       )
                     ],

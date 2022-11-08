@@ -2,7 +2,7 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class HomeDescriptionComponent extends StatelessWidget {
+class HomeDescriptionComponentMobile extends StatelessWidget {
   final Border border;
   final Color color;
   final Color colorDivider;
@@ -11,7 +11,7 @@ class HomeDescriptionComponent extends StatelessWidget {
   final double sizeDescription;
   final List<WeatherModel> weathers;
 
-  const HomeDescriptionComponent({
+  const HomeDescriptionComponentMobile({
     super.key,
     required this.colorDivider,
     required this.thickness,

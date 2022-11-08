@@ -2,9 +2,9 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class HomeForecastModal extends StatelessWidget {
+class HomeForecastModalMobile extends StatelessWidget {
   final List<ForecastModel> forecastsList;
-  const HomeForecastModal({
+  const HomeForecastModalMobile({
     super.key,
     required this.forecastsList,
   });

@@ -2,10 +2,6 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'home_description_component.dart';
-import 'home_forecast_modal.dart';
-import 'home_header_component.dart';
-
 class HomePageMobile extends StatefulWidget {
   const HomePageMobile({
     super.key,
@@ -22,7 +18,9 @@ class _HomePageMobileState extends State<HomePageMobile> {
   void initState() {
     super.initState();
     bloc = WeatherBloc();
-    bloc.add(LoadWeathersEvent());
+    bloc.add(
+      LoadWeathersEvent(city: 'curitiba'),
+    );
   }
 
   @override
@@ -64,13 +62,13 @@ class _HomePageMobileState extends State<HomePageMobile> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      HomeHeaderComponent(
+                      HomeHeaderComponentMobile(
                         city: state.weathers[0].city,
                         temperature: state.weathers[0].temperature,
                         description: state.weathers[0].description,
                       ),
                       const Spacer(),
-                      HomeDescriptionComponent(
+                      HomeDescriptionComponentMobile(
                         border: Border.all(color: LightColors.primaryColor),
                         color: LightColors.colorWhite10,
                         colorDivider: LightColors.colorWhite70,
@@ -84,7 +82,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: HomeForecastModal(
+                  child: HomeForecastModalMobile(
                     forecastsList: state.weathers[0].forecast,
                   ),
                 ),

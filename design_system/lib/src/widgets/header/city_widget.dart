@@ -22,10 +22,8 @@ class CityWidget extends StatelessWidget {
         Text(
           ' cidade',
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                fontSize: // TODO kIsWeb
-
-                    size,
-              ),
+                fontSize: size,
+              ), // TODO kIsWeb
         ),
       ],
     );

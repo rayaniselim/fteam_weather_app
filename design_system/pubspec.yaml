@@ -16,8 +16,7 @@ dependencies:
     path: ../core_module
   app_weather: 
     path: ../app_weather
-  web_weather: 
-    path: ../web_weather
+
   
   
 

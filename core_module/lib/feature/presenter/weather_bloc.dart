@@ -7,15 +7,18 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   final StreamController<WeatherEvent> _inputWeatherController =
       StreamController<WeatherEvent>();
+
   final StreamController<WeatherState> _outputWeatherController =
       StreamController<WeatherState>();
 
-  // Sink<WeatherEvent> get inputWeather => _inputWeatherController.sink;
+  // Sink<WeatherEvent> get inputWeather =>
+  //     _inputWeatherController.sink; // entrada dos eventos
   // @override
-  // Stream<WeatherState> get stream => _outputWeatherController.stream;
+  // Stream<WeatherState> get stream => _outputWeatherController.stream; // saida
 
   WeatherBloc() : super(WeatherInitialState()) {
-    _inputWeatherController.stream.listen(_mapEventToState); //
+    _inputWeatherController.stream
+        .listen(_mapEventToState); //mapea cada evento em relacao ao state
     on<LoadWeathersEvent>(
       (event, emit) async => emit(
         WeatherSuccessState(
@@ -25,6 +28,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     );
   }
 
+  /// mapeaçao dos eventos
   Future<void> _mapEventToState(WeatherEvent event) async {
     List<WeatherModel> weathers = [];
     if (event is LoadWeathersEvent) {

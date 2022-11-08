@@ -6,7 +6,8 @@ import 'package:http/http.dart' as http;
 // TODO: ARRUMAR
 
 Future<WeatherRepository> fetch() async {
-  var url = 'https://goweather.herokuapp.com/weather/curitiba';
+  String city = 'curitiba';
+  var url = 'https://goweather.herokuapp.com/weather/$city';
   var response = await http.get(Uri.parse(url));
   var json = jsonDecode(response.body);
   var weatherMap = WeatherRepository(); //(temperature: json['temperature'],);

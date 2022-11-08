@@ -2,24 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../design_system.dart';
 
-// class AppTheme {
-//   static final lightTheme = ThemeData(
-//     primaryColor: LightColors.colorsAppBar,
-//     cardColor: LightColors.colorsBackground,
-//   );
-
-//   static final themeDark = ThemeData(
-//     primaryColor: LightColors.colorsAppBar,
-//     scaffoldBackgroundColor: LightColors.colorsBackground,
-//     visualDensity: VisualDensity.adaptivePlatformDensity,
-//     iconTheme: const IconThemeData(color: Colors.black),
-//     cardColor: LightColors.colorsBackground, // nao achei o card
-//     // hintColor: LightColors.colorsHintText,
-//     focusColor: LightColors.primaryColor,
-//     errorColor: LightColors.colorsError,
-//     backgroundColor: LightColors.colorsBackground,
-//   );
-// }
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,

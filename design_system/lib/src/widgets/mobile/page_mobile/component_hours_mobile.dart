@@ -1,12 +1,12 @@
 import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../design_system.dart';
+import '../../../../design_system.dart';
 
-class ComponentsHours extends StatelessWidget {
+class ComponentsHoursMobile extends StatelessWidget {
   final List<ForecastModel> forecastList;
 
-  const ComponentsHours({
+  const ComponentsHoursMobile({
     required this.forecastList,
     super.key,
   });

@@ -13,6 +13,6 @@ export '/feature/data/models/http_model.dart';
 export '/feature/data/models/forecast_model.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 
-export 'package:core_module/feature/blocs/weather_bloc.dart';
-export 'package:core_module/feature/blocs/weather_eventy.dart';
-export 'package:core_module/feature/blocs/weather_state.dart';
+export 'package:core_module/feature/presenter/weather_bloc.dart';
+export 'package:core_module/feature/presenter/weather_event.dart';
+export 'package:core_module/feature/presenter/weather_state.dart';

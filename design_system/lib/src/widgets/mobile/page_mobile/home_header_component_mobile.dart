@@ -1,12 +1,12 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class HomeHeaderComponent extends StatelessWidget {
+class HomeHeaderComponentMobile extends StatelessWidget {
   final String temperature;
   final String city;
   final String description;
 
-  const HomeHeaderComponent({
+  const HomeHeaderComponentMobile({
     super.key,
     required this.city,
     required this.temperature,

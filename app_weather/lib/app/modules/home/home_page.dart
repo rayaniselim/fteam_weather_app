@@ -1,11 +1,10 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:web_weather/web_weather.dart';
-
-import 'components_mobile/home_page_mobile.dart';
+import 'pages/home_page_mobile.dart';
+import 'pages/home_page_web.dart';
 
 class HomePage extends StatefulWidget {
-  final String title;
-  const HomePage({Key? key, this.title = 'Home'}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
