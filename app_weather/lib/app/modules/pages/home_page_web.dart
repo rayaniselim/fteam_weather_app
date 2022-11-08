@@ -35,7 +35,9 @@ class _HomePageWebState extends State<HomePageWeb> {
       bloc: bloc,
       builder: (context, state) {
         if (state.weather == null) {
-          return const Center(child: CircularProgressIndicator());
+          return const PageError(
+            fontSize: 30,
+          );
         } else {
           return Stack(
             fit: StackFit.expand,

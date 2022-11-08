@@ -28,3 +28,5 @@ export '/src/widgets/web/modal_web/components_web/card_modal_web.dart';
 export '/src/widgets/web/modal_web/components_web/card_forecast_day_web.dart';
 export '/src/widgets/web/modal_web/components_web/app_bar_web.dart';
 export '/src/widgets/web/modal_web/components_web/components_hours_web.dart';
+
+export '/src/widgets/mobile/page_error/page_error.dart';

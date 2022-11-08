@@ -35,15 +35,8 @@ class _HomePageMobileState extends State<HomePageMobile> {
         bloc: bloc,
         builder: (context, state) {
           if (state.weather == null) {
-            return Stack(
-              fit: StackFit.expand,
-              children: [
-                Image.asset(
-                  'assets/images/nuvens.jpeg',
-                  fit: BoxFit.cover,
-                ),
-                const Center(child: CircularProgressIndicator()),
-              ],
+            return const PageError(
+              fontSize: 16,
             );
           } else {
             return Stack(
