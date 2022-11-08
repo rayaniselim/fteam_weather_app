@@ -23,7 +23,7 @@ class PageError extends StatelessWidget {
               height: 20,
             ),
             Text(
-              'Não foi possível carregar os dados.',
+              'Carregando os dados..',
               style: TextStyle(
                 fontSize: fontSize,
               ),

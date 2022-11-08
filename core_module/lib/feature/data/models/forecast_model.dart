@@ -1,5 +1,3 @@
-import '../repositories/forecast_repository.dart';
-
 class ForecastModel {
   final String temperature;
   final String wind; // vento
@@ -17,9 +15,5 @@ class ForecastModel {
       wind: forecast['wind'],
       day: forecast['day'],
     );
-  }
-
-  Future<ForecastModel> getForecastData() {
-    return ForecastRepository().getForecastData();
   }
 }

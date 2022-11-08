@@ -1,15 +1,23 @@
-import 'forecast_datasource.dart';
+import 'package:core_module/core_module.dart';
 
-abstract class WeatherDatasource {
-  factory WeatherDatasource() => ForecastDatasource();
+class WeatherDatasource {
+  final IHttpClient client;
 
-  Future<Map<String, dynamic>> getWeatherData() async {
-    return {
-      'day': 'https://goweather.herokuapp.com/weather/',
-      'wind': 'https://goweather.herokuapp.com/weather/',
-      'temperature': 'https://goweather.herokuapp.com/weather/',
-      'city': 'https://goweather.herokuapp.com/weather/',
-      'description': 'https://goweather.herokuapp.com/weather/',
-    };
+  WeatherDatasource({required this.client});
+
+  Future<Map<String, dynamic>?> remoteLoadWeather({
+    required String baseUrl,
+    required String city,
+  }) async {
+    try {
+      final Response response = await client.get(
+        baseUrl: baseUrl,
+        path: city,
+      );
+
+      return response.data;
+    } catch (error) {
+      return null;
+    }
   }
 }

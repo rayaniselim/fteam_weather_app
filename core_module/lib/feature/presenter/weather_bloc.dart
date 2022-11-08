@@ -2,27 +2,17 @@ import 'dart:async';
 import '../../core_module.dart';
 import '../data/repositories/weather_repository.dart';
 
-class DioClient implements IHttpClient {
-  final _dio = Dio();
-  @override
-  Future<Response> get({required String baseUrl, required String path}) {
-    return _dio.get(baseUrl + path);
-  }
-}
+const baseUrl = 'https://goweather.herokuapp.com/weather/';
+const city = 'brasilia';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  final _weatherRepo = WeatherRepository(client: DioClient());
+  final _weatherRepo = WeatherRepository(client: DioClientAdapter());
 
   final StreamController<WeatherEvent> _inputWeatherController =
       StreamController<WeatherEvent>();
 
   final StreamController<WeatherState> _outputWeatherController =
       StreamController<WeatherState>();
-
-  // Sink<WeatherEvent> get inputWeather =>
-  //     _inputWeatherController.sink; // entrada dos eventos
-  // @override
-  // Stream<WeatherState> get stream => _outputWeatherController.stream; // saida
 
   WeatherBloc() : super(const WeatherInitialState()) {
     _inputWeatherController.stream
@@ -31,8 +21,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       (event, emit) async => emit(
         WeatherSuccessState(
           weather: await _weatherRepo.loadWeather(
-            baseUrl: 'https://goweather.herokuapp.com/weather/',
-            city: 'curitiba',
+            baseUrl: baseUrl,
+            city: city,
           ),
         ),
       ),
@@ -45,8 +35,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     WeatherModel? weathers;
     if (event is LoadWeathersEvent) {
       weathers = await _weatherRepo.loadWeather(
-        baseUrl: 'https://goweather.herokuapp.com/weather/',
-        city: 'curitiba',
+        baseUrl: baseUrl,
+        city: city,
       );
     }
     if (event is WeatherFetchList) {

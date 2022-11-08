@@ -1,5 +1,7 @@
 import 'package:core_module/core_module.dart';
 
+import '../datasources/weather_datasource.dart';
+
 class WeatherRepository {
   final IHttpClient client;
 
@@ -9,14 +11,14 @@ class WeatherRepository {
     required String baseUrl,
     required String city,
   }) async {
-    final Response response = await client.get(
+    final datasource = WeatherDatasource(client: client);
+
+    final Map<String, dynamic>? data = await datasource.remoteLoadWeather(
       baseUrl: baseUrl,
-      path: city,
+      city: city,
     );
 
-    final data = response.data;
-
-    if (data is Map) {
+    if (data != null) {
       final weather = WeatherModel.fromMap(data);
 
       final weatherWithCity = weather.copyWith(city: city);

@@ -19,7 +19,7 @@ class _HomePageWebState extends State<HomePageWeb> {
     super.initState();
     bloc = WeatherBloc();
     bloc.add(
-      LoadWeathersEvent(city: 'curitiba'),
+      LoadWeathersEvent(),
     );
   }
 

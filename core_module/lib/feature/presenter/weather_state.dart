@@ -1,13 +1,10 @@
 import 'package:core_module/core_module.dart';
 
 // o que o Bloc vai gerenciar - o estado do Weather
-abstract class WeatherState extends Equatable {
+abstract class WeatherState {
   final WeatherModel? weather; // vai  ser carregado a lista de Weather genérico
 
   const WeatherState({required this.weather});
-
-  @override
-  List<Object?> get props => [];
 }
 
 class WeatherInitialState extends WeatherState {

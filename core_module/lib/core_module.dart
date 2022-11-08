@@ -9,9 +9,9 @@ export 'package:mockito/mockito.dart';
 export 'package:equatable/equatable.dart';
 
 export '/feature/data/models/weather_model.dart';
-export 'feature/data/models/weather_data.dart';
 export '/feature/data/models/forecast_model.dart';
-export 'feature/data/http_service/i_http_client.dart';
+export 'feature/infra/dio_client_adapter.dart';
+export 'feature/data/http/i_http_client.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 
 export 'package:core_module/feature/presenter/weather_bloc.dart';
