@@ -49,16 +49,21 @@ class HomeHeaderComponentMobile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TemperatureWidget(
-                size: 120,
+                size: 90,
                 temperature: temperature,
-              ),
-              TextItsWidget(
-                size: 16,
-                description: description,
               ),
             ],
           ),
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            TextItsWidget(
+              size: 16,
+              description: description,
+            ),
+          ],
+        )
       ],
     );
   }

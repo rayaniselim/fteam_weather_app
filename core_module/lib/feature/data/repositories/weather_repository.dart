@@ -1,51 +1,29 @@
-import 'package:core_module/feature/data/models/forecast_model.dart';
-import '../models/weather_model.dart';
+import 'package:core_module/core_module.dart';
 
 class WeatherRepository {
-  List<WeatherModel> _weathers = [];
+  final IHttpClient client;
 
-  Future<List<WeatherModel>> loadWeathers() async {
-    await Future.delayed(
-      const Duration(seconds: 1),
+  WeatherRepository({required this.client});
+
+  Future<WeatherModel?> loadWeather({
+    required String baseUrl,
+    required String city,
+  }) async {
+    final Response response = await client.get(
+      baseUrl: baseUrl,
+      path: city,
     );
-    _weathers = const [
-      WeatherModel(
-        day: 'day',
-        city: 'brasilia',
-        description: 'descrip',
-        temperature: '17',
-        wind: '4 km/h',
-        forecast: [
-          ForecastModel(
-            temperature: '19',
-            wind: '15 km/h',
-            day: '1',
-          ),
-          ForecastModel(
-            temperature: '19',
-            wind: '15 km/h',
-            day: '1',
-          ),
-          ForecastModel(
-            temperature: '19',
-            wind: '15 km/h',
-            day: '1',
-          ),
-          ForecastModel(
-            temperature: '19',
-            wind: '15 km/h',
-            day: '1',
-          ),
-        ],
-      ),
-    ];
-    return _weathers;
+
+    final data = response.data;
+
+    if (data is Map) {
+      final weather = WeatherModel.fromMap(data);
+
+      final weatherWithCity = weather.copyWith(city: city);
+
+      return weatherWithCity;
+    }
+
+    return null;
   }
 }
-
-/// 1. cliente: http, firestore, hasura, google cloud...
-/// 2. requests: post, put, get, delete > criar, atualizar, pegar, deletar
-/// 3. referencia: endpoint da api: https://goweather.herokuapp.com/weather/curitiba
-/// 4. objeto: dart, json, backend(java, js, C#...)
-/// conclusao: pegar algo do servidor: http.get(https://goweather.herokuapp.com/weather/curitiba)
-/// 

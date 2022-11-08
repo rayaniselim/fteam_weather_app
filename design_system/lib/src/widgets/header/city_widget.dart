@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/foundation.dart' show kIsWeb;
 
 class CityWidget extends StatelessWidget {
   final double size;
@@ -19,11 +18,14 @@ class CityWidget extends StatelessWidget {
           Icons.location_on_sharp,
           size: 18,
         ),
+        const SizedBox(
+          width: 5,
+        ),
         Text(
-          ' cidade',
+          city.toUpperCase(),
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
                 fontSize: size,
-              ), // TODO kIsWeb
+              ),
         ),
       ],
     );

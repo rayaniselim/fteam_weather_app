@@ -34,12 +34,12 @@ class _HomePageMobileState extends State<HomePageMobile> {
     return BlocBuilder<WeatherBloc, WeatherState>(
         bloc: bloc,
         builder: (context, state) {
-          if (state.weathers.isEmpty) {
+          if (state.weather == null) {
             return Stack(
               fit: StackFit.expand,
               children: [
                 Image.asset(
-                  'assets/images/dia.png',
+                  'assets/images/nuvens.jpeg',
                   fit: BoxFit.cover,
                 ),
                 const Center(child: CircularProgressIndicator()),
@@ -50,7 +50,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
               fit: StackFit.expand,
               children: [
                 Image.asset(
-                  'assets/images/dia.png',
+                  'assets/images/nuvens.jpeg',
                   fit: BoxFit.cover,
                 ),
                 Container(color: LightColors.colorBlackOpacity),
@@ -63,19 +63,19 @@ class _HomePageMobileState extends State<HomePageMobile> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       HomeHeaderComponentMobile(
-                        city: state.weathers[0].city,
-                        temperature: state.weathers[0].temperature,
-                        description: state.weathers[0].description,
+                        city: state.weather!.city!,
+                        temperature: state.weather!.temperature,
+                        description: state.weather!.description,
                       ),
                       const Spacer(),
                       HomeDescriptionComponentMobile(
                         border: Border.all(color: LightColors.primaryColor),
-                        color: LightColors.colorWhite10,
+                        color: LightColors.colorsBlack26,
                         colorDivider: LightColors.colorWhite70,
                         thickness: 0.3,
                         sizeDescription: 12,
                         sizeNumber: 16,
-                        weathers: state.weathers,
+                        weathers: state.weather!,
                       ),
                     ],
                   ),
@@ -83,7 +83,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: HomeForecastModalMobile(
-                    forecastsList: state.weathers[0].forecast,
+                    forecastsList: state.weather!.forecast,
                   ),
                 ),
               ],

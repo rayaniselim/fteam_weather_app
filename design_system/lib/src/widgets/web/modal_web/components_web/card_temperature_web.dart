@@ -3,11 +3,11 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class CardTemperatureWeb extends StatefulWidget {
-  final List<WeatherModel> weathers;
+  final WeatherModel? weather;
 
   const CardTemperatureWeb({
     super.key,
-    required this.weathers,
+    required this.weather,
   });
 
   @override
@@ -30,19 +30,19 @@ class _TemperatureWidgeWebtState extends State<CardTemperatureWeb> {
                 alignment: Alignment.topLeft,
                 child: CityWidget(
                   size: 20,
-                  city: widget.weathers[0].city,
+                  city: widget.weather!.city!,
                 ),
               ),
               TemperatureWidget(
                 size: 130,
-                temperature: widget.weathers[0].temperature,
+                temperature: widget.weather!.temperature,
               ),
               Container(
                 alignment: Alignment.bottomRight,
                 width: width * 0.28,
                 child: TextItsWidget(
                   size: 20,
-                  description: widget.weathers[0].description,
+                  description: widget.weather!.description,
                 ),
               ),
             ],

@@ -4,9 +4,9 @@ class ForecastDatasource implements WeatherDatasource {
   @override
   Future<Map<String, dynamic>> getWeatherData() async {
     return {
-      'day': 'https://goweather.herokuapp.com/weather/curitiba',
-      'wind': 'https://goweather.herokuapp.com/weather/curitiba',
-      'temperature': 'https://goweather.herokuapp.com/weather/curitiba',
+      'day': 'https://goweather.herokuapp.com/weather/',
+      'wind': 'https://goweather.herokuapp.com/weather/',
+      'temperature': 'https://goweather.herokuapp.com/weather/',
     };
   }
 }

@@ -12,21 +12,10 @@ class TemperatureWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
+    return Text(
       textAlign: TextAlign.left,
-      text: TextSpan(
-        text: temperature,
-        style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: size),
-        children: <InlineSpan>[
-          WidgetSpan(
-            alignment: PlaceholderAlignment.top,
-            child: Text(
-              '°',
-              style: Theme.of(context).textTheme.headline3,
-            ),
-          ),
-        ],
-      ),
+      temperature,
+      style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: size),
     );
   }
 }

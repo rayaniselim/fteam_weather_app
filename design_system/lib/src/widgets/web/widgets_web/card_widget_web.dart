@@ -17,7 +17,7 @@ class CardTopWidgetWeb extends StatelessWidget {
       width: width * 0.31,
       height: height * 0.31,
       decoration: BoxDecoration(
-        color: LightColors.colorsBlack38,
+        color: LightColors.colorsBlack26,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: LightColors.primaryColor),
       ),

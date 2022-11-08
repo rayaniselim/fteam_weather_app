@@ -34,14 +34,14 @@ class _HomePageWebState extends State<HomePageWeb> {
     return BlocBuilder<WeatherBloc, WeatherState>(
       bloc: bloc,
       builder: (context, state) {
-        if (state.weathers.isEmpty) {
+        if (state.weather == null) {
           return const Center(child: CircularProgressIndicator());
         } else {
           return Stack(
             fit: StackFit.expand,
             children: [
               Image.asset(
-                'assets/images/girassol.png',
+                'assets/images/nuvens.jpeg',
                 fit: BoxFit.cover,
               ),
               Container(color: LightColors.colorBlackOpacity),
@@ -54,7 +54,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       children: [
                         FittedBox(
                           child: CardTemperatureWeb(
-                            weathers: state.weathers,
+                            weather: state.weather!,
                           ),
                         ),
                         const FittedBox(
@@ -67,7 +67,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ComponentsHoursWeb(
-                          forecastList: state.weathers[0].forecast,
+                          forecastList: state.weather!.forecast,
                         ),
                       ],
                     ),

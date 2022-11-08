@@ -27,6 +27,16 @@ class HoursWidgetMobile extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(
+            'Day $textDay',
+            style: Theme.of(context).textTheme.overline!.copyWith(
+                  fontSize: fontSizeHour,
+                ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: height * 0.0042,
+          ),
           SizedBox(
             height: height * 0.04,
             child: Image.asset(
@@ -35,16 +45,6 @@ class HoursWidgetMobile extends StatelessWidget {
           ),
           SizedBox(
             height: height * 0.0038,
-          ),
-          Text(
-            textDay,
-            style: Theme.of(context).textTheme.overline!.copyWith(
-                  fontSize: fontSizeHour,
-                ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: height * 0.0042,
           ),
           Text(
             textWind,
@@ -56,27 +56,12 @@ class HoursWidgetMobile extends StatelessWidget {
           SizedBox(
             height: height * 0.0042,
           ),
-          RichText(
+          Text(
+            textTemperature,
             textAlign: TextAlign.left,
-            text: TextSpan(
-              text: textTemperature,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    fontSize: fontSizeTemperature,
-                    //  30,
-                  ),
-              children: <InlineSpan>[
-                WidgetSpan(
-                  alignment: PlaceholderAlignment.top,
-                  child: Text(
-                    '°',
-                    style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontSize: fontSizeBolinha,
-                          // 16,
-                        ),
-                  ),
+            style: Theme.of(context).textTheme.headline5!.copyWith(
+                  fontSize: fontSizeTemperature,
                 ),
-              ],
-            ),
           ),
           SizedBox(
             height: height * 0.0041,

@@ -9,9 +9,7 @@ que é um padrao q obriga vc a desacoplar as coisas, (trabalhar de forma desacop
 */
 class AppModule extends Module {
   @override
-  // binds = injecao de dependencia
   final List<Bind> binds = [
-    // Bind.instance<String>('Rayani'),
     // Bind.lazySingleton((i) => Controller(i())), // INVERSAO DE CONTROLE
   ];
 
@@ -20,15 +18,3 @@ class AppModule extends Module {
     ModuleRoute('/', module: HomeModule()),
   ];
 }
-
-// class Controller {
-//   final String name;
-
-//   Controller(
-//     this.name,
-//   );
-
-//   printText() {
-//     print('Name: $name controller');
-//   }
-// }

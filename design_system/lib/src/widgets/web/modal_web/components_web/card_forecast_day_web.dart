@@ -31,10 +31,10 @@ class CardForecastDayWeb extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(14.0),
           child: Container(
-            width: width * 0.09,
+            width: width * 0.10,
             height: height * 0.30,
             decoration: BoxDecoration(
-              color: LightColors.colorsBlack38,
+              color: LightColors.colorsBlack26,
               borderRadius: BorderRadius.circular(20),
               border: Border.all(
                 color: LightColors.primaryColor,
@@ -46,7 +46,7 @@ class CardForecastDayWeb extends StatelessWidget {
                 children: [
                   FittedBox(
                     child: Text(
-                      textDay,
+                      'Day $textDay',
                       style: Theme.of(context).textTheme.headline2!.copyWith(
                             fontSize: 20,
                             overflow: TextOverflow.ellipsis,
@@ -69,26 +69,12 @@ class CardForecastDayWeb extends StatelessWidget {
                   ),
                   const Spacer(),
                   FittedBox(
-                    child: RichText(
+                    child: Text(
+                      textTemperature,
                       textAlign: TextAlign.left,
-                      text: TextSpan(
-                        text: textTemperature,
-                        style: Theme.of(context).textTheme.headline2!.copyWith(
-                              fontSize: 36,
-                            ),
-                        children: <InlineSpan>[
-                          WidgetSpan(
-                            alignment: PlaceholderAlignment.top,
-                            child: Text(
-                              '°',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline2!
-                                  .copyWith(fontSize: 26),
-                            ),
+                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                            fontSize: 36,
                           ),
-                        ],
-                      ),
                     ),
                   ),
                   SizedBox(

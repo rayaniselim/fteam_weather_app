@@ -21,8 +21,8 @@ class ComponentsHoursMobile extends StatelessWidget {
         children: forecastList
             .map(
               (element) => HoursWidgetMobile(
-                image: 'assets/images/chuva.png',
                 textDay: element.day,
+                image: 'assets/images/chuva.png',
                 fontSizeHour: 12,
                 textTemperature: element.temperature,
                 textWind: element.wind,

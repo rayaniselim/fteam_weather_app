@@ -1,9 +1,14 @@
+import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
 
 import '../../../design_system.dart';
 
 class SearchWidgetDropDown extends StatefulWidget {
-  const SearchWidgetDropDown({super.key});
+  // final WeatherModel weatherMap;
+  const SearchWidgetDropDown({
+    super.key,
+    // required this.weatherMap
+  });
 
   @override
   State<SearchWidgetDropDown> createState() => _SearchWidgetDropDownState();
@@ -16,7 +21,7 @@ class _SearchWidgetDropDownState extends State<SearchWidgetDropDown> {
       padding: const EdgeInsets.all(24.0),
       child: DropdownButtonFormField(
         items: const [],
-        // items: jsonMap.map((json) {
+        // items: weatherMap.map((json) {
         //   return DropdownMenuItem(
         //     value: json,
         //     child: Text(
@@ -27,7 +32,6 @@ class _SearchWidgetDropDownState extends State<SearchWidgetDropDown> {
         //     ),
         //   );
         // }).toList(),
-
         onChanged: ((value) => {}),
         style: Theme.of(context).textTheme.overline!.copyWith(
               fontSize: 15,

@@ -1,18 +1,14 @@
 import 'forecast_model.dart';
 
-/// REGRA DE NEGOCIO
-
 class WeatherModel {
-  final String city;
+  final String? city;
   final String temperature;
-  final String wind; // vento
+  final String wind;
   final String description;
-  final List<ForecastModel> forecast; // ?? PREVISAO
-  final String day;
+  final List<ForecastModel> forecast;
 
   const WeatherModel({
-    required this.day,
-    required this.city,
+    this.city,
     required this.temperature,
     required this.wind,
     required this.description,
@@ -21,38 +17,37 @@ class WeatherModel {
 
   factory WeatherModel.fromMap(Map jsonMap) {
     return WeatherModel(
-      day: jsonMap['day'],
-      city: jsonMap['city'],
-      temperature: jsonMap['temperature'], // '20 °C',
-      wind: jsonMap['wind'], // '20 km/h',
-      description: jsonMap['description'], // 'Partly cloudy',
-      forecast: jsonMap['forecast']
-          .map(
-            (element) => ForecastModel.fromMap(element),
-          )
-          .toList(),
+      temperature: jsonMap['temperature'],
+      wind: jsonMap['wind'],
+      description: jsonMap['description'],
+      forecast: List<ForecastModel>.from(jsonMap['forecast'].map(
+        (element) => ForecastModel.fromMap(element),
+      )).toList(),
     );
   }
 
   Map toMap() {
     return {
-      city: city,
-      temperature: temperature, // '20 °C',
-      wind: wind, // '20 km/h',
-      description: description, // 'Partly cloudy',
+      temperature: temperature,
+      wind: wind,
+      description: description,
       forecast: forecast,
     };
   }
 
-  // factory WeatherModel.fromMap(Map<String, dynamic> weather, [param1]) {
-  //   return WeatherModel(
-  //     city: weather['city'],
-  //     temperature: weather['temperature'], // '20 °C',
-  //     wind: weather['wind'], // '20 km/h',
-  //     description: weather['description'], // 'Partly cloudy',
-  //     forecasteList: weather['forecaste'].map(
-  //       (element) => ForecastModel.fromMap(element),
-  //     ),
-  // );
-  // }
+  WeatherModel copyWith({
+    String? city,
+    String? temperature,
+    String? wind,
+    String? description,
+    List<ForecastModel>? forecast,
+  }) {
+    return WeatherModel(
+      city: city ?? this.city,
+      description: description ?? this.description,
+      forecast: forecast ?? this.forecast,
+      temperature: temperature ?? this.temperature,
+      wind: wind ?? this.wind,
+    );
+  }
 }

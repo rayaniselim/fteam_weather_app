@@ -1,4 +1,4 @@
-class WeatherJson {
+class WeatherData {
   final Map<dynamic, dynamic> weatherJson = {
     "temperature": "20 °C",
     "wind": "20 km/h",
@@ -10,4 +10,3 @@ class WeatherJson {
     ]
   };
 }
-/// TODO: pesquisar API

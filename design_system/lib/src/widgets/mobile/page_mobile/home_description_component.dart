@@ -9,7 +9,7 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
   final double thickness;
   final double sizeNumber;
   final double sizeDescription;
-  final List<WeatherModel> weathers;
+  final WeatherModel weathers;
 
   const HomeDescriptionComponentMobile({
     super.key,
@@ -24,10 +24,10 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const height = 800;
-    // MediaQuery.of(context).size.height;
-    const width = 400;
-    // MediaQuery.of(context).size.width;
+    // const height = 800;
+    final height = MediaQuery.of(context).size.height;
+    // const width = 400;
+    final width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(14.0),
       child: Container(
@@ -41,35 +41,45 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              flex: 1,
+            // Expanded(
+            //   flex: 1,
+            //   child: Center(
+            //     child: ColumnDescriptionMobile(
+            //       sizeNumber: sizeNumber,
+            //       sizeDescription: sizeDescription,
+            //       textDescription: '',
+            //       textNumber: '40%',
+            //     ),
+            //   ),
+            // ),
+            const Expanded(
               child: Center(
-                child: ColumnDescriptionMobile(
-                  sizeNumber: sizeNumber,
-                  sizeDescription: sizeDescription,
-                  textDescription: 'trocar',
-                  textNumber: '40%',
-                ),
+                child: Icon(Icons.sunny),
+                // Image.asset(
+                //   '/assets/images/nublado.png',
+                //   height: 20,
+                //   width: 20,
+                // ),
               ),
             ),
-            SizedBox(
-              height: height * 0.025,
-              child: VerticalDivider(
-                color: colorDivider,
-                thickness: thickness,
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Center(
-                child: ColumnDescriptionMobile(
-                  sizeNumber: sizeNumber,
-                  sizeDescription: sizeDescription,
-                  textDescription: 'trocar',
-                  textNumber: '11km',
-                ),
-              ),
-            ),
+            // SizedBox(
+            //   height: height * 0.025,
+            //   child: VerticalDivider(
+            //     color: colorDivider,
+            //     thickness: thickness,
+            //   ),
+            // ),
+            // Expanded(
+            //   flex: 1,
+            //   child: Center(
+            //     child: ColumnDescriptionMobile(
+            //       sizeNumber: sizeNumber,
+            //       sizeDescription: sizeDescription,
+            //       textDescription: 'trocar',
+            //       textNumber: '11km',
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: height * 0.025,
               child: VerticalDivider(
@@ -84,7 +94,7 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
                   sizeNumber: sizeNumber,
                   sizeDescription: sizeDescription,
                   textDescription: 'Wind',
-                  textNumber: weathers[0].wind,
+                  textNumber: weathers.wind,
                 ),
               ),
             ),

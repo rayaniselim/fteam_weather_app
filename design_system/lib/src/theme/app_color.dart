@@ -4,7 +4,7 @@ class LightColors {
   static const Color primaryColor = Color(0xFFFFFFFF);
   static const Color colorsBlack = Color(0xFF000000);
   static const Color colorsTextGrey = Color(0xFF797979);
-  static const Color colorsBlack38 = Color(0x61000000);
+  static const Color colorsBlack26 = Color(0x42000000);
 
   static const Color colorsAppBar = Colors.transparent;
   static const Color colorsError = Color(0xFFF44336);

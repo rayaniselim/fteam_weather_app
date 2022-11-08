@@ -11,7 +11,6 @@ class TextItsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       description,
-      // "it's Sunny",
       style: Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: size),
     );
   }

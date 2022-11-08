@@ -11,17 +11,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // late final HomeStore store;
-
   @override
   void initState() {
     super.initState();
-    // store = Modular.get<HomeStore>();
   }
 
   @override
   void dispose() {
-    // Modular.dispose<HomeStore>();
     super.dispose();
   }
 
@@ -50,7 +46,6 @@ class _HomePageState extends State<HomePage> {
                   child: const HomePageWeb(),
                 ),
         );
-        // }
       },
     );
   }
