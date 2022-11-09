@@ -23,7 +23,7 @@ class ComponentsHoursMobile extends StatelessWidget {
               (element) => HoursWidgetMobile(
                 textDay: element.day,
                 image: 'assets/images/chuva.png',
-                fontSizeHour: 12,
+                fontSizeDay: 14,
                 textTemperature: element.temperature,
                 textWind: element.wind,
                 fontSizeTemperature: 36,

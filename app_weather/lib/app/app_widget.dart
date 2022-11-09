@@ -7,9 +7,6 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final weather = WeatherModel.fromMap(weatherJson); /// TODO: erro MAP
-    // getHttp();
-
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,

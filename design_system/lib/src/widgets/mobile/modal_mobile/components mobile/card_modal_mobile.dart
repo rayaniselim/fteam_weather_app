@@ -25,7 +25,10 @@ cardModalMobile(BuildContext context,
               margin: const EdgeInsets.only(
                 top: 30,
               ),
-              color: Colors.white,
+              decoration: BoxDecoration(
+                color: LightColors.primaryColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
             ),
             Column(
               children: [

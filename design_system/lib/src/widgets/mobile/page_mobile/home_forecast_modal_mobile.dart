@@ -14,7 +14,7 @@ class HomeForecastModalMobile extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return CustomPaint(
-      painter: ModalCustomPainter(Size(size.width, 320)),
+      painter: ModalCustomPainter(Size(size.width, size.width)),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

@@ -6,7 +6,7 @@ class HoursWidgetMobile extends StatelessWidget {
   final String image;
   final String textTemperature;
   final double fontSizeTemperature;
-  final double fontSizeHour;
+  final double fontSizeDay;
   final double fontSizeBolinha;
 
   const HoursWidgetMobile(
@@ -15,7 +15,7 @@ class HoursWidgetMobile extends StatelessWidget {
       required this.image,
       required this.textTemperature,
       required this.fontSizeTemperature,
-      required this.fontSizeHour,
+      required this.fontSizeDay,
       required this.fontSizeBolinha,
       required this.textWind});
 
@@ -30,12 +30,12 @@ class HoursWidgetMobile extends StatelessWidget {
           Text(
             'Day $textDay',
             style: Theme.of(context).textTheme.overline!.copyWith(
-                  fontSize: fontSizeHour,
+                  fontSize: fontSizeDay,
                 ),
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: height * 0.0042,
+            height: height * 0.008,
           ),
           SizedBox(
             height: height * 0.04,
@@ -44,12 +44,12 @@ class HoursWidgetMobile extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: height * 0.0038,
+            height: height * 0.005,
           ),
           Text(
             textWind,
             style: Theme.of(context).textTheme.overline!.copyWith(
-                  fontSize: fontSizeHour,
+                  fontSize: fontSizeDay,
                 ),
             textAlign: TextAlign.center,
           ),
@@ -63,9 +63,6 @@ class HoursWidgetMobile extends StatelessWidget {
                   fontSize: fontSizeTemperature,
                 ),
           ),
-          SizedBox(
-            height: height * 0.0041,
-          )
         ],
       ),
     );
