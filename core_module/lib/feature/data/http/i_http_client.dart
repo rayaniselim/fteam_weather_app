@@ -6,3 +6,5 @@ abstract class IHttpClient {
     required String path,
   });
 }
+
+// TODO: criar classe para traducao da abstracao RESPONSE, ex: DioResponse

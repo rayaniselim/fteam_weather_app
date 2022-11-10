@@ -5,8 +5,7 @@ class WeatherDatasource {
 
   WeatherDatasource({required this.client});
 
-  Future<Map<String, dynamic>?> remoteLoadWeather({
-    required String baseUrl,
+  Future<Map<String, dynamic>?> remoteSearchWeather({
     required String city,
   }) async {
     try {
@@ -21,3 +20,4 @@ class WeatherDatasource {
     }
   }
 }
+// TODO: poderia estar no module se fosse um app maior

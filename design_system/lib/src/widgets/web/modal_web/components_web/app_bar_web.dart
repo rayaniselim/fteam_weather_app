@@ -29,7 +29,7 @@ class _WebAppBarState extends State<WebAppBar> {
           ),
           const Spacer(),
           const SizedBox(
-            width: 200,
+            width: 230,
             child: SearchWidgetDropDown(),
           ),
           const CircleAvatar(

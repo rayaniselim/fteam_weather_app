@@ -3,18 +3,14 @@ import 'package:core_module/core_module.dart';
 import '../datasources/weather_datasource.dart';
 
 class WeatherRepository {
-  final IHttpClient client;
+  final WeatherDatasource datasource;
 
-  WeatherRepository({required this.client});
+  WeatherRepository({required this.datasource});
 
-  Future<WeatherModel?> loadWeather({
-    required String baseUrl,
+  Future<WeatherModel?> searchWeather({
     required String city,
   }) async {
-    final datasource = WeatherDatasource(client: client);
-
-    final Map<String, dynamic>? data = await datasource.remoteLoadWeather(
-      baseUrl: baseUrl,
+    final Map<String, dynamic>? data = await datasource.remoteSearchWeather(
       city: city,
     );
 
