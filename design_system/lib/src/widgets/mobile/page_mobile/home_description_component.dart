@@ -24,9 +24,8 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // const height = 800;
     final height = MediaQuery.of(context).size.height;
-    // const width = 400;
+
     final width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(14.0),
@@ -41,45 +40,11 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Expanded(
-            //   flex: 1,
-            //   child: Center(
-            //     child: ColumnDescriptionMobile(
-            //       sizeNumber: sizeNumber,
-            //       sizeDescription: sizeDescription,
-            //       textDescription: '',
-            //       textNumber: '40%',
-            //     ),
-            //   ),
-            // ),
             const Expanded(
               child: Center(
                 child: Icon(Icons.sunny),
-                // Image.asset(
-                //   '/assets/images/nublado.png',
-                //   height: 20,
-                //   width: 20,
-                // ),
               ),
             ),
-            // SizedBox(
-            //   height: height * 0.025,
-            //   child: VerticalDivider(
-            //     color: colorDivider,
-            //     thickness: thickness,
-            //   ),
-            // ),
-            // Expanded(
-            //   flex: 1,
-            //   child: Center(
-            //     child: ColumnDescriptionMobile(
-            //       sizeNumber: sizeNumber,
-            //       sizeDescription: sizeDescription,
-            //       textDescription: 'trocar',
-            //       textNumber: '11km',
-            //     ),
-            //   ),
-            // ),
             SizedBox(
               height: height * 0.025,
               child: VerticalDivider(

@@ -1,6 +1,5 @@
 import 'package:core_module/core_module.dart';
-import 'package:core_module/feature/data/datasources/weather_datasource.dart';
-import 'package:core_module/feature/data/repositories/weather_repository.dart';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -14,21 +13,16 @@ class HomePageMobile extends StatefulWidget {
 }
 
 class _HomePageMobileState extends State<HomePageMobile> {
-  late final WeatherBloc bloc;
+  final bloc = Modular.get<WeatherBloc>();
+  final textController = Modular.get<TextEditingController>();
 
   @override
   void initState() {
     super.initState();
-    bloc = WeatherBloc(
-      weatherRepo: WeatherRepository(
-        datasource: WeatherDatasource(
-          client: DioClientAdapter(),
-        ),
-      ),
-    );
+
     bloc.add(
       SearchWeatherEvent(
-        city: 'Brasilia',
+        city: textController.text == '' ? 'Curitiba' : textController.text,
       ),
     );
   }
@@ -88,6 +82,18 @@ class _HomePageMobileState extends State<HomePageMobile> {
                   child: HomeForecastModalMobile(
                     forecastsList: state.weather!.forecast,
                   ),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     bloc.add(
+                  //       SearchWeatherEvent(
+                  //         city: textController.text == ''
+                  //             ? 'saopaulo'
+                  //             : textController.text,
+                  //       ),
+                  //     );
+                  //   },
+                  //   child: Text('PESQUISA'),
+                  // ),
                 ),
               ],
             );
