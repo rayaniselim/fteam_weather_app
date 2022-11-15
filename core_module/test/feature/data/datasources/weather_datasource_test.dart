@@ -12,3 +12,13 @@ void main() {
 // });}
   });
 }
+
+
+/*
+UNIDADE - 
+na programacao funcional, seria uma funcao, ou seja cada funcao é basicamente uma unidade
+na orientacao a obj, é cada/uma classe, 
+
+MÉTODO É DENTRO DA CLASSE  E FUNCAO É FORA DA CLASSE
+
+*/

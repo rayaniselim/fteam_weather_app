@@ -22,7 +22,7 @@ class _HomePageWebState extends State<HomePageWeb> {
     bloc = WeatherBloc(
       weatherRepo: WeatherRepository(
         datasource: WeatherDatasource(
-          client: DioClientAdapter(),
+          client: DioClientAdapter(Modular.get<Dio>()),
         ),
       ),
     );

@@ -13,15 +13,16 @@ que é um padrao q obriga vc a desacoplar as coisas, (trabalhar de forma desacop
 class AppModule extends Module {
   @override
   final List<Bind> binds = [
-    // Bind.lazySingleton((i) => Controller(i())), // INVERSAO DE CONTROLE
-    Bind.singleton<TextEditingController>(
-      (i) => TextEditingController(),
+    Bind.factory<Dio>((_) => Dio()), // INVERSAO DE CONTROLE
+    Bind.lazySingleton<TextEditingController>(
+      (_) => TextEditingController(),
     ),
-    Bind.singleton<WeatherBloc>(
-      (i) => WeatherBloc(
+
+    Bind.factory<WeatherBloc>(
+      (_) => WeatherBloc(
         weatherRepo: WeatherRepository(
           datasource: WeatherDatasource(
-            client: DioClientAdapter(),
+            client: DioClientAdapter(Modular.get<Dio>()),
           ),
         ),
       ),

@@ -34,48 +34,4 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       emit(successState);
     }
   }
-
-// TODO: ajustar os outros eventos como o exemplo linha 19.
-  /// mapeaçao dos eventos
-  // Future<void> _mapEventToState(WeatherEvent event) async {
-  //   late WeatherState state;
-  //   WeatherModel? weathers;
-  //   if (event is SearchWeathersEvent) {
-  //     weathers = await _weatherRepo.loadWeather(
-  //       baseUrl: baseUrl,
-  //       city: city,
-  //     );
-  //   }
-  //   if (event is WeatherFetchList) {
-  //     state = await _fetchList();
-  //   }
-  //   // if (event is WeatherFetchListWithError) {
-  //   //   state = await _fetchListWithError();
-  //   // }
-  //   _outputWeatherController.add(
-  //     WeatherSuccessState(weather: weathers),
-  //   );
-  // }
-
-  Future<WeatherState> _fetchList() async {
-    // Funcao - fora da classe, método dentro
-    // buscar lista
-    await Future.delayed(
-      const Duration(
-        seconds: 2,
-      ),
-      () => <WeatherModel>[],
-    );
-    return const WeatherSuccessState(weather: null);
-  }
-
-  Future<WeatherState> _fetchListWithError() async {
-    // erro na busca
-    return await Future.delayed(
-        const Duration(
-          seconds: 2,
-        ),
-        () => const WeatherErrorState(
-            message: 'Não foi possível carregar os dados.'));
-  }
 }

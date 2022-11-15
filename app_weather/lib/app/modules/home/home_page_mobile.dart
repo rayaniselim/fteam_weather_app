@@ -82,18 +82,6 @@ class _HomePageMobileState extends State<HomePageMobile> {
                   child: HomeForecastModalMobile(
                     forecastsList: state.weather!.forecast,
                   ),
-                  // ElevatedButton(
-                  //   onPressed: () {
-                  //     bloc.add(
-                  //       SearchWeatherEvent(
-                  //         city: textController.text == ''
-                  //             ? 'saopaulo'
-                  //             : textController.text,
-                  //       ),
-                  //     );
-                  //   },
-                  //   child: Text('PESQUISA'),
-                  // ),
                 ),
               ],
             );

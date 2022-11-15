@@ -16,4 +16,12 @@ class ForecastModel {
       day: forecast['day'],
     );
   }
+
+  Map toMap() {
+    return {
+      'temperature': temperature,
+      'wind': wind,
+      'day': day,
+    };
+  }
 }
