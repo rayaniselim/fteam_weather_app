@@ -15,10 +15,6 @@ class WeatherModel {
     required this.forecast,
   });
 
-  bool temperaturaIgualVinte() {
-    return temperature == '20';
-  }
-
   factory WeatherModel.fromMap(Map jsonMap) {
     return WeatherModel(
       temperature: jsonMap['temperature'],
