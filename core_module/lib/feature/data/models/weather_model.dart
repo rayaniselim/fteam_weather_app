@@ -15,18 +15,18 @@ class WeatherModel {
     required this.forecast,
   });
 
-  factory WeatherModel.fromMap(Map jsonMap) {
+  factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
-      temperature: jsonMap['temperature'],
-      wind: jsonMap['wind'],
-      description: jsonMap['description'],
-      forecast: List<ForecastModel>.from(jsonMap['forecast'].map(
+      temperature: json['temperature'],
+      wind: json['wind'],
+      description: json['description'],
+      forecast: List<ForecastModel>.from(json['forecast'].map(
         (element) => ForecastModel.fromMap(element),
       )).toList(),
     );
   }
 
-  Map toMap() {
+  Map<String, dynamic> toJson() {
     return {
       'temperature': temperature,
       'wind': wind,

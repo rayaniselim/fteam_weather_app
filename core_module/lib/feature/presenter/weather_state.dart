@@ -7,6 +7,10 @@ abstract class WeatherState {
   const WeatherState({required this.weather});
 }
 
+class WeatherLoadingState extends WeatherState {
+  WeatherLoadingState({required super.weather});
+}
+
 class WeatherInitialState extends WeatherState {
   const WeatherInitialState()
       : super(weather: null); // estado inicial, passando uma lista/array vazio

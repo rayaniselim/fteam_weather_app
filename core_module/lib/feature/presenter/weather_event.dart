@@ -1,4 +1,4 @@
-abstract class WeatherEvent {}
+class WeatherEvent {}
 
 class WeatherFetchList extends WeatherEvent {}
 

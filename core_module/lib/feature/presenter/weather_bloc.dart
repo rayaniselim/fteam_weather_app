@@ -13,11 +13,11 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       : super(const WeatherInitialState()) {
     //mapea cada evento em relacao ao state
     on<SearchWeatherEvent>(
-      (event, emit) async => _searchWeather(event, emit),
+      (event, emit) async => _searchWeatherEvent(event, emit),
     );
   }
 
-  Future<void> _searchWeather(
+  Future<void> _searchWeatherEvent(
     SearchWeatherEvent event,
     Emitter<WeatherState> emit,
   ) async {

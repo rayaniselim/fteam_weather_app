@@ -1,0 +1,4 @@
+name: fteam_weather_app
+
+packages:
+  - packages/*cd 

@@ -15,7 +15,7 @@ class WeatherRepository {
     );
 
     if (data != null) {
-      final weather = WeatherModel.fromMap(data);
+      final weather = WeatherModel.fromJson(data);
 
       final weatherWithCity = weather.copyWith(city: city);
 

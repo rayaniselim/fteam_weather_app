@@ -5,7 +5,7 @@ class CustomResponse {
   final int? statusCode;
   final String? statusMessage;
 
-  const CustomResponse({
+  CustomResponse({
     required this.data,
     this.statusCode,
     this.statusMessage,
