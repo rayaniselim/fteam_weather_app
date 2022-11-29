@@ -1,7 +1,5 @@
 import 'package:core_module/core_module.dart';
 
-import '../datasources/weather_datasource.dart';
-
 class WeatherRepository {
   final WeatherDatasource datasource;
 
