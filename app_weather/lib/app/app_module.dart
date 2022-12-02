@@ -1,8 +1,6 @@
 import 'package:core_module/core_module.dart';
 
 import 'modules/home/home_module.dart';
-import 'package:core_module/feature/data/datasources/weather_datasource.dart';
-import 'package:core_module/feature/data/repositories/weather_repository.dart';
 import 'package:flutter/widgets.dart';
 
 /* ESTE MODULO É GLOBAL(é a RAIZ) para todo o app

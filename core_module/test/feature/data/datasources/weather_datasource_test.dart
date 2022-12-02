@@ -14,8 +14,7 @@ void main() {
 
   test('O remoteSearchWeather deve retornar null e um WeatherDatasource',
       () async {
-    final remoteSearchWeather =
-        await datasource.remoteSearchWeather(city: 'Curitiba');
+    final remoteSearchWeather = await datasource.remoteSearchWeather(city: '');
 
     expect(remoteSearchWeather, null);
     expect(datasource, isA<WeatherDatasource>());

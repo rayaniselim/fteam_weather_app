@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import '../../core_module.dart';
-import '../data/repositories/weather_repository.dart';
 
 const baseUrl = 'https://goweather.herokuapp.com/weather/';
 final String city = city;

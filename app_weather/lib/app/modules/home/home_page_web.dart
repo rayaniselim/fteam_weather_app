@@ -1,6 +1,4 @@
 import 'package:core_module/core_module.dart';
-import 'package:core_module/feature/data/datasources/weather_datasource.dart';
-import 'package:core_module/feature/data/repositories/weather_repository.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 

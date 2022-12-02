@@ -3,9 +3,9 @@ library core_module;
 export 'package:bloc/bloc.dart';
 export 'package:dio/dio.dart';
 export 'package:flutter_modular/flutter_modular.dart';
-export 'package:flutter_triple/flutter_triple.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
+export 'package:bloc_test/bloc_test.dart';
 
 export 'feature/data/datasources/weather_datasource.dart';
 export 'feature/data/models/weather_model.dart';
