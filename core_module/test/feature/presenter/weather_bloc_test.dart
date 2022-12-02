@@ -5,37 +5,37 @@ import 'package:core_module/feature/presenter/weather_event.dart';
 import 'package:core_module/feature/presenter/weather_state.dart';
 
 import 'package:mocktail/mocktail.dart';
-import 'package:core_module/feature/data/repositories/weather_repository.dart'
-    as weather_repository;
+import 'package:core_module/feature/data/repositories/weather_repository.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
 // / testa o WeatherRepository
-class WeatherRepositoryMock extends Mock
-    implements weather_repository.WeatherRepository {}
+class WeatherRepositoryMock extends Mock implements WeatherRepository {}
 
 class WeatherModelMock extends Mock implements WeatherModel {}
 
 void main() {
   late WeatherModel model;
-  late WeatherBloc bloc;
-  late weather_repository.WeatherRepository repository;
+  late WeatherRepository repository;
 
   setUp(() async {
     model = WeatherModelMock();
     repository = WeatherRepositoryMock();
-
-    when(
-      () => repository.searchWeather(city: 'Curitiba'),
-    ).thenAnswer((_) async => model);
-    bloc = WeatherBloc(weatherRepo: repository);
   });
 
   blocTest<WeatherBloc, WeatherState>(
     'Ele vai retornar o estado de sucesso',
-    build: () => bloc,
+    setUp: () {
+      when(
+        () => repository.searchWeather(city: 'Curitiba'),
+      ).thenAnswer((_) async => model);
+    },
+    build: () {
+      final bloc = WeatherBloc(weatherRepo: repository);
+      return bloc;
+    },
     act: (bloc) => bloc.add(SearchWeatherEvent(city: 'Curitiba')),
-    expect: () => [isA<WeatherSuccessState>()],
+    expect: () => [isA<WeatherLoadingState>(), isA<WeatherSuccessState>()],
   );
 
   blocTest<WeatherBloc, WeatherState>(
@@ -45,8 +45,11 @@ void main() {
         () => repository.searchWeather(city: ''),
       ).thenAnswer(((_) async => null));
     },
-    build: () => bloc,
+    build: () {
+      final bloc = WeatherBloc(weatherRepo: repository);
+      return bloc;
+    },
     act: (bloc) => bloc.add(SearchWeatherEvent(city: '')),
-    expect: () => [isA<WeatherErrorState>()],
+    expect: () => [isA<WeatherLoadingState>(), isA<WeatherErrorState>()],
   );
 }

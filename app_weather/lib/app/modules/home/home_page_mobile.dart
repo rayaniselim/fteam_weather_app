@@ -14,22 +14,19 @@ class HomePageMobile extends StatefulWidget {
 
 class _HomePageMobileState extends State<HomePageMobile> {
   final bloc = Modular.get<WeatherBloc>();
-  final textController = Modular.get<TextEditingController>();
+  final textController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
 
-    bloc.add(
-      SearchWeatherEvent(
-        city: textController.text == '' ? 'Curitiba' : textController.text,
-      ),
-    );
+    bloc.add(SearchWeatherEvent(city: 'Curitiba'));
   }
 
   @override
   void dispose() {
     bloc.close();
+
     super.dispose();
   }
 

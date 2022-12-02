@@ -6,11 +6,13 @@ import 'package:test/scaffolding.dart';
 
 class DioClientAdapterMock extends Mock implements DioClientAdapter {}
 
+class HttpMock extends Mock implements IHttpClient {}
+
 void main() {
   CustomResponse customResponse =
       CustomResponse(data: 'data', statusCode: 200, statusMessage: 'exito');
   WeatherDatasource datasource =
-      WeatherDatasource(client: DioClientAdapter(Dio()));
+      WeatherDatasource(client: HttpMock());
 
   test('O remoteSearchWeather deve retornar null e um WeatherDatasource',
       () async {

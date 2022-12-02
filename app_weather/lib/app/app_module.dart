@@ -1,7 +1,6 @@
 import 'package:core_module/core_module.dart';
 
 import 'modules/home/home_module.dart';
-import 'package:flutter/widgets.dart';
 
 /* ESTE MODULO É GLOBAL(é a RAIZ) para todo o app
 essa classe  existe APENAS para instanciar injecao de dependencia,
@@ -12,15 +11,13 @@ class AppModule extends Module {
   @override
   final List<Bind> binds = [
     Bind.factory<Dio>((_) => Dio()), // INVERSAO DE CONTROLE
-    Bind.lazySingleton<TextEditingController>(
-      (_) => TextEditingController(),
-    ),
+    Bind.factory<DioClientAdapter>((i) => DioClientAdapter(i())), // INVERSAO DE CONTROLE
 
     Bind.factory<WeatherBloc>(
-      (_) => WeatherBloc(
+      (i) => WeatherBloc(
         weatherRepo: WeatherRepository(
           datasource: WeatherDatasource(
-            client: DioClientAdapter(Modular.get<Dio>()),
+            client: i(),
           ),
         ),
       ),

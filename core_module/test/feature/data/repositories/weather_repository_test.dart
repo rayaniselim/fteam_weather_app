@@ -6,10 +6,32 @@ import 'package:test/scaffolding.dart';
 class DataSourceMock extends Mock implements WeatherDatasource {}
 
 void main() {
-  late WeatherRepository repository = WeatherRepository(
-      datasource: WeatherDatasource(client: DioClientAdapter(Dio())));
+  late WeatherRepository repository;
+  late WeatherDatasource datasource;
+
+  setUp(() {
+    datasource = DataSourceMock();
+    repository = WeatherRepository(datasource: datasource);
+  });
 
   test('o searchWeather deve retornar um WeatherModel', () async {
+    final dataMock = {
+      'temperature': 'temperature',
+      'wind': 'wind',
+      'description': 'description',
+      'forecast': [
+        {
+          'temperature': 'temperature',
+          'wind': 'wind',
+          'day': 'day',
+        }
+      ],
+    };
+
+    when(
+      () => datasource.remoteSearchWeather(city: 'Brasilia'),
+    ).thenAnswer((_) async => dataMock);
+
     final searchWeather = await repository.searchWeather(city: 'Brasilia');
 
     expect(searchWeather, isA<WeatherModel>());
@@ -17,12 +39,16 @@ void main() {
   });
 
   test(
-      'o remoteSearchWeather deve retornar um Map com as informacoes da cidade de acordo com a API',
-      () async {
-    WeatherDatasource datasource =
-        WeatherDatasource(client: DioClientAdapter(Dio()));
-    final data = await datasource.remoteSearchWeather(city: 'Cuiabá');
-    expect(data, isA<Map>());
-    print(data.toString());
-  });
+    'o searchWeather deve retornar nulo quando o datasource retornar nulo',
+    () async {
+      when(
+        () => datasource.remoteSearchWeather(city: 'Brasilia'),
+      ).thenAnswer((_) async => null);
+
+      final searchWeather = await repository.searchWeather(city: 'Brasilia');
+
+      expect(searchWeather, isNull);
+
+    },
+  );
 }

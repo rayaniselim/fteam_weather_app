@@ -20,9 +20,13 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     SearchWeatherEvent event,
     Emitter<WeatherState> emit,
   ) async {
+    const loadingState = WeatherLoadingState();
+    emit(loadingState);
+
     final WeatherModel? model = await weatherRepo.searchWeather(
       city: event.city,
     );
+
     if (model == null) {
       const errorState = WeatherErrorState(
         message: 'Não foi possível carregar os dados.',

@@ -8,7 +8,7 @@ abstract class WeatherState {
 }
 
 class WeatherLoadingState extends WeatherState {
-  WeatherLoadingState({required super.weather});
+  const WeatherLoadingState() : super(weather: null);
 }
 
 class WeatherInitialState extends WeatherState {
@@ -27,7 +27,5 @@ class WeatherErrorState extends WeatherState {
 
   const WeatherErrorState({
     required this.message,
-  }) : super(
-          weather: null,
-        );
+  }) : super(weather: null);
 }
