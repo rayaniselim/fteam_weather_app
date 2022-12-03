@@ -3,7 +3,6 @@ import 'package:core_module/feature/data/models/weather_model.dart';
 import 'package:core_module/feature/presenter/weather_bloc.dart';
 import 'package:core_module/feature/presenter/weather_event.dart';
 import 'package:core_module/feature/presenter/weather_state.dart';
-
 import 'package:mocktail/mocktail.dart';
 import 'package:core_module/feature/data/repositories/weather_repository.dart';
 import 'package:test/expect.dart';
@@ -39,7 +38,7 @@ void main() {
   );
 
   blocTest<WeatherBloc, WeatherState>(
-    'emits [loading, failure] when getWeather throws',
+    'Ele vai retornar o estado de erro',
     setUp: () {
       when(
         () => repository.searchWeather(city: ''),
