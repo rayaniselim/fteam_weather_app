@@ -22,7 +22,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
 
     bloc.add(
       SearchWeatherEvent(
-        city: textController.text == '' ? 'Curitiba' : textController.text,
+        city: textController.text == '' ? 'Brasilia' : textController.text,
       ),
     );
   }

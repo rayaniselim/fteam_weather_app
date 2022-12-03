@@ -6,8 +6,8 @@ import 'package:test/scaffolding.dart';
 class DataSourceMock extends Mock implements WeatherDatasource {}
 
 void main() {
-  late WeatherRepository repository = WeatherRepository(
-      datasource: WeatherDatasource(client: DioClientAdapter(Dio())));
+  late WeatherRepository repository =
+      WeatherRepository(datasource: DataSourceMock());
 
   test('o searchWeather deve retornar um WeatherModel', () async {
     final searchWeather = await repository.searchWeather(city: 'Brasilia');
@@ -19,8 +19,7 @@ void main() {
   test(
       'o remoteSearchWeather deve retornar um Map com as informacoes da cidade de acordo com a API',
       () async {
-    WeatherDatasource datasource =
-        WeatherDatasource(client: DioClientAdapter(Dio()));
+    DataSourceMock datasource = DataSourceMock();
     final data = await datasource.remoteSearchWeather(city: 'Cuiabá');
     expect(data, isA<Map>());
     print(data.toString());

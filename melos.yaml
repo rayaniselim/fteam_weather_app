@@ -1,4 +1,6 @@
 name: fteam_weather_app
 
 packages:
-  - packages/*cd 
+  - app_weather/*
+  - core_module/*
+  - design_system/*
