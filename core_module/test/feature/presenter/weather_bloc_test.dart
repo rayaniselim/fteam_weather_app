@@ -1,10 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:core_module/feature/data/models/weather_model.dart';
-import 'package:core_module/feature/presenter/weather_bloc.dart';
-import 'package:core_module/feature/presenter/weather_event.dart';
-import 'package:core_module/feature/presenter/weather_state.dart';
+import 'package:core_module/core_module.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:core_module/feature/data/repositories/weather_repository.dart';
+
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -33,7 +30,7 @@ void main() {
       final bloc = WeatherBloc(weatherRepo: repository);
       return bloc;
     },
-    act: (bloc) => bloc.add(SearchWeatherEvent(city: 'Curitiba')),
+    act: (bloc) => bloc.add(const SearchWeatherEvent(city: 'Curitiba')),
     expect: () => [isA<WeatherLoadingState>(), isA<WeatherSuccessState>()],
   );
 
@@ -42,13 +39,13 @@ void main() {
     setUp: () {
       when(
         () => repository.searchWeather(city: ''),
-      ).thenAnswer(((_) async => null));
+      ).thenAnswer((_) async => null);
     },
     build: () {
       final bloc = WeatherBloc(weatherRepo: repository);
       return bloc;
     },
-    act: (bloc) => bloc.add(SearchWeatherEvent(city: '')),
+    act: (bloc) => bloc.add(const SearchWeatherEvent(city: '')),
     expect: () => [isA<WeatherLoadingState>(), isA<WeatherErrorState>()],
   );
 }

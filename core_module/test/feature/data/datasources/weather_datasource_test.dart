@@ -4,15 +4,14 @@ import 'package:mocktail/mocktail.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
-class DioClientAdapterMock extends Mock implements DioClientAdapter {}
+class DioClientAdapterMock extends Mock implements DioHttpClient {}
 
 class HttpMock extends Mock implements IHttpClient {}
 
 void main() {
-  CustomResponse customResponse =
+  final customResponse =
       CustomResponse(data: 'data', statusCode: 200, statusMessage: 'exito');
-  WeatherDatasource datasource =
-      WeatherDatasource(client: HttpMock());
+  final datasource = WeatherDatasource(client: HttpMock());
 
   test('O remoteSearchWeather deve retornar null e um WeatherDatasource',
       () async {
@@ -25,6 +24,5 @@ void main() {
   test('customResponse deve retornar o statusCode int?', () {
     final responseCode = customResponse.statusCode;
     expect(responseCode, isA<int?>());
-    print(responseCode);
   });
 }

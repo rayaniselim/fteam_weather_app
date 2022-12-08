@@ -10,8 +10,9 @@ class DioHttpClient implements IHttpClient {
     required String baseUrl,
     required String path,
   }) async {
-    final Response response = await dio.get(baseUrl + path);
-    // TODO Falta um try catch
+    final response = await dio.get(baseUrl + path);
+
+    //TODO: Falta um try catch
     return CustomResponse(
       data: response.data,
       statusCode: response.statusCode,

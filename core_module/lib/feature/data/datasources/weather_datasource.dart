@@ -11,7 +11,7 @@ class WeatherDatasource {
     required String city,
   }) async {
     try {
-      final CustomResponse response = await client.get(
+      final response = await client.get(
         baseUrl: _baseUrl,
         path: city,
       );
