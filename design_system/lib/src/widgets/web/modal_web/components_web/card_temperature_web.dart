@@ -1,4 +1,4 @@
-import 'package:core_module/core_module.dart';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class _CardTemperatureWebState extends State<CardTemperatureWeb> {
     return CardTopWidgetWeb(
       child: FittedBox(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -41,7 +41,7 @@ class _CardTemperatureWebState extends State<CardTemperatureWeb> {
                 alignment: Alignment.bottomRight,
                 width: width * 0.28,
                 child: TextItsWidget(
-                  size: 20,
+                  sizeDescription: 20,
                   description: widget.weather!.description,
                 ),
               ),

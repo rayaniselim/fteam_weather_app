@@ -1,7 +1,4 @@
-import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../design_system.dart';
 
 class ComponentsHoursMobile extends StatelessWidget {
   final int itemCount;
@@ -22,15 +19,13 @@ class ComponentsHoursMobile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(itemCount, (index) {
           return itemBuilder(context, index);
-        })
-        
-        
+        }),
+
         // forecastList
         //     .map(
         //       (element) => HoursWidgetMobile(
         //         textDay: element.day,
-        //         // TODO static const
-        //         image: 'assets/images/chuva.png',
+        //         image: Images.nuvens,
         //         fontSizeDay: 14,
         //         textTemperature: element.temperature,
         //         textWind: element.wind,

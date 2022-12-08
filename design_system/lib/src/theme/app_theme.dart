@@ -13,6 +13,9 @@ class AppTheme {
       headline5: LightTextStyle.headline5,
       headline3: LightTextStyle.headline3,
     ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: LightColors.primaryColor,
+    ),
     scaffoldBackgroundColor: LightColors.primaryColor,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     iconTheme: const IconThemeData(color: LightColors.primaryColor),

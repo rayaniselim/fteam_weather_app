@@ -1,4 +1,3 @@
-import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidgetDropDown extends StatelessWidget {
@@ -16,7 +15,7 @@ class SearchWidgetDropDown extends StatelessWidget {
     final textController = Modular.get<TextEditingController>();
 
     return Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(24),
       child: TextField(
         controller: textController,
         // TODO recebe um metodo de submit pelo construtor
@@ -24,9 +23,7 @@ class SearchWidgetDropDown extends StatelessWidget {
           bloc.add(SearchWeatherEvent(city: valorDigitado));
           Modular.to.pop();
         },
-        style: theme
-            .textTheme
-            .overline!
+        style: theme.textTheme.overline!
             .copyWith(fontSize: 15, color: Colors.black),
         cursorColor: Colors.grey,
         decoration: InputDecoration(
@@ -38,28 +35,28 @@ class SearchWidgetDropDown extends StatelessWidget {
           hintText: 'Search City',
           contentPadding: const EdgeInsets.all(14),
           enabledBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               color: theme.indicatorColor,
               width: 0.5,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               color: theme.indicatorColor,
               width: 1.5,
             ),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               color: theme.errorColor,
               width: 1,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               color: theme.errorColor,
               width: 1.5,

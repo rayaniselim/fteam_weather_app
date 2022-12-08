@@ -3,24 +3,22 @@ import 'package:flutter/material.dart';
 class HoursWidgetMobile extends StatelessWidget {
   final String textDay;
   final String textWind;
-  final String image;
+  final Image image;
   final String textTemperature;
   final double fontSizeTemperature;
   final double fontSizeDay;
   final double fontSizeBolinha;
 
-
-
-
-  const HoursWidgetMobile(
-      {super.key,
-      required this.textDay,
-      required this.image,
-      required this.textTemperature,
-      required this.fontSizeTemperature,
-      required this.fontSizeDay,
-      required this.fontSizeBolinha,
-      required this.textWind});
+  const HoursWidgetMobile({
+    super.key,
+    required this.textDay,
+    required this.image,
+    required this.textTemperature,
+    required this.fontSizeTemperature,
+    required this.fontSizeDay,
+    required this.fontSizeBolinha,
+    required this.textWind,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +38,7 @@ class HoursWidgetMobile extends StatelessWidget {
           SizedBox(
             height: height * 0.008,
           ),
-          SizedBox(
-            height: height * 0.04,
-            child: Image.asset(
-              image
-            ),
-          ),
+          SizedBox(height: height * 0.04, child: image),
           SizedBox(
             height: height * 0.005,
           ),

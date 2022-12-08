@@ -1,4 +1,3 @@
-import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,7 @@ class CardForecastDayWeb extends StatelessWidget {
   final String textKmWind;
 
   final String textTemperature;
-  final String image;
+  final Image image;
 
   const CardForecastDayWeb({
     super.key,
@@ -24,15 +23,16 @@ class CardForecastDayWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+    final size = MediaQuery.of(context).size;
+
+    final theme = Theme.of(context);
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(14.0),
+          padding: const EdgeInsets.all(14),
           child: Container(
-            width: width * 0.10,
-            height: height * 0.30,
+            width: size.width * 0.10,
+            height: size.height * 0.30,
             decoration: BoxDecoration(
               color: LightColors.colorsBlack26,
               borderRadius: BorderRadius.circular(20),
@@ -41,20 +41,20 @@ class CardForecastDayWeb extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Column(
                 children: [
                   FittedBox(
                     child: Text(
                       'Day $textDay',
-                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                      style: theme.textTheme.headline2!.copyWith(
                             fontSize: 20,
                             overflow: TextOverflow.ellipsis,
                           ),
                     ),
                   ),
                   SizedBox(
-                    width: width * 0.025,
+                    width: size.width * 0.025,
                     child: const Divider(
                       color: LightColors.primaryColor,
                       thickness: 0.6,
@@ -62,23 +62,20 @@ class CardForecastDayWeb extends StatelessWidget {
                   ),
                   const Spacer(),
                   Center(
-                    child: Image.asset(
-                      image,
-                      height: 60,
-                    ),
+                    child: image,
                   ),
                   const Spacer(),
                   FittedBox(
                     child: Text(
                       textTemperature,
                       textAlign: TextAlign.left,
-                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                      style: theme.textTheme.headline2!.copyWith(
                             fontSize: 36,
                           ),
                     ),
                   ),
                   SizedBox(
-                    width: width * 0.025,
+                    width: size.width * 0.025,
                     child: const Divider(
                       color: LightColors.primaryColor,
                       thickness: 0.6,
@@ -87,7 +84,7 @@ class CardForecastDayWeb extends StatelessWidget {
                   FittedBox(
                     child: Text(
                       textKmWind,
-                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                      style: theme.textTheme.headline2!.copyWith(
                             fontSize: 20,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -96,14 +93,14 @@ class CardForecastDayWeb extends StatelessWidget {
                   FittedBox(
                     child: Text(
                       textWind,
-                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                      style: theme.textTheme.headline2!.copyWith(
                             fontSize: 16,
                             overflow: TextOverflow.ellipsis,
                           ),
                     ),
                   ),
                   SizedBox(
-                    width: width * 0.030,
+                    width: size.width * 0.030,
                   ),
                 ],
               ),

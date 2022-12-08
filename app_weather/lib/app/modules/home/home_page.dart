@@ -17,8 +17,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        var width = constraints.maxWidth;
-        var alturaBarra = AppBar().preferredSize.height;
+        final width = constraints.maxWidth;
+        final alturaBarra = AppBar().preferredSize.height;
 
         return Scaffold(
           extendBody: true,

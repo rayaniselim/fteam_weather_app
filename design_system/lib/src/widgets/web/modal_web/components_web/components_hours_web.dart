@@ -1,4 +1,4 @@
-import 'package:core_module/core_module.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../../../design_system.dart';
@@ -18,8 +18,8 @@ class ComponentsHoursWeb extends StatelessWidget {
       children: forecastList
           .map(
             (element) => CardForecastDayWeb(
-              // TODO static const
-              image: 'assets/images/chuva_branca.png',
+
+              image: Images.chuvaBranca,
               textDay: element.day,
               textTemperature: element.temperature,
               textWind: 'Wind',

@@ -59,8 +59,8 @@ class HomeHeaderComponentMobile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             TextItsWidget(
-              size: 16,
               description: description,
+              sizeDescription: 16,
             ),
           ],
         )

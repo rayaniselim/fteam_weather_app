@@ -45,11 +45,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
           return Stack(
             fit: StackFit.expand,
             children: [
-              Image.asset(
-                // TODO static const
-                'assets/images/nuvens.jpeg',
-                fit: BoxFit.cover,
-              ),
+              Images.nuvens,
               Container(color: LightColors.colorBlackOpacity),
               Padding(
                 padding: const EdgeInsets.only(

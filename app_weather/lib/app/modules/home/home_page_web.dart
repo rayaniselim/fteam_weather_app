@@ -22,7 +22,7 @@ class _HomePageWebState extends State<HomePageWeb> {
     bloc = WeatherBloc(
       weatherRepo: WeatherRepository(
         datasource: WeatherDatasource(
-          client: DioClientAdapter(Modular.get<Dio>()),
+          client: DioHttpClient(Modular.get<Dio>()),
         ),
       ),
     );
@@ -48,11 +48,7 @@ class _HomePageWebState extends State<HomePageWeb> {
           return Stack(
             fit: StackFit.expand,
             children: [
-              Image.asset(
-                // TODO static const
-                'assets/images/nuvens.jpeg',
-                fit: BoxFit.cover,
-              ),
+              Images.nuvens,
               Container(color: LightColors.colorBlackOpacity),
               Padding(
                 padding: const EdgeInsets.all(60),

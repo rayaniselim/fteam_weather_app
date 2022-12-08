@@ -7,10 +7,10 @@ class HomeModule extends Module {
   final List<Bind> binds = [
 
 
-    // TODO Não se injeta page
-    Bind.lazySingleton<HomePage>(
-      (i) => const HomePage(),
-    ),
+    // TODO: Não se injeta page
+    // Bind.lazySingleton<HomePage>(
+    //   (i) => const HomePage(),
+    // ),
   ];
 
   @override

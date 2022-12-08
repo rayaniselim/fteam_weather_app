@@ -1,4 +1,4 @@
-import 'package:core_module/core_module.dart';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: const EdgeInsets.all(14.0),
+      padding: const EdgeInsets.all(14),
       child: Container(
         width: width * 0.93,
         height: height * 0.098,

@@ -14,7 +14,7 @@ class CardModalWeb extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(24),
                 child: FittedBox(
                   child: Text(
                     'Weather Today',

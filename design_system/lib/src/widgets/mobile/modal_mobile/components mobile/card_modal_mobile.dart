@@ -1,4 +1,3 @@
-import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -69,8 +68,7 @@ cardModalMobile(
 
                           return HoursWidgetMobile(
                             textDay: element.day,
-                            // TODO static const
-                            image: 'assets/images/chuva.png',
+                            image: Images.chuva,
                             fontSizeDay: 14,
                             textTemperature: element.temperature,
                             textWind: element.wind,

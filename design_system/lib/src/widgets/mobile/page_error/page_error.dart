@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../design_system.dart';
+
 class PageError extends StatelessWidget {
   final double fontSize;
   const PageError({super.key, required this.fontSize});
@@ -9,11 +11,7 @@ class PageError extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.asset(
-          // TODO static const
-          'assets/images/nuvens.jpeg',
-          fit: BoxFit.cover,
-        ),
+        Images.nuvens,
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
