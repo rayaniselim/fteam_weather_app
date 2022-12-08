@@ -36,7 +36,10 @@ class HomeHeaderComponentMobile extends StatelessWidget {
                   ),
                 ],
               ),
-              const IconButtonWidget(),
+              IconButtonWidget(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const PageDropDown(),),),
+              ),
             ],
           ),
         ),

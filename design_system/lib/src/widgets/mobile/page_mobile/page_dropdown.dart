@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../design_system.dart';
 
 class PageDropDown extends StatefulWidget {
-  const PageDropDown({super.key});
+  const PageDropDown({
+    super.key,
+  });
 
   @override
   State<PageDropDown> createState() => _PageDropDownState();
@@ -12,6 +14,8 @@ class PageDropDown extends StatefulWidget {
 class _PageDropDownState extends State<PageDropDown> {
   @override
   Widget build(BuildContext context) {
+    final textController = TextEditingController();
+    Function(String)? onSubmitted;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).backgroundColor,
@@ -33,10 +37,13 @@ class _PageDropDownState extends State<PageDropDown> {
         ],
       ),
       body: Stack(
-        children: const [
+        children: [
           Card(
             elevation: 0,
-            child: SearchWidgetDropDown(),
+            child: SearchWidgetDropDown(
+              onSubmitted: onSubmitted,
+              textController: textController,
+            ),
           ),
         ],
       ),
