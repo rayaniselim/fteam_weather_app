@@ -25,8 +25,8 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-
     final width = MediaQuery.of(context).size.width;
+
     return Padding(
       padding: const EdgeInsets.all(14.0),
       child: Container(

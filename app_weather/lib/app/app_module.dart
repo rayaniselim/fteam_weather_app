@@ -11,7 +11,7 @@ class AppModule extends Module {
   @override
   final List<Bind> binds = [
     Bind.factory<Dio>((_) => Dio()), // INVERSAO DE CONTROLE
-    Bind.factory<DioClientAdapter>((i) => DioClientAdapter(i())), // INVERSAO DE CONTROLE
+    Bind.factory<IHttpClient>((i) => DioHttpClient(i())), // INVERSAO DE CONTROLE
 
     Bind.factory<WeatherBloc>(
       (i) => WeatherBloc(

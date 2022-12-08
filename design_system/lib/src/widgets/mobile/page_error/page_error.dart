@@ -10,6 +10,7 @@ class PageError extends StatelessWidget {
       fit: StackFit.expand,
       children: [
         Image.asset(
+          // TODO static const
           'assets/images/nuvens.jpeg',
           fit: BoxFit.cover,
         ),

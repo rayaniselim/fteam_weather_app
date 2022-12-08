@@ -9,6 +9,9 @@ class HoursWidgetMobile extends StatelessWidget {
   final double fontSizeDay;
   final double fontSizeBolinha;
 
+
+
+
   const HoursWidgetMobile(
       {super.key,
       required this.textDay,
@@ -40,7 +43,7 @@ class HoursWidgetMobile extends StatelessWidget {
           SizedBox(
             height: height * 0.04,
             child: Image.asset(
-              image,
+              image
             ),
           ),
           SizedBox(

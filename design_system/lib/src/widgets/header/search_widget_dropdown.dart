@@ -8,21 +8,23 @@ class SearchWidgetDropDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // TODO Design system não conhece nada alem de widget e tema
     final bloc = Modular.get<WeatherBloc>();
+
+    // TODO recebe pelo construtor TextEditingController
     final textController = Modular.get<TextEditingController>();
+
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: TextField(
         controller: textController,
+        // TODO recebe um metodo de submit pelo construtor
         onSubmitted: (valorDigitado) {
-          bloc.add(
-            SearchWeatherEvent(
-              city: valorDigitado,
-            ),
-          );
+          bloc.add(SearchWeatherEvent(city: valorDigitado));
           Modular.to.pop();
         },
-        style: Theme.of(context)
+        style: theme
             .textTheme
             .overline!
             .copyWith(fontSize: 15, color: Colors.black),
@@ -38,28 +40,28 @@ class SearchWidgetDropDown extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             borderSide: BorderSide(
-              color: Theme.of(context).indicatorColor,
+              color: theme.indicatorColor,
               width: 0.5,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             borderSide: BorderSide(
-              color: Theme.of(context).indicatorColor,
+              color: theme.indicatorColor,
               width: 1.5,
             ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             borderSide: BorderSide(
-              color: Theme.of(context).errorColor,
+              color: theme.errorColor,
               width: 1,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             borderSide: BorderSide(
-              color: Theme.of(context).errorColor,
+              color: theme.errorColor,
               width: 1.5,
             ),
           ),

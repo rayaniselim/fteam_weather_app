@@ -25,6 +25,7 @@ class _PageDropDownState extends State<PageDropDown> {
             child: CircleAvatar(
               radius: 22,
               backgroundImage: AssetImage(
+                // TODO static const
                 'assets/images/lago.jpeg',
               ),
             ),

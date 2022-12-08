@@ -2,14 +2,12 @@ import 'dart:async';
 
 import '../../core_module.dart';
 
-const baseUrl = 'https://goweather.herokuapp.com/weather/';
-final String city = city;
-
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  final WeatherRepository weatherRepo;
+  final WeatherRepository _weatherRepo;
 
-  WeatherBloc({required this.weatherRepo})
-      : super(const WeatherInitialState()) {
+  WeatherBloc({required WeatherRepository weatherRepo})
+      : _weatherRepo = weatherRepo,
+        super(const WeatherInitialState()) {
     //mapea cada evento em relacao ao state
     on<SearchWeatherEvent>(
       (event, emit) async => _searchWeatherEvent(event, emit),
@@ -23,7 +21,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     const loadingState = WeatherLoadingState();
     emit(loadingState);
 
-    final WeatherModel? model = await weatherRepo.searchWeather(
+    final WeatherModel? model = await _weatherRepo.searchWeather(
       city: event.city,
     );
 

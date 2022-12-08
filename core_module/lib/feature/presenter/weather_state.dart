@@ -18,7 +18,7 @@ class WeatherInitialState extends WeatherState {
 
 class WeatherSuccessState extends WeatherState {
   const WeatherSuccessState({
-    required WeatherModel? weather, // recebe o List como padrao
+    required WeatherModel weather, // recebe o List como padrao
   }) : super(weather: weather); // na classe super carrega o state
 }
 

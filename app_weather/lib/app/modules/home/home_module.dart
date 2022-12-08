@@ -5,6 +5,9 @@ import 'home_page.dart';
 class HomeModule extends Module {
   @override
   final List<Bind> binds = [
+
+
+    // TODO Não se injeta page
     Bind.lazySingleton<HomePage>(
       (i) => const HomePage(),
     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextItsWidget extends StatelessWidget {
+  // TODO nome de `size` mais descritivo
   final double size;
   final String description;
 

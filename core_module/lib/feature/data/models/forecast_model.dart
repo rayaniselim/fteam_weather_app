@@ -17,7 +17,7 @@ class ForecastModel {
     );
   }
 
-  Map toMap() {
+  Map<String, dynamic> toMap() {
     return {
       'temperature': temperature,
       'wind': wind,

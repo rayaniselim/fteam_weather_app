@@ -1,11 +1,9 @@
-class WeatherEvent {}
-
-class WeatherFetchList extends WeatherEvent {}
-
-class WeatherFetchListWithError extends WeatherEvent {}
+class WeatherEvent {
+  const WeatherEvent();
+}
 
 class SearchWeatherEvent extends WeatherEvent {
   final String city;
 
-  SearchWeatherEvent({required this.city});
+  const SearchWeatherEvent({required this.city});
 }

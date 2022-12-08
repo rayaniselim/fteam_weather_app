@@ -1,13 +1,17 @@
 import 'package:core_module/core_module.dart';
 
-class DioClientAdapter implements IHttpClient {
+class DioHttpClient implements IHttpClient {
   final Dio dio;
-  const DioClientAdapter(this.dio);
+
+  const DioHttpClient(this.dio);
 
   @override
-  Future<CustomResponse> get(
-      {required String baseUrl, required String path}) async {
+  Future<CustomResponse> get({
+    required String baseUrl,
+    required String path,
+  }) async {
     final Response response = await dio.get(baseUrl + path);
+    // TODO Falta um try catch
     return CustomResponse(
       data: response.data,
       statusCode: response.statusCode,

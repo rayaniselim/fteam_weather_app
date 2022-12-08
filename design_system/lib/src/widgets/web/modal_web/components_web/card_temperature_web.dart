@@ -11,10 +11,10 @@ class CardTemperatureWeb extends StatefulWidget {
   });
 
   @override
-  State<CardTemperatureWeb> createState() => _TemperatureWidgeWebtState();
+  State<CardTemperatureWeb> createState() => _CardTemperatureWebState();
 }
 
-class _TemperatureWidgeWebtState extends State<CardTemperatureWeb> {
+class _CardTemperatureWebState extends State<CardTemperatureWeb> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;

@@ -12,6 +12,7 @@ class _WebAppBarState extends State<WebAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      // TODO theme
       backgroundColor: LightColors.primaryColor,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,12 +30,14 @@ class _WebAppBarState extends State<WebAppBar> {
           ),
           const Spacer(),
           const SizedBox(
+            // TODO Responsivo
             width: 230,
             child: SearchWidgetDropDown(),
           ),
           const CircleAvatar(
             radius: 22,
             backgroundImage: AssetImage(
+              // TODO static const
               'assets/images/lago.jpeg',
             ),
           ),

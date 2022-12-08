@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
                   child: const WebAppBar(),
                 ),
           body: width < 600
+              // TODO Pra que serve o PreferredSize
               ? PreferredSize(
                   preferredSize: Size(width, alturaBarra),
                   child: const HomePageMobile(),

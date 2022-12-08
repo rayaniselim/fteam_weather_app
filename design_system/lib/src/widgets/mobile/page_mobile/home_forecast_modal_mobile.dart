@@ -33,8 +33,11 @@ class HomeForecastModalMobile extends StatelessWidget {
                 color: LightColors.colorsTextGrey,
               ),
               onPressed: () {
-                cardModalMobile(context,
-                    size: size, forecastsList: forecastsList);
+                cardModalMobile(
+                  context,
+                  size: size,
+                  forecastsList: forecastsList,
+                );
               },
             ),
           ),

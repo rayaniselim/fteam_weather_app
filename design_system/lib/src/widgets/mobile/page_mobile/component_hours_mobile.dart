@@ -22,6 +22,8 @@ class ComponentsHoursMobile extends StatelessWidget {
             .map(
               (element) => HoursWidgetMobile(
                 textDay: element.day,
+                
+                // TODO static const
                 image: 'assets/images/chuva.png',
                 fontSizeDay: 14,
                 textTemperature: element.temperature,

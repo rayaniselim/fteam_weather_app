@@ -9,6 +9,7 @@ class IconButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      // TODO usar o onTap que vem pelo construtor
       onPressed: () => Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => const PageDropDown())),
       icon: const Icon(

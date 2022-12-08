@@ -17,6 +17,8 @@ class _HomePageWebState extends State<HomePageWeb> {
   @override
   void initState() {
     super.initState();
+
+    // Injetar nos binds
     bloc = WeatherBloc(
       weatherRepo: WeatherRepository(
         datasource: WeatherDatasource(
@@ -24,11 +26,7 @@ class _HomePageWebState extends State<HomePageWeb> {
         ),
       ),
     );
-    bloc.add(
-      SearchWeatherEvent(
-        city: 'Brasilia',
-      ),
-    );
+    bloc.add(const SearchWeatherEvent(city: 'Brasilia'));
   }
 
   @override
@@ -51,6 +49,7 @@ class _HomePageWebState extends State<HomePageWeb> {
             fit: StackFit.expand,
             children: [
               Image.asset(
+                // TODO static const
                 'assets/images/nuvens.jpeg',
                 fit: BoxFit.cover,
               ),
