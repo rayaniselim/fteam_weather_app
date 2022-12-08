@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 
 import '../../page_mobile/component_hours_mobile.dart';
 
-cardModalMobile(BuildContext context,
-    {required Size size, required List<ForecastModel> forecastsList}) {
+cardModalMobile(
+  BuildContext context, {
+  required Size size,
+  required List<ForecastModel> forecastsList,
+}) {
+  // TODO Show modal fica no app
+  // O Widget que é mostrado no modal, esse fica no design system
   showModalBottomSheet<void>(
     context: context,
     backgroundColor: Colors.transparent,
@@ -15,6 +20,7 @@ cardModalMobile(BuildContext context,
       maxHeight: 260,
     ),
     builder: (BuildContext context) {
+      // TODO Voce não deve vincular o widget a um modal
       return CustomPaint(
         painter: ModalCustomPainter(
           Size(size.width, 330),
@@ -57,7 +63,21 @@ cardModalMobile(BuildContext context,
                         height: 10,
                       ),
                       ComponentsHoursMobile(
-                        forecastList: forecastsList,
+                        itemCount: forecastsList.length,
+                        itemBuilder: (_, i) {
+                          final element = forecastsList.elementAt(i);
+
+                          return HoursWidgetMobile(
+                            textDay: element.day,
+                            // TODO static const
+                            image: 'assets/images/chuva.png',
+                            fontSizeDay: 14,
+                            textTemperature: element.temperature,
+                            textWind: element.wind,
+                            fontSizeTemperature: 36,
+                            fontSizeBolinha: 26,
+                          );
+                        },
                       )
                     ],
                   ),

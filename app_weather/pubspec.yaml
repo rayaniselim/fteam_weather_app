@@ -21,13 +21,16 @@ dependencies:
   core_module: 
     path: ../core_module
 
+  
+
 
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+    
+  flutterando_analysis: ^0.0.1+2
 
 
 # For information on the generic Dart part of this file, see the

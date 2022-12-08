@@ -5,7 +5,7 @@ homepage:
 publish_to: none
 
 environment:
-  sdk: '>=2.18.1 <3.0.0'
+  sdk: ">=2.18.1 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -16,18 +16,16 @@ dependencies:
   flutter_bloc: ^8.0.1
   dio: ^4.0.6
   flutter_modular: ^5.0.2
-  google_fonts: ^3.0.1
   http: ^0.13.5
-  mocktail: ^0.3.0
-  bloc_test: ^9.1.0
-
 
 dev_dependencies:
   test:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
+  flutterando_analysis: ^0.0.1+2
+  mocktail: ^0.3.0
+  bloc_test: ^9.1.0
 
 flutter:
 
@@ -47,7 +45,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  
+
   # fonts:
   #   - family: Schyler
   #     fonts:
