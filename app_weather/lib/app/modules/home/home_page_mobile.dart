@@ -15,6 +15,7 @@ class HomePageMobile extends StatefulWidget {
 class _HomePageMobileState extends State<HomePageMobile> {
   final bloc = Modular.get<WeatherBloc>();
   final textController = TextEditingController();
+  final weather = WeatherModel;
 
   @override
   void initState() {
@@ -68,7 +69,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
                       thickness: 0.3,
                       sizeDescription: 12,
                       sizeNumber: 16,
-                      weathers: weather,
+                      weather: weather.wind,
                     ),
                   ],
                 ),

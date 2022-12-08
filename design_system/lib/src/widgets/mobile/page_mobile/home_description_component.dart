@@ -9,7 +9,8 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
   final double thickness;
   final double sizeNumber;
   final double sizeDescription;
-  final WeatherModel weathers;
+  final String weather;
+
 
   const HomeDescriptionComponentMobile({
     super.key,
@@ -19,7 +20,7 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
     required this.color,
     required this.sizeNumber,
     required this.sizeDescription,
-    required this.weathers,
+    required this.weather,
   });
 
   @override
@@ -59,7 +60,7 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
                   sizeNumber: sizeNumber,
                   sizeDescription: sizeDescription,
                   textDescription: 'Wind',
-                  textNumber: weathers.wind,
+                  textNumber: weather,
                 ),
               ),
             ),

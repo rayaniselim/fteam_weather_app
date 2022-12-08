@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SearchWidgetDropDown extends StatelessWidget {
+  final Function(String)? onSubmitted;
+  final TextEditingController textController;
   const SearchWidgetDropDown({
     super.key,
+    this.onSubmitted,
+    required this.textController,
   });
 
   @override
@@ -12,17 +16,17 @@ class SearchWidgetDropDown extends StatelessWidget {
     final bloc = Modular.get<WeatherBloc>();
 
     // TODO recebe pelo construtor TextEditingController
-    final textController = Modular.get<TextEditingController>();
+    // final textController = Modular.get<TextEditingController>();
 
     return Padding(
       padding: const EdgeInsets.all(24),
       child: TextField(
         controller: textController,
-        // TODO recebe um metodo de submit pelo construtor
-        onSubmitted: (valorDigitado) {
-          bloc.add(SearchWeatherEvent(city: valorDigitado));
-          Modular.to.pop();
-        },
+        onSubmitted: onSubmitted,
+        // onSubmitted: (valorDigitado) {
+        //   bloc.add(SearchWeatherEvent(city: valorDigitado));
+        //   Modular.to.pop();
+        // },
         style: theme.textTheme.overline!
             .copyWith(fontSize: 15, color: Colors.black),
         cursorColor: Colors.grey,
