@@ -21,7 +21,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
   void initState() {
     super.initState();
 
-    bloc.add(const SearchWeatherEvent(city: 'Curitiba'));
+    bloc.add(const SearchWeatherEvent(city: 'Sao paulo'));
   }
 
   @override

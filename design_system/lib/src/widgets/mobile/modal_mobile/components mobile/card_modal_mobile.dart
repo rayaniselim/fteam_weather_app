@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../page_mobile/component_hours_mobile.dart';
 
+
+
 cardModalMobile(
   BuildContext context, {
   required Size size,
@@ -11,15 +13,15 @@ cardModalMobile(
 }) {
   // TODO Show modal fica no app
   // O Widget que é mostrado no modal, esse fica no design system
-  showModalBottomSheet<void>(
-    context: context,
-    backgroundColor: Colors.transparent,
-    elevation: 10,
-    barrierColor: Colors.black12,
-    constraints: const BoxConstraints(
-      maxHeight: 260,
-    ),
-    builder: (BuildContext context) {
+  // showModalBottomSheet<void>(
+  //   context: context,
+  //   backgroundColor: Colors.transparent,
+  //   elevation: 10,
+  //   barrierColor: Colors.black12,
+  //   constraints: const BoxConstraints(
+  //     maxHeight: 260,
+  //   ),
+  //   builder: (BuildContext context) {
       final theme = Theme.of(context);
       // TODO Voce não deve vincular o widget a um modal
       return CustomPaint(
@@ -55,10 +57,8 @@ cardModalMobile(
                     children: [
                       Text(
                         'Weather Today',
-                        style: theme
-                            .textTheme
-                            .headline5
-                            ?.copyWith(fontSize: 20),
+                        style:
+                            theme.textTheme.headline5?.copyWith(fontSize: 20),
                       ),
                       const SizedBox(
                         height: 10,
@@ -87,6 +87,6 @@ cardModalMobile(
           ],
         ),
       );
-    },
-  );
+    // },
+  // );
 }

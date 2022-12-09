@@ -21,10 +21,9 @@ class WeatherModel {
       wind: json['wind'],
       description: json['description'],
       forecast: List<ForecastModel>.from(
-        json['forecast'].map(ForecastModel.fromMap,
-            // (element) => ForecastModel.fromMap(element),
-
-            ),
+        json['forecast'].map((element) {
+          return ForecastModel.fromMap(element);
+        }),
       ).toList(),
     );
   }
