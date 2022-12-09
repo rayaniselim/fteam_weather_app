@@ -1,12 +1,11 @@
-
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeForecastModalMobile extends StatelessWidget {
-  final List<ForecastModel> forecastsList;
+  final List list;
   const HomeForecastModalMobile({
     super.key,
-    required this.forecastsList,
+    required this.list,
   });
 
   @override
@@ -36,7 +35,7 @@ class HomeForecastModalMobile extends StatelessWidget {
                 cardModalMobile(
                   context,
                   size: size,
-                  forecastsList: forecastsList,
+                  list: list,
                 );
               },
             ),

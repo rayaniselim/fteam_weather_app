@@ -2,12 +2,11 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class CardForecastDayWeb extends StatelessWidget {
-  final List<ForecastModel> forecastsList;
-
+  // final List<ForecastModel> forecastsList;
+  final List list;
   final String textDay;
   final String textWind;
   final String textKmWind;
-
   final String textTemperature;
   final Image image;
 
@@ -16,9 +15,9 @@ class CardForecastDayWeb extends StatelessWidget {
     required this.textDay,
     required this.textTemperature,
     required this.image,
-    required this.forecastsList,
     required this.textWind,
     required this.textKmWind,
+    required this.list,
   });
 
   @override
@@ -48,9 +47,9 @@ class CardForecastDayWeb extends StatelessWidget {
                     child: Text(
                       'Day $textDay',
                       style: theme.textTheme.headline2!.copyWith(
-                            fontSize: 20,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                        fontSize: 20,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -70,8 +69,8 @@ class CardForecastDayWeb extends StatelessWidget {
                       textTemperature,
                       textAlign: TextAlign.left,
                       style: theme.textTheme.headline2!.copyWith(
-                            fontSize: 36,
-                          ),
+                        fontSize: 36,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -85,18 +84,18 @@ class CardForecastDayWeb extends StatelessWidget {
                     child: Text(
                       textKmWind,
                       style: theme.textTheme.headline2!.copyWith(
-                            fontSize: 20,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                        fontSize: 20,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                   FittedBox(
                     child: Text(
                       textWind,
                       style: theme.textTheme.headline2!.copyWith(
-                            fontSize: 16,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                        fontSize: 16,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                   SizedBox(

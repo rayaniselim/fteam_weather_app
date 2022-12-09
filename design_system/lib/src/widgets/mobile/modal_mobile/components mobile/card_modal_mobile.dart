@@ -6,7 +6,8 @@ import '../../page_mobile/component_hours_mobile.dart';
 cardModalMobile(
   BuildContext context, {
   required Size size,
-  required List<ForecastModel> forecastsList,
+  // required List<ForecastModel> forecastsList,
+  required List list,
 }) {
   // TODO Show modal fica no app
   // O Widget que é mostrado no modal, esse fica no design system
@@ -62,9 +63,9 @@ cardModalMobile(
                         height: 10,
                       ),
                       ComponentsHoursMobile(
-                        itemCount: forecastsList.length,
+                        itemCount: list.length,
                         itemBuilder: (_, i) {
-                          final element = forecastsList.elementAt(i);
+                          final element = list.elementAt(i);
 
                           return HoursWidgetMobile(
                             textDay: element.day,

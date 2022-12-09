@@ -3,8 +3,11 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomePageWeb extends StatefulWidget {
+  final WeatherModel weather;
+
   const HomePageWeb({
     super.key,
+    required this.weather,
   });
 
   @override
@@ -59,7 +62,9 @@ class _HomePageWebState extends State<HomePageWeb> {
                       children: [
                         FittedBox(
                           child: CardTemperatureWeb(
-                            weather: state.weather!,
+                            modelCity: widget.weather.city,
+                            modelDescription: widget.weather.description,
+                            modelTemperature: widget.weather.temperature,
                           ),
                         ),
                         const FittedBox(

@@ -77,7 +77,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: HomeForecastModalMobile(
-                  forecastsList: weather.forecast,
+                  list: weather.forecast,
                 ),
               ),
             ],
