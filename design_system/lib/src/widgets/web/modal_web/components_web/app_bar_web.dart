@@ -1,14 +1,15 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class WebAppBar extends StatefulWidget {
-  const WebAppBar({Key? key}) : super(key: key);
+class WebAppBar extends StatelessWidget {
+  final TextEditingController textControllerSearch;
+  final Function(String)? onSubmitted;
+  const WebAppBar({
+    Key? key,
+    required this.onSubmitted,
+    required this.textControllerSearch,
+  }) : super(key: key);
 
-  @override
-  State<WebAppBar> createState() => _WebAppBarState();
-}
-
-class _WebAppBarState extends State<WebAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -27,10 +28,13 @@ class _WebAppBarState extends State<WebAppBar> {
             ),
           ),
           const Spacer(),
-          const SizedBox(
+          SizedBox(
             //TODO Responsivo
             width: 230,
-            child: SearchWidgetDropDown(),
+            child: SearchWidgetDropDown(
+              onSubmitted: onSubmitted,
+              textController: textControllerSearch,
+            ),
           ),
           const CircleAvatar(
             radius: 22,

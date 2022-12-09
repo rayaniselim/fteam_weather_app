@@ -1,7 +1,10 @@
+import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'home_page_mobile.dart';
 import 'home_page_web.dart';
+
+late TextEditingController textController;
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -15,6 +18,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final bloc = Modular.get<WeatherBloc>();
+
     return LayoutBuilder(
       builder: (context, constraints) {
         final width = constraints.maxWidth;
@@ -26,7 +31,13 @@ class _HomePageState extends State<HomePage> {
               ? null
               : PreferredSize(
                   preferredSize: Size(width, alturaBarra),
-                  child: const WebAppBar(),
+                  child: WebAppBar(
+                    onSubmitted: (valorDigitado) {
+                      bloc.add(SearchWeatherEvent(city: valorDigitado));
+                      Modular.to.pop();
+                    },
+                    textControllerSearch: textController,
+                  ),
                 ),
           body: width < 600
               // TODO(rayani): Pra que serve o PreferredSize

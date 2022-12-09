@@ -12,21 +12,12 @@ class SearchWidgetDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // TODO Design system não conhece nada alem de widget e tema
-    final bloc = Modular.get<WeatherBloc>();
-
-    // TODO recebe pelo construtor TextEditingController
-    // final textController = Modular.get<TextEditingController>();
 
     return Padding(
       padding: const EdgeInsets.all(24),
       child: TextField(
         controller: textController,
         onSubmitted: onSubmitted,
-        // onSubmitted: (valorDigitado) {
-        //   bloc.add(SearchWeatherEvent(city: valorDigitado));
-        //   Modular.to.pop();
-        // },
         style: theme.textTheme.overline!
             .copyWith(fontSize: 15, color: Colors.black),
         cursorColor: Colors.grey,
