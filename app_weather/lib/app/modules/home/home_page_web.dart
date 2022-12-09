@@ -12,20 +12,23 @@ class HomePageWeb extends StatefulWidget {
 }
 
 class _HomePageWebState extends State<HomePageWeb> {
-  late final WeatherBloc bloc;
+  // late final WeatherBloc bloc;
+  final bloc = Modular.get<WeatherBloc>();
+  final textController = TextEditingController();
+  final weather = WeatherModel;
 
   @override
   void initState() {
     super.initState();
 
     // Injetar nos binds
-    bloc = WeatherBloc(
-      weatherRepo: WeatherRepository(
-        datasource: WeatherDatasource(
-          client: DioHttpClient(Modular.get<Dio>()),
-        ),
-      ),
-    );
+    // bloc = WeatherBloc(
+    //   weatherRepo: WeatherRepository(
+    //     datasource: WeatherDatasource(
+    //       client: DioHttpClient(Modular.get<Dio>()),
+    //     ),
+    //   ),
+    // );
     bloc.add(const SearchWeatherEvent(city: 'Brasilia'));
   }
 
@@ -35,13 +38,15 @@ class _HomePageWebState extends State<HomePageWeb> {
     super.dispose();
   }
 
-  late WeatherModel weather;
+  // late WeatherModel weather;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<WeatherBloc, WeatherState>(
       bloc: bloc,
       builder: (context, state) {
-        if (state.weather == null) {
+        final weather = state.weather;
+
+        if (weather == null) {
           return const PageError(
             fontSize: 30,
           );
@@ -75,7 +80,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ComponentsHoursWeb(
-                          list: state.weather!.forecast,
+                          list: weather.forecast,
                         ),
                       ],
                     ),

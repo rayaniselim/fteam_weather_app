@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'home_page_mobile.dart';
 import 'home_page_web.dart';
 
-late TextEditingController textController;
-
 class HomePage extends StatefulWidget {
   const HomePage({
     Key? key,
@@ -19,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final bloc = Modular.get<WeatherBloc>();
-
     return LayoutBuilder(
       builder: (context, constraints) {
         final width = constraints.maxWidth;
@@ -36,7 +33,6 @@ class _HomePageState extends State<HomePage> {
                       bloc.add(SearchWeatherEvent(city: valorDigitado));
                       Modular.to.pop();
                     },
-                    textControllerSearch: textController,
                   ),
                 ),
           body: width < 600

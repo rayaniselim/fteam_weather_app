@@ -2,16 +2,16 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class WebAppBar extends StatelessWidget {
-  final TextEditingController textControllerSearch;
   final Function(String)? onSubmitted;
   const WebAppBar({
     Key? key,
     required this.onSubmitted,
-    required this.textControllerSearch,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final textController = TextEditingController();
+
     return AppBar(
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -31,15 +31,16 @@ class WebAppBar extends StatelessWidget {
           SizedBox(
             //TODO Responsivo
             // width: 230,
-            width: MediaQuery.of(context).size.width * 0.22, //22.46 de 1024 pixels 15 polegadas
+            width: MediaQuery.of(context).size.width *
+                0.22, //22.46 de 1024 pixels 15 polegadas
             child: SearchWidgetDropDown(
               onSubmitted: onSubmitted,
-              textController: textControllerSearch,
+              textController: textController,
             ),
           ),
           const CircleAvatar(
             radius: 22,
-            backgroundImage: Images.lago
+            backgroundImage: Images.lago,
           ),
         ],
       ),
