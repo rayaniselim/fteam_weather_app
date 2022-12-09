@@ -8,15 +8,15 @@ class WeatherRepository {
   Future<WeatherModel?> searchWeather({
     required String city,
   }) async {
-    final data = await datasource.remoteSearchWeather(
-      city: city,
-    );
-    // final Map<String, dynamic>? data = await datasource.remoteSearchWeather(
+    // final data = await datasource.remoteSearchWeather(
     //   city: city,
     // );
+    final Map<String, dynamic>? data = await datasource.remoteSearchWeather(
+      city: city,
+    );
 
     if (data != null) {
-      final weather = WeatherModel.fromJson(data);
+      final weather = WeatherModel.fromMap(data);
 
       final weatherWithCity = weather.copyWith(city: city);
 

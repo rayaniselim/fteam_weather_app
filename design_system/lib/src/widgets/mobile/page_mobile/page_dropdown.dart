@@ -28,10 +28,7 @@ class _PageDropDownState extends State<PageDropDown> {
             padding: EdgeInsets.all(8),
             child: CircleAvatar(
               radius: 22,
-              backgroundImage: AssetImage(
-                //TODO: IMAGE static const
-                'assets/images/lago.jpeg',
-              ),
+              backgroundImage: Images.lago,
             ),
           ),
         ],

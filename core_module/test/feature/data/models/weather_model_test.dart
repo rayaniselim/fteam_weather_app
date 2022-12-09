@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('fromMap() deve retornar um WeatherModel Válido', () {
-    final model = WeatherModel.fromJson({
+    final model = WeatherModel.fromMap({
       'temperature': 'temperature',
       'wind': 'wind',
       'description': '',
@@ -25,7 +25,7 @@ void main() {
     expect(model.forecast, allOf([isNotNull, isA<List<ForecastModel>>()]));
   });
 
-  test('toJson() deve retornar um Map<String, dynamic> Válido', () {
+  test('toMap() deve retornar um Map<String, dynamic> Válido', () {
     const model = WeatherModel(
       city: 'city',
       description: 'description',
@@ -34,7 +34,7 @@ void main() {
       forecast: [],
     );
 
-    final json = model.toJson();
+    final json = model.toMap();
 
     expect(json['city'], null);
     expect(json['description'], model.description);

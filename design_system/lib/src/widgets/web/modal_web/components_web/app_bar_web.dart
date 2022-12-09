@@ -38,10 +38,7 @@ class WebAppBar extends StatelessWidget {
           ),
           const CircleAvatar(
             radius: 22,
-            backgroundImage: AssetImage(
-              //TODO static const
-              'assets/images/lago.jpeg',
-            ),
+            backgroundImage: Images.lago
           ),
         ],
       ),

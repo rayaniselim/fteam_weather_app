@@ -11,14 +11,15 @@ class Images {
     fit: BoxFit.cover,
   );
 
-  static Image lago = Image.asset(
-    'assets/images/lago.jpeg',
-    fit: BoxFit.cover,
-  );
-
   static Image chuvaBranca = Image.asset(
     'assets/images/chuva_branca.png',
     fit: BoxFit.cover,
     height: 60,
+
+    
   );
+  static const ImageProvider lago = AssetImage(
+    'assets/images/lago.jpeg',
+
+    ); 
 }
