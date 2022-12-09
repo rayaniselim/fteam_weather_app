@@ -2,10 +2,10 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomeForecastModalMobile extends StatelessWidget {
-  final List list;
+  final void Function() onTap;
   const HomeForecastModalMobile({
     super.key,
-    required this.list,
+    required this.onTap,
   });
 
   @override
@@ -31,13 +31,7 @@ class HomeForecastModalMobile extends StatelessWidget {
                 Icons.horizontal_rule_rounded,
                 color: LightColors.colorsTextGrey,
               ),
-              onPressed: () {
-                cardModalMobile(
-                  context,
-                  size: size,
-                  list: list,
-                );
-              },
+              onPressed: onTap,
             ),
           ),
           Container(

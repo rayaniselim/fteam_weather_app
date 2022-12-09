@@ -33,6 +33,8 @@ class _HomePageMobileState extends State<HomePageMobile> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return BlocBuilder<WeatherBloc, WeatherState>(
       bloc: bloc,
       builder: (context, state) {
@@ -77,7 +79,21 @@ class _HomePageMobileState extends State<HomePageMobile> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: HomeForecastModalMobile(
-                  list: weather.forecast,
+                  onTap: () {
+                    showModalBottomSheet<void>(
+                      context: context,
+                      elevation: 10,
+                      barrierColor: Colors.black12,
+                      builder: (BuildContext context) {
+                        final theme = Theme.of(context);
+                        return cardModalMobile(
+                          context,
+                          size: size,
+                          list: weather.forecast,
+                        );
+                      },
+                    );
+                  },
                 ),
               ),
             ],

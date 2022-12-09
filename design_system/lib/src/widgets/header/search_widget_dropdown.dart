@@ -47,7 +47,6 @@ class SearchWidgetDropDown extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               color: theme.errorColor,
-              width: 1,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(

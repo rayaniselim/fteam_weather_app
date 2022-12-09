@@ -21,10 +21,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     const loadingState = WeatherLoadingState();
     emit(loadingState);
 
-    // final model = await _weatherRepo.searchWeather(
-    //   city: event.city,
-    // );
-    final WeatherModel? model = await _weatherRepo.searchWeather(
+    final model = await _weatherRepo.searchWeather(
       city: event.city,
     );
 
