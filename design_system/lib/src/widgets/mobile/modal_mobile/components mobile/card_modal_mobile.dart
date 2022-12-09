@@ -20,6 +20,7 @@ cardModalMobile(
       maxHeight: 260,
     ),
     builder: (BuildContext context) {
+      final theme = Theme.of(context);
       // TODO Voce não deve vincular o widget a um modal
       return CustomPaint(
         painter: ModalCustomPainter(
@@ -49,12 +50,12 @@ cardModalMobile(
                   ),
                 ),
                 Container(
-                  color: Theme.of(context).backgroundColor,
+                  color: theme.backgroundColor,
                   child: Column(
                     children: [
                       Text(
                         'Weather Today',
-                        style: Theme.of(context)
+                        style: theme
                             .textTheme
                             .headline5
                             ?.copyWith(fontSize: 20),

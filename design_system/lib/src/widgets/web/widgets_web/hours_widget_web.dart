@@ -23,6 +23,7 @@ class HoursWebWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final theme = Theme.of(context);
 
     return Center(
       child: Column(
@@ -39,10 +40,7 @@ class HoursWebWidget extends StatelessWidget {
           ),
           Text(
             textHour,
-            style: Theme.of(context)
-                .textTheme
-                .caption!
-                .copyWith(fontSize: fontSizeHour),
+            style: theme.textTheme.caption!.copyWith(fontSize: fontSizeHour),
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -52,17 +50,17 @@ class HoursWebWidget extends StatelessWidget {
             textAlign: TextAlign.left,
             text: TextSpan(
               text: textTemperature,
-              style: Theme.of(context).textTheme.headline2!.copyWith(
-                    fontSize: fontSizeTemperature,
-                  ),
+              style: theme.textTheme.headline2!.copyWith(
+                fontSize: fontSizeTemperature,
+              ),
               children: <InlineSpan>[
                 WidgetSpan(
                   alignment: PlaceholderAlignment.top,
                   child: Text(
                     '°',
-                    style: Theme.of(context).textTheme.headline2!.copyWith(
-                          fontSize: fontSizeBolinha,
-                        ),
+                    style: theme.textTheme.headline2!.copyWith(
+                      fontSize: fontSizeBolinha,
+                    ),
                   ),
                 ),
               ],

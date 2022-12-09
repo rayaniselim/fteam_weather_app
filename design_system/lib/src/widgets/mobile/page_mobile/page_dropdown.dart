@@ -16,12 +16,13 @@ class _PageDropDownState extends State<PageDropDown> {
   Widget build(BuildContext context) {
     final textController = TextEditingController();
     Function(String)? onSubmitted;
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).backgroundColor,
-        iconTheme: Theme.of(context)
-            .iconTheme
-            .copyWith(color: LightColors.colorsTextGrey),
+        // backgroundColor: Theme.of(context).backgroundColor,
+        // TODO: Verificar se o background está sendo chamado pelo theme
+        iconTheme: theme.iconTheme.copyWith(color: LightColors.colorsTextGrey),
         elevation: 0,
         actions: const [
           Padding(

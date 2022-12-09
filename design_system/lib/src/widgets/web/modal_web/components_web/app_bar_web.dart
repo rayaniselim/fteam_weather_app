@@ -30,7 +30,8 @@ class WebAppBar extends StatelessWidget {
           const Spacer(),
           SizedBox(
             //TODO Responsivo
-            width: 230,
+            // width: 230,
+            width: MediaQuery.of(context).size.width * 0.22, //22.46 de 1024 pixels 15 polegadas
             child: SearchWidgetDropDown(
               onSubmitted: onSubmitted,
               textController: textControllerSearch,

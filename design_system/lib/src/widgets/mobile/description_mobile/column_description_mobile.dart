@@ -16,13 +16,15 @@ class ColumnDescriptionMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             textNumber,
-            style: Theme.of(context)
+            style: theme
                 .textTheme
                 .subtitle1!
                 .copyWith(fontSize: sizeNumber),
@@ -30,7 +32,7 @@ class ColumnDescriptionMobile extends StatelessWidget {
           ),
           Text(
             textDescription!,
-            style: Theme.of(context)
+            style: theme
                 .textTheme
                 .caption!
                 .copyWith(fontSize: sizeDescription),

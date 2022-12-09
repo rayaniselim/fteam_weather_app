@@ -23,14 +23,14 @@ class HoursWidgetMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-
+ final theme = Theme.of(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Day $textDay',
-            style: Theme.of(context).textTheme.overline!.copyWith(
+            style: theme.textTheme.overline!.copyWith(
                   fontSize: fontSizeDay,
                 ),
             textAlign: TextAlign.center,
@@ -44,7 +44,7 @@ class HoursWidgetMobile extends StatelessWidget {
           ),
           Text(
             textWind,
-            style: Theme.of(context).textTheme.overline!.copyWith(
+            style:theme.textTheme.overline!.copyWith(
                   fontSize: fontSizeDay,
                 ),
             textAlign: TextAlign.center,
@@ -55,7 +55,7 @@ class HoursWidgetMobile extends StatelessWidget {
           Text(
             textTemperature,
             textAlign: TextAlign.left,
-            style: Theme.of(context).textTheme.headline5!.copyWith(
+            style: theme.textTheme.headline5!.copyWith(
                   fontSize: fontSizeTemperature,
                 ),
           ),
