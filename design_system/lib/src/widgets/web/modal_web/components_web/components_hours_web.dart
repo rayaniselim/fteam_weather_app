@@ -1,29 +1,27 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../../design_system.dart';
 
 class ComponentsHoursWeb extends StatelessWidget {
-  final List<ForecastModel> forecastList;
+  final List list;
 
   const ComponentsHoursWeb({
-    required this.forecastList,
     super.key,
+    required this.list,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: forecastList
+      children: list
           .map(
             (element) => CardForecastDayWeb(
-
               image: Images.chuvaBranca,
               textDay: element.day,
               textTemperature: element.temperature,
               textWind: 'Wind',
-              forecastsList: const [],
+              list: const [],
               textKmWind: element.wind,
             ),
           )

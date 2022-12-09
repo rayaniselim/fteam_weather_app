@@ -3,11 +3,11 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomePageWeb extends StatefulWidget {
-  final WeatherModel weather;
+
 
   const HomePageWeb({
     super.key,
-    required this.weather,
+
   });
 
   @override
@@ -38,8 +38,10 @@ class _HomePageWebState extends State<HomePageWeb> {
     super.dispose();
   }
 
+  late WeatherModel weather;
   @override
   Widget build(BuildContext context) {
+
     return BlocBuilder<WeatherBloc, WeatherState>(
       bloc: bloc,
       builder: (context, state) {
@@ -62,9 +64,9 @@ class _HomePageWebState extends State<HomePageWeb> {
                       children: [
                         FittedBox(
                           child: CardTemperatureWeb(
-                            modelCity: widget.weather.city,
-                            modelDescription: widget.weather.description,
-                            modelTemperature: widget.weather.temperature,
+                            modelCity: weather.city,
+                            modelDescription: weather.description,
+                            modelTemperature: weather.temperature,
                           ),
                         ),
                         const FittedBox(
@@ -77,7 +79,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ComponentsHoursWeb(
-                          forecastList: state.weather!.forecast,
+                          list: state.weather!.forecast,
                         ),
                       ],
                     ),
