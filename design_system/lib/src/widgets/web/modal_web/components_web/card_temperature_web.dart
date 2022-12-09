@@ -26,7 +26,6 @@ class _CardTemperatureWebState extends State<CardTemperatureWeb> {
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
-            mainAxisSize: MainAxisSize.max,
             children: [
               Container(
                 width: width * 0.28,

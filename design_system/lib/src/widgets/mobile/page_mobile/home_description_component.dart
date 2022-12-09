@@ -1,4 +1,3 @@
-
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,6 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
   final double sizeNumber;
   final double sizeDescription;
   final String weather;
-
 
   const HomeDescriptionComponentMobile({
     super.key,
@@ -54,7 +52,6 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
               child: Center(
                 child: ColumnDescriptionMobile(
                   sizeNumber: sizeNumber,

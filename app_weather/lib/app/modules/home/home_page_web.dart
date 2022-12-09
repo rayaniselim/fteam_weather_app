@@ -3,11 +3,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HomePageWeb extends StatefulWidget {
-
-
   const HomePageWeb({
     super.key,
-
   });
 
   @override
@@ -41,7 +38,6 @@ class _HomePageWebState extends State<HomePageWeb> {
   late WeatherModel weather;
   @override
   Widget build(BuildContext context) {
-
     return BlocBuilder<WeatherBloc, WeatherState>(
       bloc: bloc,
       builder: (context, state) {

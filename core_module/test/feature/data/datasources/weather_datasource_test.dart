@@ -10,7 +10,7 @@ class HttpMock extends Mock implements IHttpClient {}
 
 void main() {
   final customResponse =
-      CustomResponse(data: 'data', statusCode: 200, statusMessage: 'exito');
+      CustomHttpResponse(data: 'data', statusCode: 200, statusMessage: 'exito');
   final datasource = WeatherDatasource(client: HttpMock());
 
   test('O remoteSearchWeather deve retornar null e um WeatherDatasource',

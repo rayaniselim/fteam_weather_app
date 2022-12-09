@@ -6,14 +6,14 @@ class DioHttpClient implements IHttpClient {
   const DioHttpClient(this.dio);
 
   @override
-  Future<CustomResponse> get({
+  Future<CustomHttpResponse> get({
     required String baseUrl,
     required String path,
   }) async {
     final response = await dio.get(baseUrl + path);
 
     //TODO: Falta um try catch
-    return CustomResponse(
+    return CustomHttpResponse(
       data: response.data,
       statusCode: response.statusCode,
       statusMessage: response.statusMessage,

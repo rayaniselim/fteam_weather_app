@@ -85,7 +85,6 @@ class _HomePageMobileState extends State<HomePageMobile> {
                       elevation: 10,
                       barrierColor: Colors.black12,
                       builder: (BuildContext context) {
-                        final theme = Theme.of(context);
                         return cardModalMobile(
                           context,
                           size: size,

@@ -1,11 +1,11 @@
 /// Configurado apenas o necessário para funcionar o http.get(),
 
-class CustomResponse {
+class CustomHttpResponse {
   final dynamic data;
   final int? statusCode;
   final String? statusMessage;
 
-  CustomResponse({
+  CustomHttpResponse({
     required this.data,
     this.statusCode,
     this.statusMessage,
