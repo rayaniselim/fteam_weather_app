@@ -5,24 +5,29 @@ import '../../page_mobile/component_hours_mobile.dart';
 
 Container cardModalMobile(
   BuildContext context, {
-  required Size size,
+  required Size sizeModal,
   required List list,
 }) {
   final theme = Theme.of(context);
+  final size = MediaQuery.of(context).size;
   return Container(
-    color: Colors.transparent,
-    constraints: const BoxConstraints(
-      maxHeight: 260,
+    // PARTE DE DENTRO DO MODAL
+    color: Colors.grey,
+    constraints: BoxConstraints(
+      maxHeight: size.height * 0.28,
     ),
     child: CustomPaint(
       painter: ModalCustomPainter(
-        Size(size.width, 330),
+        Size(
+          sizeModal.width,
+          340,
+        ),
       ),
       child: Stack(
         children: [
           Container(
-            margin: const EdgeInsets.only(
-              top: 30,
+            margin: EdgeInsets.only(
+              top: size.height * 0.02,
             ),
             decoration: BoxDecoration(
               color: LightColors.primaryColor,
@@ -32,7 +37,7 @@ Container cardModalMobile(
           Column(
             children: [
               SizedBox(
-                height: 45,
+                height: size.height * 0.035,
                 child: IconButton(
                   icon: const Icon(
                     Icons.horizontal_rule_rounded,
@@ -49,8 +54,8 @@ Container cardModalMobile(
                       'Weather Today',
                       style: theme.textTheme.headline5?.copyWith(fontSize: 20),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: size.height * 0.01,
                     ),
                     ComponentsHoursMobile(
                       itemCount: list.length,

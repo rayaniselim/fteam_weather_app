@@ -6,15 +6,14 @@ class CardModalWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+    final size = MediaQuery.of(context).size;
     return Column(
       children: [
         CardTopWidgetWeb(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(24),
+                padding: const EdgeInsets.all(14),
                 child: FittedBox(
                   child: Text(
                     'Weather Today',
@@ -25,8 +24,9 @@ class CardModalWeb extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 24,
+              //TODO: web
+              SizedBox(
+                height: size.height * 0.01,
               ),
               FittedBox(
                 child: Row(
@@ -34,37 +34,37 @@ class CardModalWeb extends StatelessWidget {
                   children: [
                     HoursWebWidget(
                       image: 'assets/images/chuva_branca.png',
-                      heightImage: height * 0.05,
+                      heightImage: size.height * 0.05,
                       textHour: '05:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '3',
                       fontSizeTemperature: 36,
                       fontSizeBolinha: 26,
                     ),
-                    SizedBox(width: width * 0.018),
+                    SizedBox(width: size.width * 0.018),
                     HoursWebWidget(
                       image: 'assets/images/nublado_branco.png',
-                      heightImage: height * 0.05,
+                      heightImage: size.height * 0.05,
                       textHour: '06:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '16',
                       fontSizeTemperature: 36,
                       fontSizeBolinha: 26,
                     ),
-                    SizedBox(width: width * 0.018),
+                    SizedBox(width: size.width * 0.018),
                     HoursWebWidget(
                       image: 'assets/images/sol.png',
-                      heightImage: height * 0.05,
+                      heightImage: size.height * 0.05,
                       textHour: '07:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '23',
                       fontSizeTemperature: 36,
                       fontSizeBolinha: 26,
                     ),
-                    SizedBox(width: width * 0.018),
+                    SizedBox(width: size.width * 0.018),
                     HoursWebWidget(
                       image: 'assets/images/sol.png',
-                      heightImage: height * 0.05,
+                      heightImage: size.height * 0.05,
                       textHour: '08:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '23',

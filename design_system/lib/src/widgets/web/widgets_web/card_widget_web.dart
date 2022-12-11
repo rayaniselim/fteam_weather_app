@@ -11,11 +11,10 @@ class CardTopWidgetWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+    final size = MediaQuery.of(context).size;
     return Container(
-      width: width * 0.31,
-      height: height * 0.31,
+      width: size.width * 0.31,
+      height: size.height * 0.31,
       decoration: BoxDecoration(
         color: LightColors.colorsBlack26,
         borderRadius: BorderRadius.circular(20),

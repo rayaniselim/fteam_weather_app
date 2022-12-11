@@ -31,7 +31,7 @@ class _CardTemperatureWebState extends State<CardTemperatureWeb> {
                 width: width * 0.28,
                 alignment: Alignment.topLeft,
                 child: CityWidget(
-                  size: 20,
+                  sizeFont: 20,
                   city: widget.modelCity!,
                 ),
               ),

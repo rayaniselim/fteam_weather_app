@@ -20,8 +20,6 @@ class _PageDropDownState extends State<PageDropDown> {
 
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Theme.of(context).backgroundColor,
-        // TODO: Verificar se o background está sendo chamado pelo theme
         iconTheme: theme.iconTheme.copyWith(color: LightColors.colorsTextGrey),
         elevation: 0,
         actions: const [

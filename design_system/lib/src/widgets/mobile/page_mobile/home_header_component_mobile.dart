@@ -31,7 +31,7 @@ class HomeHeaderComponentMobile extends StatelessWidget {
               Row(
                 children: [
                   CityWidget(
-                    size: 16,
+                    sizeFont: 16,
                     city: city,
                   ),
                 ],

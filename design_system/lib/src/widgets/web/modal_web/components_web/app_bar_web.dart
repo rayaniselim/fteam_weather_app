@@ -11,15 +11,15 @@ class WebAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textController = TextEditingController();
+    final size = MediaQuery.of(context).size;
 
     return AppBar(
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-              top: 12,
-              bottom: 12,
+            padding: EdgeInsets.all(
+              size.height * 0.020,
             ),
             child: Text(
               'Weather Day',
@@ -29,8 +29,7 @@ class WebAppBar extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: MediaQuery.of(context).size.width *
-                0.16, //22.46 de 1024 pixels 15 polegadas
+            width: size.width * 0.16,
             child: SearchWidgetDropDown(
               onSubmitted: onSubmitted,
               textController: textController,

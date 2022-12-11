@@ -87,7 +87,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
                       builder: (BuildContext context) {
                         return cardModalMobile(
                           context,
-                          size: size,
+                          sizeModal: size,
                           list: weather.forecast,
                         );
                       },

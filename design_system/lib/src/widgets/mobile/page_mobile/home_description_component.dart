@@ -23,14 +23,13 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+    final size = MediaQuery.of(context).size;
 
     return Padding(
       padding: const EdgeInsets.all(14),
       child: Container(
-        width: width * 0.93,
-        height: height * 0.098,
+        width: size.width * 0.93,
+        height: size.height * 0.098,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(20),
@@ -45,7 +44,7 @@ class HomeDescriptionComponentMobile extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.025,
+              height: size.height * 0.025,
               child: VerticalDivider(
                 color: colorDivider,
                 thickness: thickness,

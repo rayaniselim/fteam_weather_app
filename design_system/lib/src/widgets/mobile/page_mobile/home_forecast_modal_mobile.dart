@@ -12,34 +12,39 @@ class HomeForecastModalMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return CustomPaint(
-      painter: ModalCustomPainter(Size(size.width, size.width)),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            width: size.width,
-            height: 46,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(35),
-                topRight: Radius.circular(35),
+    return Stack(
+      children: [
+        Positioned(
+          top: size.height * 0.95,
+          child: CustomPaint(
+            size: Size.fromHeight(size.height * 0.2),
+            painter: ModalCustomPainter(Size(size.width, size.width)),
+            child: Container(
+              width: size.width,
+              height: size.height * 0.04,
+              decoration: const BoxDecoration(
+                // color: LightColors.primaryColor,
+                // color: Colors.pink,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(35),
+                  topRight: Radius.circular(35),
+                ),
+              ),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.horizontal_rule_rounded,
+                  color: LightColors.colorsTextGrey,
+                ),
+                onPressed: onTap,
               ),
             ),
-            child: IconButton(
-              icon: const Icon(
-                Icons.horizontal_rule_rounded,
-                color: LightColors.colorsTextGrey,
-              ),
-              onPressed: onTap,
-            ),
+            // Container(
+            //   height: 16,
+            //   color: LightColors.primaryColor,
+            // ),
           ),
-          Container(
-            height: 16,
-            color: LightColors.primaryColor,
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
