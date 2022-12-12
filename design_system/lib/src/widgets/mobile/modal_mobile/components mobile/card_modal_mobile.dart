@@ -11,75 +11,61 @@ Container cardModalMobile(
   final theme = Theme.of(context);
   final size = MediaQuery.of(context).size;
   return Container(
-    // PARTE DE DENTRO DO MODAL
-    color: Colors.grey,
     constraints: BoxConstraints(
-      maxHeight: size.height * 0.28,
+      maxHeight: size.height * 0.32,
+      minHeight: size.height * 0.28,
     ),
-    child: CustomPaint(
-      painter: ModalCustomPainter(
-        Size(
-          sizeModal.width,
-          340,
-        ),
+    decoration: const BoxDecoration(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
       ),
-      child: Stack(
-        children: [
-          Container(
-            margin: EdgeInsets.only(
-              top: size.height * 0.02,
+    ),
+    child: Stack(
+      children: [
+        Column(
+          children: [
+            HomeForecastModalMobile(
+              onTap: () {},
             ),
-            decoration: BoxDecoration(
-              color: LightColors.primaryColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ),
-          Column(
-            children: [
-              SizedBox(
-                height: size.height * 0.035,
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.horizontal_rule_rounded,
-                    color: LightColors.colorsTextGrey,
+            Container(
+              color: theme.backgroundColor,
+              child: Column(
+                children: [
+                  Text(
+                    'Weather Today',
+                    style: theme.textTheme.headline5?.copyWith(fontSize: 20),
                   ),
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                color: theme.backgroundColor,
-                child: Column(
-                  children: [
-                    Text(
-                      'Weather Today',
-                      style: theme.textTheme.headline5?.copyWith(fontSize: 20),
-                    ),
-                    SizedBox(
-                      height: size.height * 0.01,
-                    ),
-                    ComponentsHoursMobile(
-                      itemCount: list.length,
-                      itemBuilder: (_, i) {
-                        final element = list.elementAt(i);
+                  SizedBox(
+                    height: size.height * 0.01,
+                  ),
+                  ComponentsHoursMobile(
+                    itemCount: list.length,
+                    itemBuilder: (_, i) {
+                      final element = list.elementAt(i);
 
-                        return HoursWidgetMobile(
-                          textDay: element.day,
-                          image: Images.chuva,
-                          fontSizeDay: 14,
-                          textTemperature: element.temperature,
-                          textWind: element.wind,
-                          fontSizeTemperature: 36,
-                          fontSizeBolinha: 26,
-                        );
-                      },
-                    )
-                  ],
-                ),
+                      return HoursWidgetMobile(
+                        textDay: element.day,
+                        image: Images.chuva,
+                        fontSizeDay: 14,
+                        textTemperature: element.temperature,
+                        textWind: element.wind,
+                        fontSizeTemperature: 36,
+                        fontSizeBolinha: 26,
+                      );
+                    },
+                  )
+                ],
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+            Container(
+              color: Colors.white,
+              height: size.height * 0.032,
+            )
+          ],
+        ),
+      ],
     ),
   );
 }
