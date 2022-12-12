@@ -31,16 +31,19 @@ class _HomePageState extends State<HomePage> {
                   child: WebAppBar(
                     onSubmitted: (valorDigitado) {
                       bloc.add(SearchWeatherEvent(city: valorDigitado));
-                      Modular.to.pop();
+                      // Navigator.pop(context);
                     },
                   ),
                 ),
           body: width < 600
-              // TODO(rayani): Pra que serve o PreferredSize
-              ? PreferredSize(
-                  preferredSize: Size(width, alturaBarra),
-                  child: const HomePageMobile(),
-                )
+              // anuncia um tamanho preferido que pode ser usado pelos pais.
+              // Cria um widget que tem um tamanho preferencial que o pai pode consultar.
+              //criar seu próprio widget de tamanho preferido personalizado
+              // ? PreferredSize(
+              // preferredSize: Size(width, alturaBarra),
+              // child:
+              ? const HomePageMobile()
+              // )
               : PreferredSize(
                   preferredSize: Size(width, alturaBarra),
                   child: const HomePageWeb(),
