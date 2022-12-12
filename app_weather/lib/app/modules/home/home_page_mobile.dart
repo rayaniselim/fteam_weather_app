@@ -21,7 +21,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
   void initState() {
     super.initState();
 
-    bloc.add(const SearchWeatherEvent(city: 'Sao paulo'));
+    bloc.add(const SearchWeatherEvent(city: 'Sao Paulo'));
   }
 
   @override
@@ -39,60 +39,68 @@ class _HomePageMobileState extends State<HomePageMobile> {
       bloc: bloc,
       builder: (context, state) {
         final weather = state.weather;
-
         if (weather == null) {
           return const PageError(
             fontSize: 16,
           );
         } else {
-          return Stack(
-            fit: StackFit.expand,
+          return Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Images.nuvens,
-              Container(color: LightColors.colorBlackOpacity),
-              Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 66,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Expanded(
+                child: Stack(
+                  fit: StackFit.expand,
                   children: [
-                    HomeHeaderComponentMobile(
-                      city: weather.city!,
-                      temperature: weather.temperature,
-                      description: weather.description,
+                    Images.nuvens,
+                    Container(color: LightColors.colorBlackOpacity),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 66,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          HomeHeaderComponentMobile(
+                            city: weather.city!,
+                            temperature: weather.temperature,
+                            description: weather.description,
+                          ),
+                          HomeDescriptionComponentMobile(
+                            border: Border.all(color: LightColors.primaryColor),
+                            color: LightColors.colorsBlack26,
+                            colorDivider: LightColors.colorWhite70,
+                            thickness: 0.3,
+                            sizeDescription: 12,
+                            sizeNumber: 16,
+                            weather: weather.wind,
+                          ),
+                        ],
+                      ),
                     ),
-                    const Spacer(),
-                    HomeDescriptionComponentMobile(
-                      border: Border.all(color: LightColors.primaryColor),
-                      color: LightColors.colorsBlack26,
-                      colorDivider: LightColors.colorWhite70,
-                      thickness: 0.3,
-                      sizeDescription: 12,
-                      sizeNumber: 16,
-                      weather: weather.wind,
+                    Positioned(
+                      bottom: 0,
+                      child: Column(
+                        children: [
+                          HomeForecastModalMobile(
+                            onTap: () {
+                              showModalBottomSheet<void>(
+                                context: context,
+                                barrierColor: Colors.black12,
+                                backgroundColor: Colors.transparent,
+                                builder: (BuildContext context) {
+                                  return cardModalMobile(
+                                    context,
+                                    sizeModal: size,
+                                    list: weather.forecast,
+                                  );
+                                },
+                              );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ],
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: HomeForecastModalMobile(
-                  onTap: () {
-                    showModalBottomSheet<void>(
-                      context: context,
-                      elevation: 10,
-                      barrierColor: Colors.black12,
-                      builder: (BuildContext context) {
-                        return cardModalMobile(
-                          context,
-                          sizeModal: size,
-                          list: weather.forecast,
-                        );
-                      },
-                    );
-                  },
                 ),
               ),
             ],
