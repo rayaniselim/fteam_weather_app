@@ -8,7 +8,7 @@ class CardForecastDayWeb extends StatelessWidget {
   final String textWind;
   final String textKmWind;
   final String textTemperature;
-  final Image image;
+  final String image;
 
   const CardForecastDayWeb({
     super.key,
@@ -23,8 +23,8 @@ class CardForecastDayWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
     final theme = Theme.of(context);
+
     return Column(
       children: [
         Padding(
@@ -40,7 +40,9 @@ class CardForecastDayWeb extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(
+                6,
+              ),
               child: Column(
                 children: [
                   FittedBox(
@@ -52,6 +54,7 @@ class CardForecastDayWeb extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const Spacer(),
                   SizedBox(
                     width: size.width * 0.025,
                     child: const Divider(
@@ -59,11 +62,13 @@ class CardForecastDayWeb extends StatelessWidget {
                       thickness: 0.6,
                     ),
                   ),
-                  const Spacer(),
                   Center(
-                    child: image,
+                    child: Image.asset(
+                      image,
+                      height: size.height * 0.05,
+                      width: size.width * 0.05,
+                    ),
                   ),
-                  const Spacer(),
                   FittedBox(
                     child: Text(
                       textTemperature,
@@ -75,11 +80,13 @@ class CardForecastDayWeb extends StatelessWidget {
                   ),
                   SizedBox(
                     width: size.width * 0.025,
+                    height: size.height * 0.0002,
                     child: const Divider(
                       color: LightColors.primaryColor,
                       thickness: 0.6,
                     ),
                   ),
+                  const Spacer(),
                   FittedBox(
                     child: Text(
                       textKmWind,
@@ -97,9 +104,6 @@ class CardForecastDayWeb extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: size.width * 0.030,
                   ),
                 ],
               ),

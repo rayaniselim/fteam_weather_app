@@ -5,6 +5,7 @@ class HoursWebWidget extends StatelessWidget {
   final String image;
   final String textTemperature;
   final double heightImage;
+  final double widthImage;
   final double fontSizeTemperature;
   final double fontSizeHour;
   final double fontSizeBolinha;
@@ -18,11 +19,12 @@ class HoursWebWidget extends StatelessWidget {
     required this.fontSizeTemperature,
     required this.fontSizeHour,
     required this.fontSizeBolinha,
+    required this.widthImage,
   });
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    final size = MediaQuery.of(context).size;
     final theme = Theme.of(context);
 
     return Center(
@@ -31,12 +33,13 @@ class HoursWebWidget extends StatelessWidget {
         children: [
           SizedBox(
             height: heightImage,
+            width: widthImage,
             child: Image.asset(
               image,
             ),
           ),
           SizedBox(
-            height: height * 0.02,
+            height: size.height * 0.02,
           ),
           Text(
             textHour,
@@ -44,7 +47,7 @@ class HoursWebWidget extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: height * 0.02,
+            height: size.height * 0.02,
           ),
           RichText(
             textAlign: TextAlign.left,
@@ -67,7 +70,7 @@ class HoursWebWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: height * 0.0041,
+            height: size.height * 0.0041,
           )
         ],
       ),

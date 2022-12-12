@@ -35,6 +35,7 @@ class CardModalWeb extends StatelessWidget {
                     HoursWebWidget(
                       image: 'assets/images/chuva_branca.png',
                       heightImage: size.height * 0.05,
+                      widthImage: size.width * 0.05,
                       textHour: '05:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '3',
@@ -45,6 +46,7 @@ class CardModalWeb extends StatelessWidget {
                     HoursWebWidget(
                       image: 'assets/images/nublado_branco.png',
                       heightImage: size.height * 0.05,
+                      widthImage: size.width * 0.05,
                       textHour: '06:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '16',
@@ -55,6 +57,7 @@ class CardModalWeb extends StatelessWidget {
                     HoursWebWidget(
                       image: 'assets/images/sol.png',
                       heightImage: size.height * 0.05,
+                      widthImage: size.width * 0.05,
                       textHour: '07:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '23',
@@ -65,6 +68,7 @@ class CardModalWeb extends StatelessWidget {
                     HoursWebWidget(
                       image: 'assets/images/sol.png',
                       heightImage: size.height * 0.05,
+                      widthImage: size.width * 0.05,
                       textHour: '08:00 AM',
                       fontSizeHour: 12,
                       textTemperature: '23',

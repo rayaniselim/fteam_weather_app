@@ -17,7 +17,9 @@ class ComponentsHoursWeb extends StatelessWidget {
       children: list
           .map(
             (element) => CardForecastDayWeb(
-              image: Images.chuvaBranca,
+              // image: Images.chuvaBranca,
+              /// TODO:   erro, pede uma ImageProvider
+              image: 'assets/images/chuva_branca.png',
               textDay: element.day,
               textTemperature: element.temperature,
               textWind: 'Wind',
