@@ -11,12 +11,17 @@ class DioHttpClient implements IHttpClient {
     required String path,
   }) async {
     final response = await dio.get(baseUrl + path);
-
-    //TODO: Falta um try catch
-    return CustomHttpResponse(
+    final customHttpResponse = CustomHttpResponse(
       data: response.data,
       statusCode: response.statusCode,
       statusMessage: response.statusMessage,
     );
+
+    try {
+      customHttpResponse;
+    } catch (e) {
+      throw Exception('O servidor está fora do ar');
+    }
+    return customHttpResponse;
   }
 }

@@ -11,7 +11,7 @@ export 'feature/data/models/forecast_model.dart';
 export 'feature/data/models/weather_model.dart';
 export 'feature/data/repositories/weather_repository.dart';
 export 'feature/infra/custom_http_response.dart';
-export 'feature/infra/dio_client_adapter.dart';
+export 'feature/infra/dio_http_client.dart';
 export 'feature/presenter/weather_bloc.dart';
 export 'feature/presenter/weather_event.dart';
 export 'feature/presenter/weather_state.dart';
