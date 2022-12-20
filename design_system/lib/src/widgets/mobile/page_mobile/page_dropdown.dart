@@ -2,20 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../design_system.dart';
 
-class PageDropDown extends StatefulWidget {
+class PageDropDown extends StatelessWidget {
+  final void Function(String) onSubmitted;
   const PageDropDown({
     super.key,
+    required this.onSubmitted,
   });
 
   @override
-  State<PageDropDown> createState() => _PageDropDownState();
-}
-
-class _PageDropDownState extends State<PageDropDown> {
-  @override
   Widget build(BuildContext context) {
     final textController = TextEditingController();
-    Function(String)? onSubmitted;
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -27,7 +23,9 @@ class _PageDropDownState extends State<PageDropDown> {
             padding: EdgeInsets.all(8),
             child: CircleAvatar(
               radius: 22,
-              backgroundImage: Images.lago,
+              backgroundImage: AssetImage(
+                Images.lago,
+              ),
             ),
           ),
         ],

@@ -1,25 +1,9 @@
-import 'package:flutter/material.dart';
-
 class Images {
-  static Image nuvens = Image.asset(
-    'assets/images/nuvens.jpeg',
-    fit: BoxFit.cover,
-  );
+  static String nuvens = 'assets/images/nuvens.jpeg';
 
-  static Image chuva = Image.asset(
-    'assets/images/chuva.png',
-    fit: BoxFit.cover,
-  );
+  static String chuva = 'assets/images/chuva.png';
 
-  static Image chuvaBranca = Image.asset(
-    'assets/images/chuva_branca.png',
-    fit: BoxFit.cover,
-    height: 60,
+  static String chuvaBranca = 'assets/images/chuva_branca.png';
 
-    
-  );
-  static const ImageProvider lago = AssetImage(
-    'assets/images/lago.jpeg',
-
-    ); 
+  static const String lago = 'assets/images/lago.jpeg';
 }

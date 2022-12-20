@@ -24,7 +24,6 @@ class CardModalWeb extends StatelessWidget {
                   ),
                 ),
               ),
-              //TODO: web
               SizedBox(
                 height: size.height * 0.01,
               ),

@@ -5,12 +5,14 @@ class HomeHeaderComponentMobile extends StatelessWidget {
   final String temperature;
   final String city;
   final String description;
+  final void Function() onTap;
 
   const HomeHeaderComponentMobile({
     super.key,
     required this.city,
     required this.temperature,
     required this.description,
+    required this.onTap,
   });
 
   @override
@@ -37,11 +39,7 @@ class HomeHeaderComponentMobile extends StatelessWidget {
                 ],
               ),
               IconButtonWidget(
-                onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const PageDropDown(),
-                  ),
-                ),
+                onTap: onTap,
               ),
             ],
           ),

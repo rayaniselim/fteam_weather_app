@@ -54,7 +54,9 @@ class _HomePageWebState extends State<HomePageWeb> {
           return Stack(
             fit: StackFit.expand,
             children: [
-              Images.nuvens,
+              Image.asset(
+                Images.nuvens,
+              ),
               Container(color: LightColors.colorBlackOpacity),
               Padding(
                 padding: const EdgeInsets.all(60),

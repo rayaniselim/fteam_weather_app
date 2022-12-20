@@ -8,7 +8,7 @@ class CardForecastDayWeb extends StatelessWidget {
   final String textWind;
   final String textKmWind;
   final String textTemperature;
-  final String image;
+  final Image image;
 
   const CardForecastDayWeb({
     super.key,
@@ -63,11 +63,7 @@ class CardForecastDayWeb extends StatelessWidget {
                     ),
                   ),
                   Center(
-                    child: Image.asset(
-                      image,
-                      height: size.height * 0.05,
-                      width: size.width * 0.05,
-                    ),
+                    child: image,
                   ),
                   FittedBox(
                     child: Text(

@@ -2,7 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class WebAppBar extends StatelessWidget {
-  final Function(String)? onSubmitted;
+  final Function(String) onSubmitted;
   const WebAppBar({
     Key? key,
     required this.onSubmitted,
@@ -37,7 +37,9 @@ class WebAppBar extends StatelessWidget {
           ),
           const CircleAvatar(
             radius: 22,
-            backgroundImage: Images.lago,
+            backgroundImage: AssetImage(
+              Images.lago,
+            ),
           ),
         ],
       ),

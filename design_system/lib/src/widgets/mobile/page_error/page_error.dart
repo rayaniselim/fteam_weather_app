@@ -11,7 +11,9 @@ class PageError extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Images.nuvens,
+        Image.asset(
+          Images.nuvens,
+        ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

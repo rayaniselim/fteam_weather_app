@@ -47,7 +47,9 @@ Container cardModalMobile(
 
                       return HoursWidgetMobile(
                         textDay: element.day,
-                        image: Images.chuva,
+                        image: Image.asset(
+                          Images.chuva,
+                        ),
                         fontSizeDay: 14,
                         textTemperature: element.temperature,
                         textWind: element.wind,

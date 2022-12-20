@@ -21,7 +21,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
   void initState() {
     super.initState();
 
-    bloc.add(const SearchWeatherEvent(city: 'Sao Paulo'));
+    bloc.add(const SearchWeatherEvent(city: 'Curitiba'));
   }
 
   @override
@@ -51,7 +51,9 @@ class _HomePageMobileState extends State<HomePageMobile> {
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
-                    Images.nuvens,
+                    Image.asset(
+                      Images.nuvens,
+                    ),
                     Container(color: LightColors.colorBlackOpacity),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -64,6 +66,16 @@ class _HomePageMobileState extends State<HomePageMobile> {
                             city: weather.city!,
                             temperature: weather.temperature,
                             description: weather.description,
+                            onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => PageDropDown(
+                                  onSubmitted: (String city) {
+                                    bloc.add(SearchWeatherEvent(city: city));
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ),
                           ),
                           HomeDescriptionComponentMobile(
                             border: Border.all(color: LightColors.primaryColor),

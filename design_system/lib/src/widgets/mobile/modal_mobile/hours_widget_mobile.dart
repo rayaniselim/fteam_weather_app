@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HoursWidgetMobile extends StatelessWidget {
   final String textDay;
   final String textWind;
-  final Image image;
+  final Widget image;
   final String textTemperature;
   final double fontSizeTemperature;
   final double fontSizeDay;
@@ -23,7 +23,7 @@ class HoursWidgetMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
- final theme = Theme.of(context);
+    final theme = Theme.of(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,8 +31,8 @@ class HoursWidgetMobile extends StatelessWidget {
           Text(
             'Day $textDay',
             style: theme.textTheme.overline!.copyWith(
-                  fontSize: fontSizeDay,
-                ),
+              fontSize: fontSizeDay,
+            ),
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -44,9 +44,9 @@ class HoursWidgetMobile extends StatelessWidget {
           ),
           Text(
             textWind,
-            style:theme.textTheme.overline!.copyWith(
-                  fontSize: fontSizeDay,
-                ),
+            style: theme.textTheme.overline!.copyWith(
+              fontSize: fontSizeDay,
+            ),
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -56,8 +56,8 @@ class HoursWidgetMobile extends StatelessWidget {
             textTemperature,
             textAlign: TextAlign.left,
             style: theme.textTheme.headline5!.copyWith(
-                  fontSize: fontSizeTemperature,
-                ),
+              fontSize: fontSizeTemperature,
+            ),
           ),
         ],
       ),

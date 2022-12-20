@@ -12,14 +12,18 @@ class ComponentsHoursWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: list
           .map(
             (element) => CardForecastDayWeb(
-              // image: Images.chuvaBranca,
-              /// TODO:   erro, pede uma ImageProvider
-              image: 'assets/images/chuva_branca.png',
+              image: Image.asset(
+                Images.chuvaBranca,
+                height: size.height * 0.05,
+                width: size.width * 0.05,
+              ),
               textDay: element.day,
               textTemperature: element.temperature,
               textWind: 'Wind',

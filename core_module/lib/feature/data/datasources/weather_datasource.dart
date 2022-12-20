@@ -17,10 +17,23 @@ class WeatherDatasource {
       );
 
       return response.data;
+      // return {
+      //   'temperature': '27',
+      //   'wind': 'wind',
+      //   'description': '',
+      //   'forecast': [
+      //     {
+      //       'temperature': 'temperature',
+      //       'wind': 'wind',
+      //       'day': 'day',
+      //     }
+      //   ],
+      // };
       // Não faça tratamento de erro generico(Sem 'on')
     } catch (error) {
       return null;
     }
+    return null;
   }
 }
 // TODO: poderia estar no module se fosse um app maior

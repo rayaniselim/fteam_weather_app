@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SearchWidgetDropDown extends StatelessWidget {
-  final Function(String)? onSubmitted;
+  final Function(String) onSubmitted;
   final TextEditingController textController;
+
   const SearchWidgetDropDown({
     super.key,
-    this.onSubmitted,
+    required this.onSubmitted,
     required this.textController,
   });
 
@@ -22,9 +23,14 @@ class SearchWidgetDropDown extends StatelessWidget {
             .copyWith(fontSize: 15, color: Colors.black),
         cursorColor: Colors.grey,
         decoration: InputDecoration(
-          suffixIcon: const Icon(
-            Icons.search,
+          suffixIcon: IconButton(
             color: Colors.black,
+            icon: const Icon(
+              Icons.search,
+            ),
+            onPressed: () {
+              onSubmitted(textController.text);
+            },
           ),
           border: InputBorder.none,
           hintText: 'Search City',
