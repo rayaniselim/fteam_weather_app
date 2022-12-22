@@ -12,7 +12,6 @@ class HomePageWeb extends StatefulWidget {
 }
 
 class _HomePageWebState extends State<HomePageWeb> {
-  // late final WeatherBloc bloc;
   final bloc = Modular.get<WeatherBloc>();
   final textController = TextEditingController();
   final weather = WeatherModel;
@@ -29,7 +28,7 @@ class _HomePageWebState extends State<HomePageWeb> {
     //     ),
     //   ),
     // );
-    bloc.add(const SearchWeatherEvent(city: 'Brasilia'));
+    bloc.add(const SearchWeatherEvent(city: 'Curitiba'));
   }
 
   @override
@@ -38,7 +37,6 @@ class _HomePageWebState extends State<HomePageWeb> {
     super.dispose();
   }
 
-  // late WeatherModel weather;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<WeatherBloc, WeatherState>(
@@ -56,6 +54,7 @@ class _HomePageWebState extends State<HomePageWeb> {
             children: [
               Image.asset(
                 Images.nuvens,
+                fit: BoxFit.cover,
               ),
               Container(color: LightColors.colorBlackOpacity),
               Padding(

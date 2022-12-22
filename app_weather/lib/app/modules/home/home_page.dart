@@ -17,6 +17,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final bloc = Modular.get<WeatherBloc>();
+    final textController = TextEditingController();
+
     return LayoutBuilder(
       builder: (context, constraints) {
         final width = constraints.maxWidth;
@@ -29,9 +31,18 @@ class _HomePageState extends State<HomePage> {
               : PreferredSize(
                   preferredSize: Size(width, alturaBarra),
                   child: WebAppBar(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => SearchWidgetDropDown(
+                          onSubmitted: (String city) {
+                            bloc.add(SearchWeatherEvent(city: city));
+                          },
+                          textController: textController,
+                        ),
+                      ),
+                    ),
                     onSubmitted: (valorDigitado) {
                       bloc.add(SearchWeatherEvent(city: valorDigitado));
-                      // Navigator.pop(context);
                     },
                   ),
                 ),

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../design_system.dart';
 
-class PageDropDown extends StatelessWidget {
+class PageDropDownMobile extends StatelessWidget {
   final void Function(String) onSubmitted;
-  const PageDropDown({
+  const PageDropDownMobile({
     super.key,
     required this.onSubmitted,
   });

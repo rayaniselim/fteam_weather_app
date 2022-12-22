@@ -13,6 +13,7 @@ class PageError extends StatelessWidget {
       children: [
         Image.asset(
           Images.nuvens,
+          fit: BoxFit.cover,
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,

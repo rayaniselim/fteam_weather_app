@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 
 class WebAppBar extends StatelessWidget {
   final Function(String) onSubmitted;
+  final void Function() onTap;
+
   const WebAppBar({
     Key? key,
     required this.onSubmitted,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -33,6 +36,7 @@ class WebAppBar extends StatelessWidget {
             child: SearchWidgetDropDown(
               onSubmitted: onSubmitted,
               textController: textController,
+              onTap: onTap,
             ),
           ),
           const CircleAvatar(

@@ -53,6 +53,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
                   children: [
                     Image.asset(
                       Images.nuvens,
+                      fit: BoxFit.cover,
                     ),
                     Container(color: LightColors.colorBlackOpacity),
                     Padding(
@@ -68,7 +69,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
                             description: weather.description,
                             onTap: () => Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => PageDropDown(
+                                builder: (context) => PageDropDownMobile(
                                   onSubmitted: (String city) {
                                     bloc.add(SearchWeatherEvent(city: city));
                                     Navigator.pop(context);

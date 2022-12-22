@@ -31,9 +31,7 @@ class WeatherDatasource {
       // };
       // Não faça tratamento de erro generico(Sem 'on')
     } catch (error) {
-      return null;
+      throw Exception('Erro no banco de dados');
     }
-    return null;
   }
 }
-// TODO: poderia estar no module se fosse um app maior

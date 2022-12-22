@@ -11,20 +11,27 @@ que é um padrao q obriga vc a desacoplar as coisas,
 class AppModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.factory<Dio>((_) => Dio()), // INVERSAO DE CONTROLE
-    Bind.factory<IHttpClient>(
-      (i) => DioHttpClient(i()),
-    ), // INVERSAO DE CONTROLE
-
     Bind.factory<WeatherBloc>(
       (i) => WeatherBloc(
-        weatherRepo: WeatherRepository(
-          datasource: WeatherDatasource(
-            client: i(),
-          ),
-        ),
+        weatherRepo: i(),
       ),
     ),
+    Bind.factory<WeatherRepository>(
+      (i) => WeatherRepository(
+        datasource: i(),
+      ),
+    ),
+    Bind.factory<WeatherDatasource>(
+      (i) => WeatherDatasource(
+        client: i(),
+      ),
+    ),
+    Bind.factory<IHttpClient>(
+      (i) => DioHttpClient(
+        i(),
+      ),
+    ),
+    Bind.factory<Dio>((_) => Dio()),
   ];
 
   @override

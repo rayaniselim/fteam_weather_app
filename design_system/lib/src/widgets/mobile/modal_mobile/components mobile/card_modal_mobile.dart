@@ -49,6 +49,8 @@ Container cardModalMobile(
                         textDay: element.day,
                         image: Image.asset(
                           Images.chuva,
+                          height: size.height * 0.09,
+                          width: size.width * 0.09,
                         ),
                         fontSizeDay: 14,
                         textTemperature: element.temperature,
@@ -63,7 +65,7 @@ Container cardModalMobile(
             ),
             Container(
               color: Colors.white,
-              height: size.height * 0.032,
+              height: size.height * 0.053,
             )
           ],
         ),
