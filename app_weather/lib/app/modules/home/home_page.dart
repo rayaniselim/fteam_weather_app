@@ -14,53 +14,70 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final bloc = Modular.get<WeatherBloc>();
+
+  @override
+  void initState() {
+    super.initState();
+    bloc.add(const SearchWeatherEvent(city: 'curitiba'));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    bloc.close();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final bloc = Modular.get<WeatherBloc>();
-    final textController = TextEditingController();
+    return BlocBuilder<WeatherBloc, WeatherState>(
+      bloc: bloc,
+      builder: (context, state) {
+        final weather = state.weather;
+        if (weather == null) {
+          return const LoadingPage(
+            fontSize: 30,
+          );
+        } else {
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              final width = constraints.maxWidth;
+              final barHeight = AppBar().preferredSize.height;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final width = constraints.maxWidth;
-        final alturaBarra = AppBar().preferredSize.height;
-
-        return Scaffold(
-          extendBody: true,
-          appBar: width < 600
-              ? null
-              : PreferredSize(
-                  preferredSize: Size(width, alturaBarra),
-                  child: WebAppBar(
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => SearchWidgetDropDown(
-                          onSubmitted: (String city) {
-                            bloc.add(SearchWeatherEvent(city: city));
+              return Scaffold(
+                extendBody: true,
+                appBar: width < 600
+                    ? null
+                    : PreferredSize(
+                        preferredSize: Size(width, barHeight),
+                        child: WebAppBar(
+                          onSubmitted: (String valorDigitado) {
+                            bloc.add(SearchWeatherEvent(city: valorDigitado));
                           },
-                          textController: textController,
                         ),
                       ),
-                    ),
-                    onSubmitted: (valorDigitado) {
-                      bloc.add(SearchWeatherEvent(city: valorDigitado));
-                    },
-                  ),
-                ),
-          body: width < 600
-              // anuncia um tamanho preferido que pode ser usado pelos pais.
-              // Cria um widget que tem um tamanho preferencial
-              // que o pai pode consultar.
-              // cria seu próprio widget de tamanho preferido personalizado
-              // ? PreferredSize(
-              // preferredSize: Size(width, alturaBarra),
-              // child:
-              ? const HomePageMobile()
-              // )
-              : PreferredSize(
-                  preferredSize: Size(width, alturaBarra),
-                  child: const HomePageWeb(),
-                ),
-        );
+                body: width < 600
+                    // anuncia um tamanho preferido que pode ser usado pelos pais.
+                    // Cria um widget que tem um tamanho preferencial
+                    // que o pai pode consultar.
+                    ? HomePageMobile(
+                        weather: weather,
+                        onTapSearch: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => PageDropDownMobile(
+                              onSubmitted: (String city) {
+                                bloc.add(SearchWeatherEvent(city: city));
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ),
+                        ),
+                      )
+                    : HomePageWeb(weather: weather),
+              );
+            },
+          );
+        }
       },
     );
   }

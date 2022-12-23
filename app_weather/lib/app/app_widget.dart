@@ -10,8 +10,6 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      // darkTheme: AppTheme.themeDark,
-      // themeMode: isLight ? ThemeMode.light : ThemeMode.dark,
       routerDelegate: Modular.routerDelegate,
       routeInformationParser: Modular.routeInformationParser,
     );

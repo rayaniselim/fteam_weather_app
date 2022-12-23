@@ -2,96 +2,56 @@ import 'package:core_module/core_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class HomePageWeb extends StatefulWidget {
+class HomePageWeb extends StatelessWidget {
+  final WeatherModel weather;
+
   const HomePageWeb({
     super.key,
+    required this.weather,
   });
 
   @override
-  State<HomePageWeb> createState() => _HomePageWebState();
-}
-
-class _HomePageWebState extends State<HomePageWeb> {
-  final bloc = Modular.get<WeatherBloc>();
-  final textController = TextEditingController();
-  final weather = WeatherModel;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // Injetar nos binds
-    // bloc = WeatherBloc(
-    //   weatherRepo: WeatherRepository(
-    //     datasource: WeatherDatasource(
-    //       client: DioHttpClient(Modular.get<Dio>()),
-    //     ),
-    //   ),
-    // );
-    bloc.add(const SearchWeatherEvent(city: 'Curitiba'));
-  }
-
-  @override
-  void dispose() {
-    bloc.close();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return BlocBuilder<WeatherBloc, WeatherState>(
-      bloc: bloc,
-      builder: (context, state) {
-        final weather = state.weather;
-
-        if (weather == null) {
-          return const PageError(
-            fontSize: 30,
-          );
-        } else {
-          return Stack(
-            fit: StackFit.expand,
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Image.asset(
+          Images.nuvens,
+          fit: BoxFit.cover,
+        ),
+        Container(color: LightColors.colorBlackOpacity),
+        Padding(
+          padding: const EdgeInsets.all(60),
+          child: Column(
             children: [
-              Image.asset(
-                Images.nuvens,
-                fit: BoxFit.cover,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  FittedBox(
+                    child: CardTemperatureWeb(
+                      modelCity: weather.city,
+                      modelDescription: weather.description,
+                      modelTemperature: weather.temperature,
+                    ),
+                  ),
+                  const FittedBox(
+                    child: CardModalWeb(),
+                  ),
+                ],
               ),
-              Container(color: LightColors.colorBlackOpacity),
-              Padding(
-                padding: const EdgeInsets.all(60),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        FittedBox(
-                          child: CardTemperatureWeb(
-                            modelCity: weather.city,
-                            modelDescription: weather.description,
-                            modelTemperature: weather.temperature,
-                          ),
-                        ),
-                        const FittedBox(
-                          child: CardModalWeb(),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ComponentsHoursWeb(
-                          list: weather.forecast,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+              const Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ComponentsHoursWeb(
+                    list: weather.forecast,
+                  ),
+                ],
               ),
             ],
-          );
-        }
-      },
+          ),
+        ),
+      ],
     );
   }
 }

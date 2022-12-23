@@ -32,12 +32,9 @@ class PageDropDownMobile extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Card(
-            elevation: 0,
-            child: SearchWidgetDropDown(
-              onSubmitted: onSubmitted,
-              textController: textController,
-            ),
+          SearchWidgetDropDown(
+            onSubmitted: onSubmitted,
+            textController: textController,
           ),
         ],
       ),

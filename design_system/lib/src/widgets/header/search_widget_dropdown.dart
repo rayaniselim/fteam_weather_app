@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class SearchWidgetDropDown extends StatelessWidget {
   final Function(String) onSubmitted;
   final TextEditingController textController;
-  final void Function()? onTap;
 
   const SearchWidgetDropDown({
     super.key,
     required this.onSubmitted,
     required this.textController,
-    this.onTap,
   });
 
   @override

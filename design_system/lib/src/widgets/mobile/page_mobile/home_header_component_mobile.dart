@@ -5,14 +5,14 @@ class HomeHeaderComponentMobile extends StatelessWidget {
   final String temperature;
   final String city;
   final String description;
-  final void Function() onTap;
+  final void Function() onTapSearch;
 
   const HomeHeaderComponentMobile({
     super.key,
     required this.city,
     required this.temperature,
     required this.description,
-    required this.onTap,
+    required this.onTapSearch,
   });
 
   @override
@@ -39,7 +39,7 @@ class HomeHeaderComponentMobile extends StatelessWidget {
                 ],
               ),
               IconButtonWidget(
-                onTap: onTap,
+                onTap: onTapSearch,
               ),
             ],
           ),

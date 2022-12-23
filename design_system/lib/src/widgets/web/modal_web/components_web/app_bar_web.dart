@@ -2,13 +2,11 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class WebAppBar extends StatelessWidget {
-  final Function(String) onSubmitted;
-  final void Function() onTap;
+  final void Function(String) onSubmitted;
 
   const WebAppBar({
     Key? key,
     required this.onSubmitted,
-    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -32,11 +30,11 @@ class WebAppBar extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: size.width * 0.16,
+            width: 240,
+            // width: size.width * 0.16,
             child: SearchWidgetDropDown(
               onSubmitted: onSubmitted,
               textController: textController,
-              onTap: onTap,
             ),
           ),
           const CircleAvatar(
