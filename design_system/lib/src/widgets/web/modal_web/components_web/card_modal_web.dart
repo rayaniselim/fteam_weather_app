@@ -19,7 +19,7 @@ class CardModalWeb extends StatelessWidget {
                     'Weather Today',
                     style: Theme.of(context)
                         .textTheme
-                        .headline2
+                        .displayMedium
                         ?.copyWith(fontSize: 24),
                   ),
                 ),

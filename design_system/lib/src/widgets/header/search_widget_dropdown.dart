@@ -19,7 +19,7 @@ class SearchWidgetDropDown extends StatelessWidget {
       child: TextField(
         controller: textController,
         onSubmitted: onSubmitted,
-        style: theme.textTheme.overline!
+        style: theme.textTheme.labelSmall!
             .copyWith(fontSize: 15, color: Colors.black),
         cursorColor: Colors.grey,
         decoration: InputDecoration(
@@ -52,13 +52,13 @@ class SearchWidgetDropDown extends StatelessWidget {
           errorBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
-              color: theme.errorColor,
+              color: theme.colorScheme.error,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
-              color: theme.errorColor,
+              color: theme.colorScheme.error,
               width: 1.5,
             ),
           ),

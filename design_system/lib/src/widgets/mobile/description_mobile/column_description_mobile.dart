@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../design_system.dart';
+
 class ColumnDescriptionMobile extends StatelessWidget {
   final double sizeNumber;
   final double sizeDescription;
@@ -24,18 +26,18 @@ class ColumnDescriptionMobile extends StatelessWidget {
         children: [
           Text(
             textNumber,
-            style: theme
-                .textTheme
-                .subtitle1!
-                .copyWith(fontSize: sizeNumber),
+            style: theme.textTheme.titleMedium!.copyWith(
+              fontSize: sizeNumber,
+              color: LightColors.primaryColor,
+            ),
             textAlign: TextAlign.center,
           ),
           Text(
             textDescription!,
-            style: theme
-                .textTheme
-                .caption!
-                .copyWith(fontSize: sizeDescription),
+            style: theme.textTheme.bodySmall!.copyWith(
+              fontSize: sizeDescription,
+              color: LightColors.primaryColor,
+            ),
             textAlign: TextAlign.center,
           ),
         ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../design_system.dart';
+
 class TextItsWidget extends StatelessWidget {
   final double sizeDescription;
   final String description;
@@ -14,8 +16,9 @@ class TextItsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       description,
-      style: Theme.of(context).textTheme.subtitle1!.copyWith(
+      style: Theme.of(context).textTheme.titleMedium!.copyWith(
             fontSize: sizeDescription,
+            color: LightColors.primaryColor,
           ),
     );
   }

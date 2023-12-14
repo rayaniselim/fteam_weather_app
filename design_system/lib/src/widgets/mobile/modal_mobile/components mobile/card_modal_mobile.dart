@@ -30,12 +30,14 @@ Container cardModalMobile(
               onTap: () {},
             ),
             Container(
-              color: theme.backgroundColor,
+              color: LightColors.primaryColor,
+              //theme.colorScheme.background,
               child: Column(
                 children: [
                   Text(
                     'Weather Today',
-                    style: theme.textTheme.headline5?.copyWith(fontSize: 20),
+                    style:
+                        theme.textTheme.headlineSmall?.copyWith(fontSize: 20),
                   ),
                   SizedBox(
                     height: size.height * 0.01,

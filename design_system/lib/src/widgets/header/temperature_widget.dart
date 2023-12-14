@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../design_system.dart';
+
 class TemperatureWidget extends StatelessWidget {
   final double size;
   final String temperature;
@@ -15,7 +17,10 @@ class TemperatureWidget extends StatelessWidget {
     return Text(
       textAlign: TextAlign.left,
       temperature,
-      style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: size),
+      style: Theme.of(context).textTheme.displayMedium?.copyWith(
+            fontSize: size,
+            color: LightColors.primaryColor,
+          ),
     );
   }
 }

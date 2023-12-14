@@ -43,7 +43,7 @@ class HoursWebWidget extends StatelessWidget {
           ),
           Text(
             textHour,
-            style: theme.textTheme.caption!.copyWith(fontSize: fontSizeHour),
+            style: theme.textTheme.bodySmall!.copyWith(fontSize: fontSizeHour),
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -53,7 +53,7 @@ class HoursWebWidget extends StatelessWidget {
             textAlign: TextAlign.left,
             text: TextSpan(
               text: textTemperature,
-              style: theme.textTheme.headline2!.copyWith(
+              style: theme.textTheme.displayMedium!.copyWith(
                 fontSize: fontSizeTemperature,
               ),
               children: <InlineSpan>[
@@ -61,7 +61,7 @@ class HoursWebWidget extends StatelessWidget {
                   alignment: PlaceholderAlignment.top,
                   child: Text(
                     '°',
-                    style: theme.textTheme.headline2!.copyWith(
+                    style: theme.textTheme.displayMedium!.copyWith(
                       fontSize: fontSizeBolinha,
                     ),
                   ),

@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                 body: width < 600
-                    // anuncia um tamanho preferido que pode ser usado pelos pais.
+                    // anuncia um tamanho preferido que pode ser usado pelo pai
                     // Cria um widget que tem um tamanho preferencial
                     // que o pai pode consultar.
                     ? HomePageMobile(

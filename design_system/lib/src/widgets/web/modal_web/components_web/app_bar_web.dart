@@ -24,8 +24,10 @@ class WebAppBar extends StatelessWidget {
             ),
             child: Text(
               'Weather Day',
-              style:
-                  Theme.of(context).textTheme.headline5!.copyWith(fontSize: 20),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineSmall!
+                  .copyWith(fontSize: 20),
             ),
           ),
           const Spacer(),

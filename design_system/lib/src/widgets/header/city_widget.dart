@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../design_system.dart';
+
 class CityWidget extends StatelessWidget {
   final double sizeFont;
   final String city;
@@ -24,8 +26,9 @@ class CityWidget extends StatelessWidget {
         ),
         Text(
           city.toUpperCase(),
-          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontSize: sizeFont,
+                color: LightColors.primaryColor,
               ),
         ),
       ],

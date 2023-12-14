@@ -1,12 +1,15 @@
 import 'package:core_module/core_module.dart';
+import 'package:core_module/feature/data/datasources/weather_datasource%20copy.dart';
 
-class WeatherDatasource {
+class WeatherDatasource implements IWeatherDatasource {
+  @override
   final IHttpClient client;
 
   static const _baseUrl = 'https://goweather.herokuapp.com/weather/';
 
   WeatherDatasource({required this.client});
 
+  @override
   Future<Map<String, dynamic>?> remoteSearchWeather({
     required String city,
   }) async {
@@ -17,19 +20,6 @@ class WeatherDatasource {
       );
 
       return response.data;
-      // return {
-      //   'temperature': '27',
-      //   'wind': 'wind',
-      //   'description': '',
-      //   'forecast': [
-      //     {
-      //       'temperature': 'temperature',
-      //       'wind': 'wind',
-      //       'day': 'day',
-      //     }
-      //   ],
-      // };
-      // Não faça tratamento de erro generico(Sem 'on')
     } catch (error) {
       throw Exception('Erro no banco de dados');
     }

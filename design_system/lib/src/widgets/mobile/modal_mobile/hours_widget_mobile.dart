@@ -30,7 +30,7 @@ class HoursWidgetMobile extends StatelessWidget {
         children: [
           Text(
             'Day $textDay',
-            style: theme.textTheme.overline!.copyWith(
+            style: theme.textTheme.labelSmall!.copyWith(
               fontSize: fontSizeDay,
             ),
             textAlign: TextAlign.center,
@@ -44,7 +44,7 @@ class HoursWidgetMobile extends StatelessWidget {
           ),
           Text(
             textWind,
-            style: theme.textTheme.overline!.copyWith(
+            style: theme.textTheme.labelSmall!.copyWith(
               fontSize: fontSizeDay,
             ),
             textAlign: TextAlign.center,
@@ -55,7 +55,7 @@ class HoursWidgetMobile extends StatelessWidget {
           Text(
             textTemperature,
             textAlign: TextAlign.left,
-            style: theme.textTheme.headline5!.copyWith(
+            style: theme.textTheme.headlineSmall!.copyWith(
               fontSize: fontSizeTemperature,
             ),
           ),

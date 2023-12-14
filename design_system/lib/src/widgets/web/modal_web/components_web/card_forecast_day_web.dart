@@ -48,7 +48,7 @@ class CardForecastDayWeb extends StatelessWidget {
                   FittedBox(
                     child: Text(
                       'Day $textDay',
-                      style: theme.textTheme.headline2!.copyWith(
+                      style: theme.textTheme.displayMedium!.copyWith(
                         fontSize: 20,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -69,7 +69,7 @@ class CardForecastDayWeb extends StatelessWidget {
                     child: Text(
                       textTemperature,
                       textAlign: TextAlign.left,
-                      style: theme.textTheme.headline2!.copyWith(
+                      style: theme.textTheme.displayMedium!.copyWith(
                         fontSize: 36,
                       ),
                     ),
@@ -86,7 +86,7 @@ class CardForecastDayWeb extends StatelessWidget {
                   FittedBox(
                     child: Text(
                       textKmWind,
-                      style: theme.textTheme.headline2!.copyWith(
+                      style: theme.textTheme.displayMedium!.copyWith(
                         fontSize: 20,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -95,7 +95,7 @@ class CardForecastDayWeb extends StatelessWidget {
                   FittedBox(
                     child: Text(
                       textWind,
-                      style: theme.textTheme.headline2!.copyWith(
+                      style: theme.textTheme.displayMedium!.copyWith(
                         fontSize: 16,
                         overflow: TextOverflow.ellipsis,
                       ),
